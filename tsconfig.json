@@ -3,6 +3,14 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "component-library": [
+        "./projects/component-library/src/public-api"
+      ],
+      "component-library/*": [
+        "./projects/component-library/src/*"
+      ]
+    },
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
@@ -28,6 +36,12 @@
     },
     {
       "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/component-library/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/component-library/tsconfig.spec.json"
     }
   ]
 }
