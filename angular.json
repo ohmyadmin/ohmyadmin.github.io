@@ -98,6 +98,13 @@
             "tsConfig": "projects/component-library/tsconfig.spec.json"
           }
         }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "changeDetection": "OnPush",
+          "path": "projects/component-library/src/components",
+          "style": "scss"
+        }
       }
     }
   }
