@@ -95,7 +95,8 @@
         "test": {
           "builder": "@angular/build:unit-test",
           "options": {
-            "tsConfig": "projects/component-library/tsconfig.spec.json"
+            "tsConfig": "projects/component-library/tsconfig.spec.json",
+            "coverage": true
           }
         }
       },
@@ -104,6 +105,11 @@
           "changeDetection": "OnPush",
           "path": "projects/component-library/src/components",
           "style": "scss"
+        },
+        "@schematics/angular:pipe": {
+          "path": "projects/component-library/src/pipes",
+          "typeSeparator": ".",
+          "flat": false
         }
       }
     }
