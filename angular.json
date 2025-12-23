@@ -96,7 +96,13 @@
           "builder": "@angular/build:unit-test",
           "options": {
             "tsConfig": "projects/component-library/tsconfig.spec.json",
-            "coverage": true
+            "coverage": true,
+            "coverageThresholds": {
+              "branches": 80,
+              "functions": 80,
+              "lines": 80,
+              "statements": 80
+            }
           }
         }
       },
