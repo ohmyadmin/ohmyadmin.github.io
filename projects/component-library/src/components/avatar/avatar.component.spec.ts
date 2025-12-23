@@ -1,6 +1,6 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
-import {AvatarComponent} from './avatar.component';
+import {AvatarComponent} from 'component-library';
 import {describe, it, expect, beforeEach, vi} from 'vitest';
 
 describe('AvatarComponent', () => {

@@ -1,5 +1,5 @@
 import {mount} from 'cypress/angular-zoneless'
-import {AvatarComponent} from './avatar.component';
+import {AvatarComponent} from 'component-library';
 
 const ExampleValues = {
   name: 'Jane Doe',
@@ -59,7 +59,7 @@ const image_checks = (image_url: string) => {
     .should('be.visible')
     .should('have.css', 'border-radius', '50%')
     .should('have.attr', 'src')
-    .and('eq', image_url)
+    .and('include', image_url)
 
   let border_width: number;
 
@@ -169,10 +169,11 @@ describe('AvatarComponent [TEXT]', () => {
   })
 })
 
+const cache_bust_random_number = () => Math.random()
 describe('AvatarComponent [IMAGE]', () => {
   beforeEach(() => {
     const image_url_object = new URL(ExampleValues.image_url)
-    cy.intercept('GET', `**//${image_url_object.hostname}${image_url_object.pathname}`).as('image_request');
+    cy.intercept('GET', `**//${image_url_object.hostname}${image_url_object.pathname}*`).as('image_request');
   })
 
   afterEach(() => {
@@ -182,7 +183,7 @@ describe('AvatarComponent [IMAGE]', () => {
   })
 
   it('should display ONLY the image when no name is provided', () => {
-    mount(`<lib-avatar image_url='${ExampleValues.image_url}' />`, {
+    mount(`<lib-avatar image_url='${ExampleValues.image_url}?=${cache_bust_random_number()}' />`, {
       imports: [
         AvatarComponent
       ]
@@ -190,7 +191,11 @@ describe('AvatarComponent [IMAGE]', () => {
   });
 
   it('when the container width is smaller than the avatar size, the avatar size should not exceed the container', () => {
-    mount(`<div class='container' style="width: 100px;height: 200px;display:flex;container-type:size;background:blue;justify-items:start;align-items: start;"><lib-avatar image_url='${ExampleValues.image_url}' /></div>`, {
+    mount(`
+      <div class='container' style="width: 100px;height: 200px;display:flex;container-type:size;background:blue;justify-items:start;align-items: start;">
+        <lib-avatar image_url='${ExampleValues.image_url}?=${cache_bust_random_number()}' />
+      </div>
+    `, {
       imports: [
         AvatarComponent
       ]
@@ -198,7 +203,11 @@ describe('AvatarComponent [IMAGE]', () => {
   })
 
   it('when the container height is smaller than the avatar size, the avatar size should not exceed the container', () => {
-    mount(`<div class='container' style="height: 100px; width: 200px;display:flex;container-type:size;background:blue;justify-items:start;align-items: start;"><lib-avatar image_url='${ExampleValues.image_url}' /></div>`, {
+    mount(`
+      <div class='container' style="height: 100px; width: 200px;display:flex;container-type:size;background:blue;justify-items:start;align-items: start;">
+        <lib-avatar image_url='${ExampleValues.image_url}?=${cache_bust_random_number()}' />
+      </div>
+    `, {
       imports: [
         AvatarComponent
       ]
@@ -206,7 +215,7 @@ describe('AvatarComponent [IMAGE]', () => {
   })
 
   it('should display ONLY the image when both name and image are provided', () => {
-    mount(`<lib-avatar name='${ExampleValues.name}' image_url='${ExampleValues.image_url}' />`, {
+    mount(`<lib-avatar name='${ExampleValues.name}' image_url='${ExampleValues.image_url}?=${cache_bust_random_number()}' />`, {
       imports: [
         AvatarComponent
       ]
@@ -228,4 +237,3 @@ describe('AvatarComponent [IMAGE]', () => {
 // placeholder custom image for when no image or name is provided
 // broken image
 // when using an image, there should not be a background, think of transparent images and svgs
-// BUG, the devtools need to be opened and disable cache needs to be on so that we can intercept the image
