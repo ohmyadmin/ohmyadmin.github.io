@@ -1,0 +1,6 @@
+@if (!image_url() || image_load_error()) {
+  <span class="text">{{ name() | initials }}</span>
+}
+@else {
+  <img [src]="image_url()" alt="User Avatar" loading="lazy" (error)="on_image_error()"/>
+}

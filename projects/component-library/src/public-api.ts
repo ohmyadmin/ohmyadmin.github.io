@@ -1,5 +1,2 @@
-/*
- * Public API Surface of component-library
- */
-
-export * from './lib/component-library';
+export * from './pipes/initials/initials.pipe'
+export * from './components/avatar/avatar.component'
