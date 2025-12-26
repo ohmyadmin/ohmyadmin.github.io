@@ -7,11 +7,12 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "test:component-library": "ng test --no-progress --project component-library",
-    "test:component-library:ci": "npm run test:component-library -- --no-watch",
+    "storybook": "ng run component-library:storybook",
+    "cypress:start": "cypress open",
+    "cypress:test": "cypress run --component",
     "test:cypress:component": "cypress run --component",
-    "test:cypress:component:ci": "cypress run --component"
+    "unit-test": "ng test --no-progress --project component-library",
+    "unit-test:ci": "npm run unit-test -- --no-watch"
   },
   "prettier": {
     "printWidth": 100,
@@ -49,6 +50,14 @@
     "jsdom": "^27.1.0",
     "ng-packagr": "^21.0.0",
     "typescript": "~5.9.2",
-    "vitest": "^4.0.8"
+    "vitest": "^4.0.8",
+    "storybook": "^10.1.10",
+    "@storybook/angular": "^10.1.10",
+    "@storybook/addon-a11y": "^10.1.10",
+    "@storybook/addon-docs": "^10.1.10",
+    "@storybook/addon-onboarding": "^10.1.10",
+    "@angular-devkit/architect": "^0.2100.0",
+    "@angular-devkit/core": "^21.0.0",
+    "@compodoc/compodoc": "^1.1.32"
   }
 }

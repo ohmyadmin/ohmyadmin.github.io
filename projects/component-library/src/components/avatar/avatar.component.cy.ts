@@ -150,8 +150,8 @@ describe('AvatarComponent [TEXT]', () => {
     initials_checks(ExampleValues.initials)
   });
 
-  it('when the container has a width of 100px, the avatar size should not exceed the container', () => {
-    mount(`<div class='container' style="width:100px;height:200px;display:flex;container-type:size;background:blue;justify-items:start;align-items: start;"><lib-avatar name='${ExampleValues.name}' /></div>`, {
+  it('when the container has a width of 60px, the avatar size should not exceed the container', () => {
+    mount(`<div class='container' style="width:60px;height:200px;display:flex;container-type:size;background:blue;justify-items:start;align-items: start;"><lib-avatar name='${ExampleValues.name}' /></div>`, {
       imports: [
         AvatarComponent
       ]
@@ -159,8 +159,8 @@ describe('AvatarComponent [TEXT]', () => {
     initials_checks(ExampleValues.initials)
   })
 
-  it('when the container has a height of 100px, the avatar size should not exceed the container', () => {
-    mount(`<div class='container' style="height:100px;width: 200px;display:flex;container-type:size;background:blue;justify-items:start;align-items: start;"><lib-avatar name='${ExampleValues.name}' /></div>`, {
+  it('when the container has a height of 60px, the avatar size should not exceed the container', () => {
+    mount(`<div class='container' style="height:60px;width: 200px;display:flex;container-type:size;background:blue;justify-items:start;align-items: start;"><lib-avatar name='${ExampleValues.name}' /></div>`, {
       imports: [
         AvatarComponent
       ]
@@ -192,7 +192,7 @@ describe('AvatarComponent [IMAGE]', () => {
 
   it('when the container width is smaller than the avatar size, the avatar size should not exceed the container', () => {
     mount(`
-      <div class='container' style="width: 100px;height: 200px;display:flex;container-type:size;background:blue;justify-items:start;align-items: start;">
+      <div class='container' style="width: 60px;height: 200px;display:flex;container-type:size;background:blue;justify-items:start;align-items: start;">
         <lib-avatar image_url='${ExampleValues.image_url}?=${cache_bust_random_number()}' />
       </div>
     `, {
@@ -204,7 +204,7 @@ describe('AvatarComponent [IMAGE]', () => {
 
   it('when the container height is smaller than the avatar size, the avatar size should not exceed the container', () => {
     mount(`
-      <div class='container' style="height: 100px; width: 200px;display:flex;container-type:size;background:blue;justify-items:start;align-items: start;">
+      <div class='container' style="height:60px; width: 200px;display:flex;container-type:size;background:blue;justify-items:start;align-items: start;">
         <lib-avatar image_url='${ExampleValues.image_url}?=${cache_bust_random_number()}' />
       </div>
     `, {

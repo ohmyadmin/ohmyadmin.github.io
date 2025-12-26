@@ -32,4 +32,4 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - run: npm ci
-      - run: npm run test:component-library:ci
+      - run: npm run cypress:test

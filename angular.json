@@ -104,6 +104,39 @@
               "statements": 80
             }
           }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": "projects/component-library/.storybook",
+            "browserTarget": "component-library:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/component-library"
+            ],
+            "port": 6006,
+            "styles": [
+              "projects/component-library/.storybook/preview.css"
+            ]
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": "projects/component-library/.storybook",
+            "browserTarget": "component-library:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/component-library"
+            ],
+            "outputDir": "dist/storybook/component-library"
+          }
         }
       },
       "schematics": {

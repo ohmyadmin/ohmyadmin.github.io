@@ -1,28 +1,55 @@
+@use '../../styles/mixins';
+@use '../../styles/colors';
+
+$medium_size: 4em;
+
 :host {
-  --size-md: 200px;
+  @include mixins.generate-size-variables($medium_size);
+  --border-width: max(2px, calc(var(--size) * 0.04));
   align-items: center;
   aspect-ratio: 1 / 1;
-  background-color: var(--background-color, rgb(227,227,227));
+  background-color: var(--background-color, rgb(227 227 227));
   border-radius: 50%;
-  border: 3px solid;
+  border-width: var(--border-width);
+  border-style: var(--border-style, none);
+  color: light-dark(colors.$egg_white, colors.$matte_black);
+  container-type: inline-size;
   display: inline-flex;
   justify-content: center;
-  overflow: hidden;
-  //width: min(var(--size, var(--size-md)), 100cqmin);
-  width: min(200px, 100cqmin);
+  position: relative;
+  width: min(var(--size, var(--size-md)), 100cqmin);
   user-select: none;
-
-  // TODO: use globals here
-  font-family: sans-serif;
-  box-sizing: border-box; // TODO: use global
 }
 
 .text {
-  font-size: clamp(1rem, 40cqmin, 5rem);
-  font-weight: bold;
+  font-size: 40cqmin;
   line-height: 1;
 }
 
+.status {
+  --status-size: 25cqmin;
+  aspect-ratio: 1;
+  background: var(--status-color, #{colors.$offline});
+  border-radius: 50%;
+  border-width: var(--border-width);
+  border-style: var(--border-style, none);;
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  width: var(--status-size);
+
+  &.away {
+    --status-color: #{colors.$away};
+  }
+
+  &.busy {
+    --status-color: #{colors.$busy};
+  }
+
+  &.online {
+    --status-color: #{colors.$online};
+  }
+}
 
 img, svg {
   object-fit: cover;

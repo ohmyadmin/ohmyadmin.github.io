@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'initials',
 })
 export class InitialsPipe implements PipeTransform {
-  transform(value: string): unknown {
+  transform(value: string): string {
     const name_parts = value.trim().split(/\s+/);
 
     if (name_parts.length === 0 || name_parts[0] === "") {

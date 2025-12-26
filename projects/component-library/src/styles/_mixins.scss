@@ -1,0 +1,28 @@
+/**
+ * Generate tailwind css variables from a given medium size
+ */
+/// Generate tailwind css variables from a given medium size
+///
+/// @access public
+/// @param {Number} $medium-size     - The size to use for the medium css size variable
+/// @output Generates tailwind css variables from a given medium size
+/// @example scss
+///   @use 'styles/mixins';
+///   .element {
+///     @include mixins.generate-size-variables(200px);
+///   }
+@mixin generate-size-variables($medium-size) {
+  --size-3xs: #{$medium-size * (16/28)};
+  --size-2xs: #{$medium-size * (18/28)};
+  --size-xs: #{$medium-size * (20/28)};
+  --size-sm: #{$medium-size * (24/28)};
+  --size-md: #{$medium-size * (28/28)};
+  --size-lg: #{$medium-size * (32/28)};
+  --size-xl: #{$medium-size * (36/28)};
+  --size-2xl: #{$medium-size * (42/28)};
+  --size-3xl: #{$medium-size * (48/28)};
+  --size-4xl: #{$medium-size * (56/28)};
+  --size-5xl: #{$medium-size * (64/28)};
+  --size-6xl: #{$medium-size * (72/28)};
+  --size-7xl: #{$medium-size * (80/28)};
+}
