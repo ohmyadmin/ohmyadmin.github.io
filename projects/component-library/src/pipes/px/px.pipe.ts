@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'to-px'
 })
 export class PxPipe implements PipeTransform {
-  transform(value: string|undefined): string | undefined {
+  transform(value: number|string|undefined): string | undefined {
     if (value === undefined || value === null || value.toString().trim() === '') {
       return undefined;
     }
