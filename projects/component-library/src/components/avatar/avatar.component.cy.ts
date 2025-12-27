@@ -8,16 +8,16 @@ const ExampleValues = {
 }
 
 const base_checks = () => {
-  cy.get('lib-avatar')
+  cy.get('.avatar')
     .should('have.css', 'border-radius', '50%');
 
   let rendered_width: number, rendered_height: number;
 
-  cy.get('lib-avatar')
+  cy.get('.avatar')
     .invoke('outerWidth')
     .then(value => rendered_width = value as number)
 
-  cy.get('lib-avatar')
+  cy.get('.avatar')
     .invoke('outerHeight')
     .then(value => {
       rendered_height = value as number
@@ -26,21 +26,21 @@ const base_checks = () => {
       assert(rendered_width === rendered_height, 'Avatar Component width === height')
     })
 
-  cy.get('lib-avatar')
+  cy.get('.avatar')
     .parent()
     .invoke('outerHeight')
     .then(container_outer_height => {
-      cy.get('lib-avatar')
+      cy.get('.avatar')
         .invoke('outerHeight')
         .should('be.lte', container_outer_height, 'Avatar Component Height <= Container Height');
       cy.log('Container Outer Height', container_outer_height);
     })
 
-  cy.get('lib-avatar')
+  cy.get('.avatar')
     .parent()
     .invoke('outerWidth')
     .then(container_outer_width => {
-      cy.get('lib-avatar')
+      cy.get('.avatar')
         .invoke('outerWidth')
         .should('be.lte', container_outer_width, 'Avatar Component Width <= Container Width');
       cy.log('Container Outer Width', container_outer_width);
@@ -48,14 +48,14 @@ const base_checks = () => {
 }
 
 const image_checks = (image_url: string) => {
-  cy.get('lib-avatar')
+  cy.get('.avatar')
     .should('not.have.text');
 
-  cy.get('lib-avatar')
+  cy.get('.avatar')
     .children()
     .should('have.length', 1);
 
-  cy.get('lib-avatar img')
+  cy.get('.avatar img')
     .should('be.visible')
     .should('have.css', 'border-radius', '50%')
     .should('have.attr', 'src')
@@ -63,21 +63,21 @@ const image_checks = (image_url: string) => {
 
   let border_width: number;
 
-  cy.get('lib-avatar')
+  cy.get('.avatar')
     .invoke('css', 'border-width')
     .then(value => {
       border_width = parseInt(value.toString())
     })
 
   let avatar_width: number;
-  cy.get('lib-avatar')
+  cy.get('.avatar')
     .invoke('outerWidth')
     .then(outerWidth => {
       cy.log('avatar outerWidth', outerWidth)
       avatar_width = outerWidth!
     })
 
-  cy.get('lib-avatar img')
+  cy.get('.avatar img')
     .invoke('outerHeight')
     .then(outerHeight => {
       cy.log('image outerHeight', outerHeight)
@@ -86,17 +86,17 @@ const image_checks = (image_url: string) => {
 }
 
 const initials_checks = (initials: string) => {
-  cy.get('lib-avatar')
+  cy.get('.avatar')
     .should('contain.text', initials);
 
-  cy.get('lib-avatar')
+  cy.get('.avatar')
     .children()
     .should('have.length', 1);
 
-  cy.get('lib-avatar img')
+  cy.get('.avatar img')
     .should('not.exist');
 
-  cy.get('lib-avatar .text')
+  cy.get('.avatar .text')
     .should('exist')
     .should('have.text', initials)
 }
@@ -221,7 +221,7 @@ describe('AvatarComponent [IMAGE]', () => {
       ]
     });
 
-    cy.get('lib-avatar')
+    cy.get('.avatar')
       .screenshot('AvatarComponent', {
         overwrite: true
       })

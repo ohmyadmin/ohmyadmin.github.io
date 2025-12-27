@@ -1,0 +1,16 @@
+<lib-avatar-group layering="first_on_top" [overlap]="-5" size="md">
+  <lib-avatar image_url="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-chrome-icon.svg" />
+  <lib-avatar [image_url]="chrome() ? image_url_supported : image_url_unsupported" />
+</lib-avatar-group>
+<lib-avatar-group limit="${args.limit}" layering="first_on_top" [overlap]="-5" size="md">
+  <lib-avatar image_url="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/edge-browser-icon.svg" />
+  <lib-avatar [image_url]="edge() ? image_url_supported : image_url_unsupported" />
+</lib-avatar-group>
+<lib-avatar-group limit="${args.limit}" layering="first_on_top" [overlap]="-5" size="md">
+  <lib-avatar image_url="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/firefox-browser-icon.svg" />
+  <lib-avatar [image_url]="firefox() ? image_url_supported : image_url_unsupported" />
+</lib-avatar-group>
+<lib-avatar-group limit="${args.limit}" layering="first_on_top" [overlap]="-5" size="md">
+  <lib-avatar image_url="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/safari-icon.svg" />
+  <lib-avatar [image_url]="safari() ? image_url_supported : image_url_unsupported" />
+</lib-avatar-group>

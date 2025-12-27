@@ -32,8 +32,16 @@ My rule of thumb is:
 * SassDoc
 
 
-### Scaffolding
+## Scaffolding
 
+### Components
 ```shell
-ng generate component google-ticket
+component_name=""
+ng generate component $component_name --project component-library
+```
+
+### Directives
+```shell
+directive_name="RandomMilkyBackground"
+ng generate directive $directive_name --project component-library
 ```

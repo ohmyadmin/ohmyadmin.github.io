@@ -22,6 +22,7 @@ import {WholeNumberPipe} from 'component-library/pipes/whole-number/whole-number
     WholeNumberPipe
   ],
   host: {
+    'class': 'avatar-group',
     '[style.--item-count]': 'avatar_items_as_html().length',
     '[style.--overlap]': 'overlap()'
   },
@@ -29,7 +30,7 @@ import {WholeNumberPipe} from 'component-library/pipes/whole-number/whole-number
 })
 export class AvatarGroupComponent {
   private whole_number_pipe = inject(WholeNumberPipe);
-  overlap = input<string>();
+  overlap = input<string|number>();
   bordered = input<boolean>();
   layering = input<'first_on_top' | 'last_on_top'>('last_on_top');
   limit = input<number, number | string | undefined>(undefined, {transform: this.whole_number_pipe.transform});

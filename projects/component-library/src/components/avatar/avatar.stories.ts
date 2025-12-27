@@ -1,5 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/angular';
-import {AvatarComponent} from 'component-library';
+import {Meta, moduleMetadata, StoryObj} from '@storybook/angular';
+import {
+  AvatarComponent,
+  FlexboxColumnComponent,
+  FlexboxRowComponent,
+  RandomMilkyBackgroundDirective
+} from 'component-library';
 import {expect} from 'storybook/test';
 import {InputType} from 'storybook/internal/csf';
 
@@ -34,7 +39,7 @@ export default meta;
 type Story = StoryObj<AvatarComponent>;
 
 const base_checks: Story['play'] = async ({ canvasElement }) => {
-  const avatar_component = canvasElement.querySelector('lib-avatar');
+  const avatar_component = canvasElement.querySelector('.avatar');
   expect(avatar_component).toBeInTheDocument();
   expect(avatar_component).toBeVisible();
 }
@@ -108,6 +113,13 @@ export const BrokenImage: Story = {
 export const NoNameNoImage: Story = {}
 
 export const AllSizes: Story = {
+  decorators: [
+    moduleMetadata({
+      imports: [
+        RandomMilkyBackgroundDirective
+      ]
+    })
+  ],
   render: (args) => {
     const status_attribute = args.status ? `[status]="'${args.status}'"` : '';
     return {
@@ -119,19 +131,19 @@ export const AllSizes: Story = {
        }`
       ],
       template: `
-        <lib-avatar [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="3xs" />
-        <lib-avatar [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="2xs" />
-        <lib-avatar [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="xs" />
-        <lib-avatar [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="sm" />
-        <lib-avatar [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="md" />
-        <lib-avatar [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="lg" />
-        <lib-avatar [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="xl" />
-        <lib-avatar [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="2xl" />
-        <lib-avatar [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="3xl" />
-        <lib-avatar [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="4xl" />
-        <lib-avatar [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="5xl" />
-        <lib-avatar [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="6xl" />
-        <lib-avatar [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="7xl" />
+        <lib-avatar libRandomMilkyBackground [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="3xs" />
+        <lib-avatar libRandomMilkyBackground [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="2xs" />
+        <lib-avatar libRandomMilkyBackground [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="xs" />
+        <lib-avatar libRandomMilkyBackground [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="sm" />
+        <lib-avatar libRandomMilkyBackground [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="md" />
+        <lib-avatar libRandomMilkyBackground [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="lg" />
+        <lib-avatar libRandomMilkyBackground [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="xl" />
+        <lib-avatar libRandomMilkyBackground [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="2xl" />
+        <lib-avatar libRandomMilkyBackground [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="3xl" />
+        <lib-avatar libRandomMilkyBackground [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="4xl" />
+        <lib-avatar libRandomMilkyBackground [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="5xl" />
+        <lib-avatar libRandomMilkyBackground [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="6xl" />
+        <lib-avatar libRandomMilkyBackground [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="7xl" />
       `
     }
   },

@@ -1,7 +1,6 @@
 import {ChangeDetectionStrategy, Component, computed, input, signal} from '@angular/core';
 import {InitialsPipe} from '../../pipes/initials/initials.pipe';
 import {TAILWIND_SIZES} from '../../types/tailwind-sizes.type'
-import {random_milky_hsl_color} from '../../helpers/random_milky_hsl_color'
 
 @Component({
   selector: 'lib-avatar',
@@ -13,7 +12,6 @@ import {random_milky_hsl_color} from '../../helpers/random_milky_hsl_color'
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     '[attr.aria-label]': 'name()',
-    '[style.--background-color]': 'random_milky_hsl_color',
     '[style.--border-style]': `bordered() ? 'solid' : undefined`,
     '[style.--size]': 'css_size_variable()',
     'class': 'avatar',
@@ -31,8 +29,6 @@ export class AvatarComponent {
     const size = this.size();
     return size === undefined ? size : `var(--size-${size})`
   })
-
-  protected readonly random_milky_hsl_color = random_milky_hsl_color();
 
   protected image_load_error = signal<boolean>(false);
 

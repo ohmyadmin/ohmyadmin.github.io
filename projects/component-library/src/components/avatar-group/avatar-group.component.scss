@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   vertical-align: middle;
 
-  ::ng-deep lib-avatar {
+  ::ng-deep .avatar {
     margin-right: var(--overlap, calc(var(--size, var(--size-md)) * -0.45));
 
     &:last-child {

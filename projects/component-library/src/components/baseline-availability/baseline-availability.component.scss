@@ -1,0 +1,6 @@
+:host ::ng-deep .avatar img {
+  border-radius: unset;
+  display: inline-flex;
+  height: calc(100% - 2px);
+  width: auto;
+}

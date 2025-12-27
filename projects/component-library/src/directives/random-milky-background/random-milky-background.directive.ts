@@ -1,0 +1,16 @@
+import {Directive, ElementRef, inject} from '@angular/core';
+import {random_milky_hsl_color} from '../../helpers/random_milky_hsl_color';
+
+@Directive({
+  selector: '[libRandomMilkyBackground]',
+  host: {
+    '[style.background-color]': 'random_milky_color',
+  },
+})
+export class RandomMilkyBackgroundDirective {
+  protected readonly random_milky_color = random_milky_hsl_color();
+  private el = inject(ElementRef);
+  constructor() {
+    console.log('directive in use', this.el.nativeElement)
+  }
+}

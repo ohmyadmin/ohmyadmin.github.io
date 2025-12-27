@@ -156,6 +156,12 @@
           "style": "scss",
           "type": "component"
         },
+        "@schematics/angular:directive": {
+          "addTypeToClassName": true,
+          "path": "projects/component-library/src/directives",
+          "type": "directive",
+          "flat": false
+        },
         "@schematics/angular:pipe": {
           "path": "projects/component-library/src/pipes",
           "typeSeparator": ".",
