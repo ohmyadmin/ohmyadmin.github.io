@@ -69,19 +69,19 @@ const image_checks = (image_url: string) => {
       border_width = parseInt(value.toString())
     })
 
-  let avatar_width;
+  let avatar_width: number;
   cy.get('lib-avatar')
     .invoke('outerWidth')
     .then(outerWidth => {
       cy.log('avatar outerWidth', outerWidth)
-      avatar_width = outerWidth
+      avatar_width = outerWidth!
     })
 
   cy.get('lib-avatar img')
     .invoke('outerHeight')
     .then(outerHeight => {
-      cy.log('image outerHeight', outerHeight as string)
-      assert(outerHeight === ((avatar_width as number) - (border_width * 2)), 'Image should match the Avatar size')
+      cy.log('image outerHeight', outerHeight)
+      assert(outerHeight === (avatar_width - (border_width * 2)), 'Image should match the Avatar size')
     })
 }
 

@@ -1,10 +1,24 @@
 const eslint = require('@eslint/js');
 const ts_eslint = require('typescript-eslint');
 const angular = require('angular-eslint');
+const cypress = require('eslint-plugin-cypress/flat');
 
 module.exports = ts_eslint.config(
   {
     ignores: ['projects/component-library/src/stories/*'],
+  },
+  {
+    files: ['**/*.cy.ts'],
+    extends: [
+      cypress.configs.recommended,
+    ],
+    rules: {
+      'cypress/no-unnecessary-waiting': 'warn',
+      'cypress/assertion-before-screenshot': 'warn',
+      'cypress/no-async-tests': 'error',
+      // Disable Angular specific rules that don't make sense in a test file
+      '@angular-eslint/prefer-on-push-component-change-detection': 'off',
+    },
   },
   {
     files: ['**/*.ts'],

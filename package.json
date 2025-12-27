@@ -3,12 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "build": "ng build",
-    "cypress:open": "cypress open",
-    "cypress:start": "cypress open",
-    "cypress:test": "cypress run --component",
     "lint": "ng run component-library:lint",
     "ng": "ng",
     "start": "ng serve",
+    "start:cypress": "cypress open",
     "storybook": "ng run component-library:storybook",
     "test:cypress:component": "cypress run --component",
     "unit-test": "ng run component-library:test",
@@ -27,7 +25,6 @@
       }
     ]
   },
-  "private": true,
   "packageManager": "npm@11.6.2",
   "dependencies": {
     "@angular/common": "^21.0.0",
@@ -40,30 +37,31 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@angular-devkit/architect": "^0.2100.0",
     "@angular-devkit/build-angular": "^21.0.4",
     "@angular-devkit/core": "^21.0.0",
+    "@angular-eslint/builder": "^18.4.3",
     "@angular/build": "^21.0.4",
     "@angular/cli": "^21.0.4",
     "@angular/compiler-cli": "^21.0.0",
     "@angular/platform-browser-dynamic": "^21.0.6",
     "@compodoc/compodoc": "^1.1.32",
     "@cypress/angular": "^4.1.0",
-    "@storybook/angular": "^10.1.10",
+    "@eslint/js": "^9.0.0",
     "@storybook/addon-a11y": "^10.1.10",
     "@storybook/addon-docs": "^10.1.10",
     "@storybook/addon-onboarding": "^10.1.10",
-    "@angular-devkit/architect": "^0.2100.0",
+    "@storybook/angular": "^10.1.10",
     "@vitest/coverage-v8": "^4.0.16",
+    "angular-eslint": "^18.4.3",
     "cypress": "^15.8.1",
+    "eslint": "^9.0.0",
+    "eslint-plugin-cypress": "^5.2.0",
     "jsdom": "^27.1.0",
     "ng-packagr": "^21.0.0",
-    "typescript": "~5.9.2",
     "storybook": "^10.1.10",
-    "vitest": "^4.0.8",
-    "angular-eslint": "^18.4.3",
-    "@angular-eslint/builder": "^18.4.3",
+    "typescript": "~5.9.2",
     "typescript-eslint": "^8.0.0",
-    "eslint": "^9.0.0",
-    "@eslint/js": "^9.0.0"
+    "vitest": "^4.0.8"
   }
 }
