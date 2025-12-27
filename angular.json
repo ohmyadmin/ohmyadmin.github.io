@@ -92,17 +92,19 @@
           },
           "defaultConfiguration": "production"
         },
-        "test": {
-          "builder": "@angular/build:unit-test",
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
           "options": {
-            "tsConfig": "projects/component-library/tsconfig.spec.json",
-            "coverage": true,
-            "coverageThresholds": {
-              "branches": 80,
-              "functions": 80,
-              "lines": 80,
-              "statements": 80
-            }
+            "configDir": "projects/component-library/.storybook",
+            "browserTarget": "component-library:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/component-library"
+            ],
+            "outputDir": "dist/storybook/component-library"
           }
         },
         "storybook": {
@@ -123,19 +125,17 @@
             ]
           }
         },
-        "build-storybook": {
-          "builder": "@storybook/angular:build-storybook",
+        "test": {
+          "builder": "@angular/build:unit-test",
           "options": {
-            "configDir": "projects/component-library/.storybook",
-            "browserTarget": "component-library:build",
-            "compodoc": true,
-            "compodocArgs": [
-              "-e",
-              "json",
-              "-d",
-              "projects/component-library"
-            ],
-            "outputDir": "dist/storybook/component-library"
+            "tsConfig": "projects/component-library/tsconfig.spec.json",
+            "coverage": true,
+            "coverageThresholds": {
+              "branches": 80,
+              "functions": 80,
+              "lines": 80,
+              "statements": 80
+            }
           }
         }
       },
