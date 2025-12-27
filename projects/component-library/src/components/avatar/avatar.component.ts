@@ -18,7 +18,7 @@ import {random_milky_hsl_color} from '../../helpers/random_milky_hsl_color'
     '[style.--size]': 'css_size_variable()',
     'class': 'avatar',
     'role': 'img'
-  },
+  }
 })
 export class AvatarComponent {
   bordered = input<boolean>(false);

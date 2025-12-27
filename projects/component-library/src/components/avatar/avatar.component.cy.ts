@@ -15,15 +15,15 @@ const base_checks = () => {
 
   cy.get('lib-avatar')
     .invoke('outerWidth')
-    .then(value => rendered_width = value!)
+    .then(value => rendered_width = value as number)
 
   cy.get('lib-avatar')
     .invoke('outerHeight')
     .then(value => {
-      rendered_height = value!
-      cy.log('Avatar: width', rendered_width!);
-      cy.log('Avatar: height', rendered_height);
-      assert(rendered_width! === rendered_height, 'Avatar Component width === height')
+      rendered_height = value as number
+      cy.log('Avatar: width', rendered_width.toString());
+      cy.log('Avatar: height', rendered_height.toString());
+      assert(rendered_width === rendered_height, 'Avatar Component width === height')
     })
 
   cy.get('lib-avatar')
@@ -80,8 +80,8 @@ const image_checks = (image_url: string) => {
   cy.get('lib-avatar img')
     .invoke('outerHeight')
     .then(outerHeight => {
-      cy.log('image outerHeight', outerHeight)
-      assert(outerHeight === (avatar_width! - (border_width * 2)), 'Image should match the Avatar size')
+      cy.log('image outerHeight', outerHeight as string)
+      assert(outerHeight === ((avatar_width as number) - (border_width * 2)), 'Image should match the Avatar size')
     })
 }
 

@@ -44,7 +44,7 @@ export const Sample: Story = {
     bordered: false,
     image_url: 'https://mockmind-api.uifaces.co/content/human/1.jpg',
     name: 'Jane Doe',
-    status: undefined,
+    status: undefined
   },
   argTypes: {
     size: size_arg_type
@@ -57,7 +57,7 @@ export const Sample: Story = {
 export const OnlyText: Story = {
   args: {
     ...Sample.args,
-    image_url: undefined,
+    image_url: undefined
   },
   argTypes: Sample.argTypes,
   play: async (context) => {
@@ -68,7 +68,7 @@ export const OnlyText: Story = {
 export const OnlyImage: Story = {
   args: {
     ...Sample.args,
-    name: undefined,
+    name: undefined
   },
   argTypes: Sample.argTypes,
   play: async (context) => {

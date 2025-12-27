@@ -107,6 +107,15 @@
             "outputDir": "dist/storybook/component-library"
           }
         },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/component-library/**/*.ts",
+              "projects/component-library/**/*.html"
+            ]
+          }
+        },
         "storybook": {
           "builder": "@storybook/angular:start-storybook",
           "options": {
