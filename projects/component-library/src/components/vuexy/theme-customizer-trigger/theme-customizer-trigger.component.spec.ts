@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { ThemeCustomizerTriggerComponent } from './theme-customizer-trigger.component';
+import { ThemeCustomizerTriggerComponent } from 'component-library';
+import {describe, it, expect, beforeEach} from 'vitest';
 
 describe('ThemeCustomizerTrigger', () => {
   let component: ThemeCustomizerTriggerComponent;
