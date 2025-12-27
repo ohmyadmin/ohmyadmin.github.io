@@ -4,7 +4,7 @@
   vertical-align: middle;
 
   ::ng-deep lib-avatar {
-    margin-right: calc(var(--size, var(--size-md)) * -0.45);
+    margin-right: var(--overlap, calc(var(--size, var(--size-md)) * -0.45));
 
     &:last-child {
       margin-right: unset;

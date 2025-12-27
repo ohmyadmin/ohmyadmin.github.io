@@ -22,16 +22,17 @@ import {WholeNumberPipe} from 'component-library/pipes/whole-number/whole-number
     WholeNumberPipe
   ],
   host: {
-    '[style.--item-count]': 'avatar_items_as_html().length'
+    '[style.--item-count]': 'avatar_items_as_html().length',
+    '[style.--overlap]': 'overlap()'
   },
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AvatarGroupComponent {
   private whole_number_pipe = inject(WholeNumberPipe);
-
+  overlap = input<string>();
   bordered = input<boolean>();
   layering = input<'first_on_top' | 'last_on_top'>('last_on_top');
-  limit = input<number, number | string>(0, {transform: this.whole_number_pipe.transform});
+  limit = input<number, number | string | undefined>(undefined, {transform: this.whole_number_pipe.transform});
   size = input<TAILWIND_SIZES>();
 
   protected avatar_items_as_html = contentChildren(AvatarComponent, {read: ElementRef});
@@ -39,7 +40,7 @@ export class AvatarGroupComponent {
 
   protected surplus_text = computed(() => {
     const limit = this.limit();
-    if (limit <= 0) {
+    if (!limit || limit <= 0) {
       return undefined;
     }
 
@@ -75,7 +76,7 @@ export class AvatarGroupComponent {
 
         avatar_html_element.style.zIndex = layering === 'first_on_top' ? `${total_items - index}` : '';
 
-        const is_collapsed = limit > 0 && index >= limit;
+        const is_collapsed = limit !== undefined && limit > 0 && index >= limit;
         avatar_html_element.classList.toggle('collapsed', is_collapsed);
       });
     });

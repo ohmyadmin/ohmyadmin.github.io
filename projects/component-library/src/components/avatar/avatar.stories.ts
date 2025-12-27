@@ -41,7 +41,7 @@ const base_checks: Story['play'] = async ({ canvasElement }) => {
 
 export const Sample: Story = {
   args: {
-    bordered: false,
+    bordered: true,
     image_url: 'https://mockmind-api.uifaces.co/content/human/1.jpg',
     name: 'Jane Doe',
     status: undefined

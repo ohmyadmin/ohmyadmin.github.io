@@ -83,4 +83,26 @@ describe('AvatarComponent', () => {
     const span = fixture.debugElement.query(By.css('.text'));
     expect(span.nativeElement.textContent).toBe('UU');
   });
+
+  it('should apply bordered styles when bordered is true', () => {
+    fixture.componentRef.setInput('bordered', true);
+    fixture.detectChanges();
+    const hostElement = fixture.nativeElement;
+    expect(hostElement.style.getPropertyValue('--border-style')).toBe('solid');
+  });
+
+  it('should apply size styles when size is provided', () => {
+    fixture.componentRef.setInput('size', 'sm');
+    fixture.detectChanges();
+    const hostElement = fixture.nativeElement;
+    expect(hostElement.style.getPropertyValue('--size')).toBe('var(--size-sm)');
+  });
+
+  it('should apply status class when status is provided', () => {
+    fixture.componentRef.setInput('status', 'online');
+    fixture.detectChanges();
+    const statusElement = fixture.debugElement.query(By.css('.status'));
+    expect(statusElement).toBeTruthy();
+    expect(statusElement.nativeElement.classList).toContain('online');
+  });
 });
