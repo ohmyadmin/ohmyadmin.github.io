@@ -1,0 +1,68 @@
+$width_perforation: 4px;
+$color_ticket: #fff;
+$border_radius_normal: 30px;
+$border_radius_sharp: 18px;
+$ticket_width: 1000px;
+
+:host {
+  display: inline-flex;
+  column-gap: $width_perforation;
+  width: $ticket_width;
+  height: $ticket_width * 0.35;
+  animation: rotateMinusSix .5s cubic-bezier(0.47, 1.64, 0.41, 0.9) .1s forwards, zoomIn .5s cubic-bezier(0.47, 1.64, 0.41, 0.9) .1s forwards;
+}
+
+.stub, .body {
+  background-color: $color_ticket;
+}
+
+.stub {
+  border-radius: $border_radius_normal $border_radius_sharp $border_radius_sharp $border_radius_normal;
+  padding: $ticket_width * 0.333 * 0.125;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33%;
+  position: relative;
+
+  &:after {
+    background: repeating-linear-gradient(transparent 0, transparent 15px, $color_ticket 15px, $color_ticket 30px);
+    content: "";
+    height: 90%;
+    position: absolute;
+    right: -1 * $width_perforation;
+    width: $width_perforation;
+  }
+}
+
+.body {
+  border-radius: $border_radius_sharp $border_radius_normal $border_radius_normal $border_radius_sharp;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $ticket_width * 0.666 * 0.1;
+  flex-grow: 1;
+  column-gap: 10%;
+}
+
+@keyframes rotateMinusSix {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(-6deg);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    scale: .8;
+  }
+  50% {
+    scale: 1.2;
+  }
+  100% {
+    scale: 1;
+  }
+}

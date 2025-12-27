@@ -150,9 +150,11 @@
       },
       "schematics": {
         "@schematics/angular:component": {
+          "addTypeToClassName": true,
           "changeDetection": "OnPush",
           "path": "projects/component-library/src/components",
-          "style": "scss"
+          "style": "scss",
+          "type": "component"
         },
         "@schematics/angular:pipe": {
           "path": "projects/component-library/src/pipes",

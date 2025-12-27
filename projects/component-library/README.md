@@ -30,3 +30,10 @@ My rule of thumb is:
 
 ### MakeUseOf:
 * SassDoc
+
+
+### Scaffolding
+
+```shell
+ng generate component google-ticket
+```
