@@ -1,6 +1,3 @@
-// TODO: font to be dependent on the avatar size
-// TODO: border-width to be dependent on the avatar size
-// TODO: remove background color, its only for testing
 import {ChangeDetectionStrategy, Component, computed, input, signal} from '@angular/core';
 import {InitialsPipe} from '../../pipes/initials/initials.pipe';
 import {TAILWIND_SIZES} from '../../types/tailwind-sizes.type'
@@ -15,11 +12,12 @@ import {random_milky_hsl_color} from '../../helpers/random_milky_hsl_color'
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    'role': 'img',
     '[attr.aria-label]': 'name()',
     '[style.--background-color]': 'random_milky_hsl_color',
     '[style.--border-style]': `bordered() ? 'solid' : undefined`,
-    '[style.--size]': 'css_size_variable()'
+    '[style.--size]': 'css_size_variable()',
+    'class': 'avatar',
+    'role': 'img'
   },
 })
 export class AvatarComponent {

@@ -8,7 +8,7 @@ $medium_size: 4em;
   --border-width: max(2px, calc(var(--size) * 0.04));
   align-items: center;
   aspect-ratio: 1 / 1;
-  background-color: var(--background-color, rgb(227 227 227));
+  background-color: var(--background-color, colors.$silvery_white);
   border-radius: 50%;
   border-width: var(--border-width);
   border-style: var(--border-style, none);
