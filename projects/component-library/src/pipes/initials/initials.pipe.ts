@@ -4,11 +4,17 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'initials'
 })
 export class InitialsPipe implements PipeTransform {
-  transform(value: string): string {
+  transform(value: string|undefined): string {
+    const fallback = 'UU';
+
+    if(!value){
+      return fallback;
+    }
+
     const name_parts = value.trim().split(/\s+/);
 
     if (name_parts.length === 0 || name_parts[0] === "") {
-      return 'UU';
+      return fallback;
     }
 
     const first_name_initial = name_parts[0].charAt(0);

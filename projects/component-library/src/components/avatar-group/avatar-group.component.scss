@@ -1,0 +1,28 @@
+:host {
+  display: inline-flex;
+  flex-wrap: wrap;
+  vertical-align: middle;
+
+  ::ng-deep lib-avatar {
+    margin-right: calc(var(--size, var(--size-md)) * -0.45);
+
+    &:last-child {
+      margin-right: unset;
+    }
+
+    &.collapsed {
+      display: none;
+    }
+
+    .inner {
+      top: 0;
+      transition: top 0.1s ease;
+      will-change: top;
+    }
+
+    &:hover .inner {
+      top: -5px;
+      z-index: calc(var(--item-count) + 1);
+    }
+  }
+}

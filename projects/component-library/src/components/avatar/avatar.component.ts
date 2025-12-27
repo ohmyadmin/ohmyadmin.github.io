@@ -21,9 +21,9 @@ import {random_milky_hsl_color} from '../../helpers/random_milky_hsl_color'
   }
 })
 export class AvatarComponent {
-  bordered = input<boolean>(false);
+  bordered = input<boolean>();
   image_url = input<string>();
-  name = input<string>('Unknown User');
+  name = input<string>();
   size = input<TAILWIND_SIZES>();
   status = input<'away' | 'busy' | 'offline' | 'online'>();
 
