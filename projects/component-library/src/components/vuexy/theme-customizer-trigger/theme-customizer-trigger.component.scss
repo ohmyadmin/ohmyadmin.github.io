@@ -1,0 +1,29 @@
+:host {
+  z-index: 1001;
+  box-shadow: 0 2px 6px rgba(115,103,240, .3);
+
+  --button-height: 38px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  block-size: var(--button-height);
+  inline-size: calc(var(--button-height) + 2px);
+
+  position: fixed;
+  inset-block-start: 20%;
+  inset-inline-end: -2px;
+
+  --color-primary: 115, 103, 240;
+  --color-on-primary: 255, 255, 255;
+
+  background-color: rgb(var(--color-primary));
+  color: rgb(var(--color-on-primary));
+
+  padding: 8px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: inset-inline-end 0.1s ease-in-out;
+
+  &:hover {
+    inset-inline-end: 0
+  }
+}
