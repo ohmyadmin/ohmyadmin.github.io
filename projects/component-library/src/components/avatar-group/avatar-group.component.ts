@@ -25,6 +25,7 @@ import {PixelsPipe} from '../../pipes/pixels/pixels.pipe';
   ],
   host: {
     'class': 'avatar-group',
+    '[class]': 'density()',
     '[style.--item-count]': 'avatar_items_as_html().length',
     '[style.--overlap]': 'overlap()'
   },
@@ -33,6 +34,7 @@ import {PixelsPipe} from '../../pipes/pixels/pixels.pipe';
 export class AvatarGroupComponent {
   private whole_number_pipe = inject(WholeNumberPipe);
   private px_pipe = inject(PixelsPipe);
+  density = input<'compact'|'loose'>('compact');
   overlap = input<string|0|undefined, string|undefined|number>(undefined, {transform: this.px_pipe.transform});
   bordered = input<boolean>();
   layering = input<'first_on_top' | 'last_on_top'>('last_on_top');

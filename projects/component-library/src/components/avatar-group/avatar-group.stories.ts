@@ -19,8 +19,12 @@ const meta: Meta<AvatarGroupComponent> = {
     bordered: {
       control: 'boolean'
     },
+    density: {
+      control: 'select',
+      options: ['density', 'loose']
+    },
     limit: {
-      control: 'number'
+      control: 'range'
     },
     layering: {
       options: ['first_on_top', 'last_on_top'],
@@ -41,14 +45,17 @@ export default meta;
 type Story = StoryObj<AvatarGroupComponent>;
 export const Sample: Story = {
   render: (args) => {
-    const overlap = args.overlap ? `[size]="'${args.overlap}'"` : '';
-    const bordered = args.bordered ? `[bordered]="${args.bordered}"` : '';
-    const layering = args.layering ? `[layering]="'${args.layering}'"` : '';
-    const limit = args.limit ? `[limit]="${args.limit}"` : ''
-    const size = args.size ? `[limit]="${args.size}"` : ''
+    const inputs = [
+      args.bordered ? `[bordered]="${args.bordered}"` : '',
+      args.density ? `[density]="'${args.density}'"` : '',
+      args.layering ? `[layering]="'${args.layering}'"` : '',
+      args.limit ? `[limit]="${args.limit}"` : '',
+      args.overlap ? `[overlap]="'${args.overlap}'"` : '',
+      args.size ? `[size]="'${args.size}'"` : ''
+    ]
     return {
       template: `
-        <lib-avatar-group ${overlap} ${limit} ${layering} ${bordered} ${size}>
+        <lib-avatar-group ${inputs.join(' ')}>
           <lib-avatar libRandomMilkyBackground name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" />
           <lib-avatar libRandomMilkyBackground name="Natasha Hinter" image_url="https://mockmind-api.uifaces.co/content/human/2.jpg" />
           <lib-avatar libRandomMilkyBackground name="Joe Soap" />

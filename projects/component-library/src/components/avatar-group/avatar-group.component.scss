@@ -4,25 +4,16 @@
   vertical-align: middle;
 
   ::ng-deep .avatar {
-    margin-right: var(--overlap, calc(var(--size, var(--size-md)) * -0.45));
-
-    &:last-child {
-      margin-right: unset;
-    }
-
     &.collapsed {
       display: none;
     }
+  }
 
-    .inner {
-      top: 0;
-      transition: top 0.1s ease;
-      will-change: top;
-    }
+  &.compact ::ng-deep .avatar:not(:last-child) {
+    margin-right: var(--overlap, calc(var(--size, var(--size-md)) * -0.45));
+  }
 
-    &:hover .inner {
-      top: -5px;
-      z-index: calc(var(--item-count) + 1);
-    }
+  &.loose ::ng-deep .avatar:not(:last-child) {
+    margin-right: var(--overlap, calc(var(--size, var(--size-md)) * -0.2));
   }
 }

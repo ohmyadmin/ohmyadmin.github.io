@@ -33,3 +33,18 @@ jobs:
       - uses: actions/checkout@v6
       - run: npm ci
       - run: npm run build:component-library
+  angular_tests:
+    name: Angular Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: npm ci
+      - run: npm run test:ci:component
+
+  cypress_tests:
+    name: Cypress Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: npm ci
+      - run: npm run cypress:test
