@@ -8,7 +8,7 @@ import type {
 import {PixelsPipe} from '../../../pipes/pixels/pixels.pipe';
 
 @Component({
-  selector: 'row',
+  selector: 'lib-row',
   template: '<ng-content></ng-content>',
   styleUrl: 'flexbox-row.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

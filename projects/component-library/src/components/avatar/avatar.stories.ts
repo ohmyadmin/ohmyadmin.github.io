@@ -1,8 +1,6 @@
 import {Meta, moduleMetadata, StoryObj} from '@storybook/angular';
 import {
   AvatarComponent,
-  FlexboxColumnComponent,
-  FlexboxRowComponent,
   RandomMilkyBackgroundDirective
 } from 'component-library';
 import {expect} from 'storybook/test';

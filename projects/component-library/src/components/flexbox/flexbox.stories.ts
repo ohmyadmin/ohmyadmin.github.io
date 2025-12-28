@@ -79,7 +79,7 @@ export const Sample: Story = {
         `.row { min-height: 200px; min-width: 400px;}`
       ],
       template: `
-        <row
+        <lib-row
             [gap]="${args.gap}"
             [direction]="${args.direction}"
             [inline]="${args.inline}"
@@ -87,16 +87,16 @@ export const Sample: Story = {
             [justify-content]="${args.justify_content}"
             [align-content]="${args.align_content}"
         >
-          <column>1</column>
-          <column style="width: var(--example-block-size-large)">2</column>
-          <column style="width: var(--example-block-size-large)">3</column>
-          <column>4</column>
-          <column style="width: var(--example-block-size-large)">5</column>
-          <column style="width: var(--example-block-size-large)">6</column>
-          <column>7</column>
-          <column style="width: var(--example-block-size-large)">8</column>
-          <column style="width: var(--example-block-size-large)">9</column>
-        </row>
+          <lib-column>1</lib-column>
+          <lib-column style="width: var(--example-block-size-large)">2</lib-column>
+          <lib-column style="width: var(--example-block-size-large)">3</lib-column>
+          <lib-column>4</lib-column>
+          <lib-column style="width: var(--example-block-size-large)">5</lib-column>
+          <lib-column style="width: var(--example-block-size-large)">6</lib-column>
+          <lib-column>7</lib-column>
+          <lib-column style="width: var(--example-block-size-large)">8</lib-column>
+          <lib-column style="width: var(--example-block-size-large)">9</lib-column>
+        </lib-row>
       `
     }
   },
@@ -114,17 +114,17 @@ export const FlexDirectionRow: Story = {
       column_styles
     ],
     template: `
-      <row [gap]="10" direction="row">
-        <column>1</column>
-        <column style="width: var(--example-block-size-large)">2</column>
-        <column style="width: var(--example-block-size-large)">3</column>
-        <column>4</column>
-        <column style="width: var(--example-block-size-large)">5</column>
-        <column style="width: var(--example-block-size-large)">6</column>
-        <column>7</column>
-        <column style="width: var(--example-block-size-large)">8</column>
-        <column style="width: var(--example-block-size-large)">9</column>
-      </row>
+      <lib-row [gap]="10" direction="row">
+        <lib-column>1</lib-column>
+        <lib-column style="width: var(--example-block-size-large)">2</lib-column>
+        <lib-column style="width: var(--example-block-size-large)">3</lib-column>
+        <lib-column>4</lib-column>
+        <lib-column style="width: var(--example-block-size-large)">5</lib-column>
+        <lib-column style="width: var(--example-block-size-large)">6</lib-column>
+        <lib-column>7</lib-column>
+        <lib-column style="width: var(--example-block-size-large)">8</lib-column>
+        <lib-column style="width: var(--example-block-size-large)">9</lib-column>
+      </lib-row>
     `
   })
 };
@@ -138,17 +138,17 @@ export const FlexDirectionRowReverse: Story = {
       column_styles
     ],
     template: `
-      <row [gap]="10" direction="row-reverse">
-        <column>1</column>
-        <column style="width: var(--example-block-size-large)">2</column>
-        <column style="width: var(--example-block-size-large)">3</column>
-        <column>4</column>
-        <column style="width: var(--example-block-size-large)">5</column>
-        <column style="width: var(--example-block-size-large)">6</column>
-        <column>7</column>
-        <column style="width: var(--example-block-size-large)">8</column>
-        <column style="width: var(--example-block-size-large)">9</column>
-      </row>
+      <lib-row [gap]="10" direction="row-reverse">
+        <lib-column>1</lib-column>
+        <lib-column style="width: var(--example-block-size-large)">2</lib-column>
+        <lib-column style="width: var(--example-block-size-large)">3</lib-column>
+        <lib-column>4</lib-column>
+        <lib-column style="width: var(--example-block-size-large)">5</lib-column>
+        <lib-column style="width: var(--example-block-size-large)">6</lib-column>
+        <lib-column>7</lib-column>
+        <lib-column style="width: var(--example-block-size-large)">8</lib-column>
+        <lib-column style="width: var(--example-block-size-large)">9</lib-column>
+      </lib-row>
     `
   })
 };
@@ -163,17 +163,17 @@ export const FlexDirectionColumn: Story = {
       `.row { width: unset; height: 302px; }`
     ],
     template: `
-      <row [gap]="10" [inline]="true" direction="column">
-      <column>1</column>
-      <column style="height: var(--example-block-size-large)">2</column>
-      <column style="height: var(--example-block-size-large)">3</column>
-      <column>4</column>
-      <column style="height: var(--example-block-size-large)">5</column>
-      <column style="height: var(--example-block-size-large)">6</column>
-      <column>7</column>
-      <column style="height: var(--example-block-size-large)">8</column>
-      <column style="height: var(--example-block-size-large)">9</column>
-    </row>
+      <lib-row [gap]="10" [inline]="true" direction="column">
+        <lib-column>1</lib-column>
+        <lib-column style="height: var(--example-block-size-large)">2</lib-column>
+        <lib-column style="height: var(--example-block-size-large)">3</lib-column>
+        <lib-column>4</lib-column>
+        <lib-column style="height: var(--example-block-size-large)">5</lib-column>
+        <lib-column style="height: var(--example-block-size-large)">6</lib-column>
+        <lib-column>7</lib-column>
+        <lib-column style="height: var(--example-block-size-large)">8</lib-column>
+        <lib-column style="height: var(--example-block-size-large)">9</lib-column>
+      </lib-row>
     `
   })
 };
@@ -188,17 +188,17 @@ export const FlexDirectionColumnReverse: Story = {
       `.row { width: unset; height: 302px; }`
     ],
     template: `
-      <row [gap]="10" [inline]="true" direction="column-reverse">
-      <column>1</column>
-      <column style="height: var(--example-block-size-large)">2</column>
-      <column style="height: var(--example-block-size-large)">3</column>
-      <column>4</column>
-      <column style="height: var(--example-block-size-large)">5</column>
-      <column style="height: var(--example-block-size-large)">6</column>
-      <column>7</column>
-      <column style="height: var(--example-block-size-large)">8</column>
-      <column style="height: var(--example-block-size-large)">9</column>
-    </row>
+      <lib-row [gap]="10" [inline]="true" direction="column-reverse">
+        <lib-column>1</lib-column>
+        <lib-column style="height: var(--example-block-size-large)">2</lib-column>
+        <lib-column style="height: var(--example-block-size-large)">3</lib-column>
+        <lib-column>4</lib-column>
+        <lib-column style="height: var(--example-block-size-large)">5</lib-column>
+        <lib-column style="height: var(--example-block-size-large)">6</lib-column>
+        <lib-column>7</lib-column>
+        <lib-column style="height: var(--example-block-size-large)">8</lib-column>
+        <lib-column style="height: var(--example-block-size-large)">9</lib-column>
+      </lib-row>
     `
   })
 };
@@ -212,11 +212,11 @@ export const AlignItemsFlexStart: Story = {
       column_styles
     ],
     template: `
-      <row [gap]="10" align-items="flex-start">
-      <column>1</column>
-      <column style="width: var(--example-block-size-small); height: var(--example-block-size-large)">2</column>
-      <column style="width: var(--example-block-size-small); height: var(--example-block-size-medium)">3</column>
-    </row>
+      <lib-row [gap]="10" align-items="flex-start">
+        <lib-column>1</lib-column>
+        <lib-column style="width: var(--example-block-size-small); height: var(--example-block-size-large)">2</lib-column>
+        <lib-column style="width: var(--example-block-size-small); height: var(--example-block-size-medium)">3</lib-column>
+      </lib-row>
     `
   })
 };
@@ -230,11 +230,11 @@ export const AlignItemsCenter: Story = {
       column_styles
     ],
     template: `
-      <row [gap]="10" align-items="center">
-      <column>1</column>
-      <column style="width: var(--example-block-size-small); min-height: var(--example-block-size-large)">2</column>
-      <column style="width: var(--example-block-size-small); min-height: var(--example-block-size-medium)">3</column>
-    </row>
+      <lib-row [gap]="10" align-items="center">
+        <lib-column>1</lib-column>
+        <lib-column style="width: var(--example-block-size-small); min-height: var(--example-block-size-large)">2</lib-column>
+        <lib-column style="width: var(--example-block-size-small); min-height: var(--example-block-size-medium)">3</lib-column>
+      </lib-row>
     `
   })
 };
@@ -248,11 +248,11 @@ export const AlignItemsFlexEnd: Story = {
       column_styles
     ],
     template: `
-      <row [gap]="10" align-items="flex-end">
-        <column>1</column>
-        <column style="width: var(--example-block-size-small); min-height: var(--example-block-size-large)">2</column>
-        <column style="width: var(--example-block-size-small); min-height: var(--example-block-size-medium)">3</column>
-      </row>
+      <lib-row [gap]="10" align-items="flex-end">
+        <lib-column>1</lib-column>
+        <lib-column style="width: var(--example-block-size-small); min-height: var(--example-block-size-large)">2</lib-column>
+        <lib-column style="width: var(--example-block-size-small); min-height: var(--example-block-size-medium)">3</lib-column>
+      </lib-row>
     `
   })
 };
@@ -266,11 +266,11 @@ export const AlignItemsStretch: Story = {
       column_styles
     ],
     template: `
-      <row [gap]="10">
-        <column>1</column>
-        <column style="width: var(--example-block-size-small); min-height: var(--example-block-size-large)">2</column>
-        <column style="width: var(--example-block-size-small); min-height: var(--example-block-size-medium)">3</column>
-      </row>
+      <lib-row [gap]="10">
+        <lib-column>1</lib-column>
+        <lib-column style="width: var(--example-block-size-small); min-height: var(--example-block-size-large)">2</lib-column>
+        <lib-column style="width: var(--example-block-size-small); min-height: var(--example-block-size-medium)">3</lib-column>
+      </lib-row>
     `
   })
 };
@@ -286,11 +286,11 @@ export const JustifyContentFlexStart: Story = {
       justify_content_styles
     ],
     template: `
-      <row [gap]="10">
-      <column>1</column>
-      <column style="width: var(--example-block-size-medium)">2</column>
-      <column>3</column>
-    </row>
+      <lib-row [gap]="10">
+        <lib-column>1</lib-column>
+        <lib-column style="width: var(--example-block-size-medium)">2</lib-column>
+        <lib-column>3</lib-column>
+      </lib-row>
     `
   })
 };
@@ -305,11 +305,11 @@ export const JustifyContentCenter: Story = {
       justify_content_styles
     ],
     template: `
-     <row [gap]="10" justify-content="center">
-      <column>1</column>
-      <column style="width: var(--example-block-size-medium)">2</column>
-      <column>3</column>
-    </row>
+     <lib-row [gap]="10" justify-content="center">
+      <lib-column>1</lib-column>
+      <lib-column style="width: var(--example-block-size-medium)">2</lib-column>
+      <lib-column>3</lib-column>
+    </lib-row>
     `
   })
 };
@@ -324,11 +324,11 @@ export const JustifyContentFlexEnd: Story = {
       justify_content_styles
     ],
     template: `
-     <row [gap]="10" justify-content="flex-end">
-      <column>1</column>
-      <column style="width: var(--example-block-size-medium)">2</column>
-      <column>3</column>
-     </row>
+     <lib-row [gap]="10" justify-content="flex-end">
+      <lib-column>1</lib-column>
+      <lib-column style="width: var(--example-block-size-medium)">2</lib-column>
+      <lib-column>3</lib-column>
+     </lib-row>
     `
   })
 };
@@ -343,11 +343,11 @@ export const JustifyContentSpaceBetween: Story = {
       justify_content_styles
     ],
     template: `
-      <row [gap]="10" justify-content="space-between">
-        <column>1</column>
-        <column style="width: var(--example-block-size-medium)">2</column>
-        <column>3</column>
-      </row>
+      <lib-row [gap]="10" justify-content="space-between">
+        <lib-column>1</lib-column>
+        <lib-column style="width: var(--example-block-size-medium)">2</lib-column>
+        <lib-column>3</lib-column>
+      </lib-row>
     `
   })
 };
@@ -362,11 +362,11 @@ export const JustifyContentSpaceAround: Story = {
       justify_content_styles
     ],
     template: `
-      <row [gap]="10" justify-content="space-around">
-        <column>1</column>
-        <column style="width: var(--example-block-size-medium)">2</column>
-        <column>3</column>
-      </row>
+      <lib-row [gap]="10" justify-content="space-around">
+        <lib-column>1</lib-column>
+        <lib-column style="width: var(--example-block-size-medium)">2</lib-column>
+        <lib-column>3</lib-column>
+      </lib-row>
     `
   })
 };
@@ -381,11 +381,11 @@ export const JustifyContentSpaceEvenly: Story = {
       justify_content_styles
     ],
     template: `
-      <row [gap]="10" justify-content="space-evenly">
-        <column>1</column>
-        <column style="width: var(--example-block-size-medium)">2</column>
-        <column>3</column>
-      </row>
+      <lib-row [gap]="10" justify-content="space-evenly">
+        <lib-column>1</lib-column>
+        <lib-column style="width: var(--example-block-size-medium)">2</lib-column>
+        <lib-column>3</lib-column>
+      </lib-row>
     `
   })
 };
@@ -401,14 +401,14 @@ export const AlignContentFlexStart: Story = {
       align_content_styles
     ],
     template: `
-      <row [gap]="10">
-      <column style="height: var(--example-block-size-small);">1</column>
-      <column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">2</column>
-      <column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">3</column>
-      <column style="height: var(--example-block-size-small);">4</column>
-      <column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">5</column>
-      <column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">6</column>
-    </row>
+      <lib-row [gap]="10">
+        <lib-column style="height: var(--example-block-size-small);">1</lib-column>
+        <lib-column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">2</lib-column>
+        <lib-column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">3</lib-column>
+        <lib-column style="height: var(--example-block-size-small);">4</lib-column>
+        <lib-column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">5</lib-column>
+        <lib-column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">6</lib-column>
+      </lib-row>
     `
   })
 };
@@ -423,14 +423,14 @@ export const AlignContentCenter: Story = {
       align_content_styles
     ],
     template: `
-      <row [gap]="10" align-content="center">
-      <column style="height: var(--example-block-size-small);">1</column>
-      <column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">2</column>
-      <column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">3</column>
-      <column style="height: var(--example-block-size-small);">4</column>
-      <column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">5</column>
-      <column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">6</column>
-    </row>
+      <lib-row [gap]="10" align-content="center">
+        <lib-column style="height: var(--example-block-size-small);">1</lib-column>
+        <lib-column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">2</lib-column>
+        <lib-column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">3</lib-column>
+        <lib-column style="height: var(--example-block-size-small);">4</lib-column>
+        <lib-column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">5</lib-column>
+        <lib-column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">6</lib-column>
+      </lib-row>
     `
   })
 };
@@ -445,14 +445,14 @@ export const AlignContentFlexEnd: Story = {
       align_content_styles
     ],
     template: `
-      <row [gap]="10" align-content="flex-end">
-      <column style="height: var(--example-block-size-small);">1</column>
-      <column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">2</column>
-      <column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">3</column>
-      <column style="height: var(--example-block-size-small);">4</column>
-      <column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">5</column>
-      <column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">6</column>
-    </row>
+      <lib-row [gap]="10" align-content="flex-end">
+        <lib-column style="height: var(--example-block-size-small);">1</lib-column>
+        <lib-column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">2</lib-column>
+        <lib-column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">3</lib-column>
+        <lib-column style="height: var(--example-block-size-small);">4</lib-column>
+        <lib-column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">5</lib-column>
+        <lib-column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">6</lib-column>
+      </lib-row>
     `
   })
 };
@@ -467,14 +467,14 @@ export const AlignContentStretch: Story = {
       align_content_styles
     ],
     template: `
-      <row [gap]="10" align-content="stretch">
-      <column>1</column>
-      <column style="width: var(--example-block-size-medium)">2</column>
-      <column style="width: var(--example-block-size-medium)">3</column>
-      <column>4</column>
-      <column style="width: var(--example-block-size-medium)">5</column>
-      <column style="width: var(--example-block-size-medium)">6</column>
-    </row>
+      <lib-row [gap]="10" align-content="stretch">
+        <lib-column>1</lib-column>
+        <lib-column style="width: var(--example-block-size-medium)">2</lib-column>
+        <lib-column style="width: var(--example-block-size-medium)">3</lib-column>
+        <lib-column>4</lib-column>
+        <lib-column style="width: var(--example-block-size-medium)">5</lib-column>
+        <lib-column style="width: var(--example-block-size-medium)">6</lib-column>
+      </lib-row>
     `
   })
 };
@@ -489,14 +489,14 @@ export const AlignContentSpaceBetween: Story = {
       align_content_styles
     ],
     template: `
-      <row [gap]="10" align-content="space-between">
-      <column style="height: var(--example-block-size-small);">1</column>
-      <column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">2</column>
-      <column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">3</column>
-      <column style="height: var(--example-block-size-small);">4</column>
-      <column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">5</column>
-      <column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">6</column>
-    </row>
+      <lib-row [gap]="10" align-content="space-between">
+        <lib-column style="height: var(--example-block-size-small);">1</lib-column>
+        <lib-column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">2</lib-column>
+        <lib-column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">3</lib-column>
+        <lib-column style="height: var(--example-block-size-small);">4</lib-column>
+        <lib-column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">5</lib-column>
+        <lib-column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">6</lib-column>
+      </lib-row>
     `
   })
 };
@@ -511,14 +511,14 @@ export const AlignContentSpaceAround: Story = {
       align_content_styles
     ],
     template: `
-      <row [gap]="10" align-content="space-around">
-      <column style="height: var(--example-block-size-small);">1</column>
-      <column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">2</column>
-      <column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">3</column>
-      <column style="height: var(--example-block-size-small);">4</column>
-      <column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">5</column>
-      <column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">6</column>
-    </row>
+      <lib-row [gap]="10" align-content="space-around">
+        <lib-column style="height: var(--example-block-size-small);">1</lib-column>
+        <lib-column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">2</lib-column>
+        <lib-column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">3</lib-column>
+        <lib-column style="height: var(--example-block-size-small);">4</lib-column>
+        <lib-column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">5</lib-column>
+        <lib-column style="width: var(--example-block-size-medium); height: var(--example-block-size-small);">6</lib-column>
+      </lib-row>
     `
   })
 };

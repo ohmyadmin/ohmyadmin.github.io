@@ -1,14 +1,15 @@
-import {Component} from '@angular/core';
-import {TestBed, ComponentFixture} from '@angular/core/testing';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
-import {describe, it, expect, beforeEach} from 'vitest';
+import {beforeEach, describe, expect, it} from 'vitest';
 import {RandomMilkyBackgroundDirective} from 'component-library';
 
 @Component({
   standalone: true,
   imports: [RandomMilkyBackgroundDirective],
   template: `
-    <div libRandomMilkyBackground>Test Element</div>`
+    <div libRandomMilkyBackground>Test Element</div>`,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 class TestHostComponent {
 }

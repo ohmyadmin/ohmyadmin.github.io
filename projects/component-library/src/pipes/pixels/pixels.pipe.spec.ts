@@ -13,7 +13,7 @@ describe('PixelsPipe', () => {
   });
 
   it('should return undefined if the value is null', () => {
-    expect(pipe.transform(null as any)).toBeUndefined();
+    expect(pipe.transform(null)).toBeUndefined();
   });
 
   it('should return undefined if the value is an empty string', () => {
