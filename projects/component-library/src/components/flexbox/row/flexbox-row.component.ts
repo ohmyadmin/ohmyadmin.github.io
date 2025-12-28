@@ -31,9 +31,9 @@ export class FlexboxRowComponent {
   direction = input<SupportedDirections>()
   inline = input<boolean>()
   gap =  input<string|0|undefined,number|string|undefined>(undefined, {transform: this.px_pipe.transform})
-  align_items = input<SupportedAlignItems | null>(null, {alias: 'align-items'})
-  justify_content = input<SupportedJustifyContent | null>(null, {alias: 'justify-content'})
-  align_content = input<SupportedAlignContent>('stretch', {alias: 'align-content'})
+  align_items = input<SupportedAlignItems | null>(null)
+  justify_content = input<SupportedJustifyContent | null>(null)
+  align_content = input<SupportedAlignContent>('stretch')
 
   direction_css_class = computed(() => `flex-direction-${this.direction()}`);
 }
