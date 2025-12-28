@@ -14,7 +14,7 @@ const meta: Meta<AvatarGroupComponent> = {
       ]
     })
   ],
-  tags: ['autodocs'],
+  tags: ['autodocs','avatar'],
   argTypes: {
     bordered: {
       control: 'boolean'

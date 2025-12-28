@@ -15,7 +15,7 @@ const size_arg_type: InputType = {
 
 const meta: Meta<AvatarComponent> = {
   component: AvatarComponent,
-  tags: ['autodocs'],
+  tags: ['autodocs','avatar'],
   argTypes: {
     bordered: {
       control: 'boolean'

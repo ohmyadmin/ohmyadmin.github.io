@@ -9,7 +9,7 @@ const meta: Meta<BaselineAvailabilityComponent> = {
     },
   },
   component: BaselineAvailabilityComponent,
-  tags: ['autodocs']
+  tags: ['autodocs', 'avatar']
 }
 
 export default meta;
