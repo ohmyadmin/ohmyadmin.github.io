@@ -8,7 +8,7 @@ import {RandomMilkyBackgroundDirective} from 'component-library';
   standalone: true,
   imports: [RandomMilkyBackgroundDirective],
   template: `
-    <div libRandomMilkyBackground>Test Element</div>`,
+    <div libRandomMilkyBackground>Test Element</div>`
 })
 class TestHostComponent {
 }
@@ -18,7 +18,7 @@ describe('RandomMilkyBackgroundDirective', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TestHostComponent, RandomMilkyBackgroundDirective],
+      imports: [TestHostComponent, RandomMilkyBackgroundDirective]
     }).compileComponents();
 
     fixture = TestBed.createComponent(TestHostComponent);

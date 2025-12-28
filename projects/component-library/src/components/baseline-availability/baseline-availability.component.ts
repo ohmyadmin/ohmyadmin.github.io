@@ -11,7 +11,7 @@ import {TAILWIND_SIZES} from '../../types/tailwind-sizes.type';
   ],
   templateUrl: './baseline-availability.component.html',
   styleUrl: './baseline-availability.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BaselineAvailabilityComponent {
   size = input<TAILWIND_SIZES>('3xs');

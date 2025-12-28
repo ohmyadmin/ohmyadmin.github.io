@@ -5,7 +5,7 @@ import {
   contentChildren,
   effect,
   ElementRef, inject,
-  input,
+  input
 } from '@angular/core';
 import {AvatarComponent} from '../avatar/avatar.component';
 import {TAILWIND_SIZES} from '../../types/tailwind-sizes.type';
@@ -17,7 +17,7 @@ import {PixelsPipe} from '../../pipes/pixels/pixels.pipe';
   templateUrl: './avatar-group.component.html',
   styleUrl: './avatar-group.component.scss',
   imports: [
-    AvatarComponent,
+    AvatarComponent
   ],
   providers: [
     WholeNumberPipe,

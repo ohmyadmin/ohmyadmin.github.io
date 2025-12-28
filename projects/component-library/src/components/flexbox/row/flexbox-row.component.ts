@@ -23,7 +23,7 @@ import {PixelsPipe} from '../../../pipes/pixels/pixels.pipe';
     '[style.--flex-style]': `inline() ? 'inline-flex' : null`,
     '[style.--align-items]': 'align_items()',
     '[style.--justify-content]': 'justify_content()',
-    '[style.--align-content]': 'align_content()',
+    '[style.--align-content]': 'align_content()'
   }
 })
 export class FlexboxRowComponent {

@@ -1,7 +1,7 @@
 import {Meta, moduleMetadata, StoryObj} from '@storybook/angular';
 import {
   AvatarComponent,
-  AvatarGroupComponent, RandomMilkyBackgroundDirective,
+  AvatarGroupComponent, RandomMilkyBackgroundDirective
 } from 'component-library';
 
 const meta: Meta<AvatarGroupComponent> = {
@@ -36,7 +36,7 @@ const meta: Meta<AvatarGroupComponent> = {
     size: {
       options: ['3xs', '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl', '5xl', '6xl', '7xl'],
       control: 'select'
-    },
+    }
   }
 }
 
