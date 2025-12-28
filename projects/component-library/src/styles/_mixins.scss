@@ -11,6 +11,10 @@
 ///     @include mixins.generate-size-variables(200px);
 ///   }
 @mixin generate-size-variables($medium-size) {
+  --size-7xs: #{$medium-size * math.div(8, 28)};
+  --size-6xs: #{$medium-size * math.div(10, 28)};
+  --size-5xs: #{$medium-size * math.div(12, 28)};
+  --size-4xs: #{$medium-size * math.div(14, 28)};
   --size-3xs: #{$medium-size * math.div(16, 28)};
   --size-2xs: #{$medium-size * math.div(18, 28)};
   --size-xs: #{$medium-size * math.div(20, 28)};
