@@ -5,7 +5,7 @@ import type {
   SupportedDirections,
   SupportedJustifyContent
 } from '../flexbox.types';
-import {PxPipe} from 'component-library/pipes/px/px.pipe';
+import {PixelsPipe} from '../../../pipes/pixels/pixels.pipe';
 
 @Component({
   selector: 'row',
@@ -13,7 +13,7 @@ import {PxPipe} from 'component-library/pipes/px/px.pipe';
   styleUrl: 'flexbox-row.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
-    PxPipe
+    PixelsPipe
   ],
   host: {
     class: 'row',
@@ -27,10 +27,10 @@ import {PxPipe} from 'component-library/pipes/px/px.pipe';
   }
 })
 export class FlexboxRowComponent {
-  px_pipe = inject(PxPipe);
+  px_pipe = inject(PixelsPipe);
   direction = input<SupportedDirections>()
   inline = input<boolean>()
-  gap =  input<string|undefined,number|string|undefined>(undefined, {transform: this.px_pipe.transform})
+  gap =  input<string|0|undefined,number|string|undefined>(undefined, {transform: this.px_pipe.transform})
   align_items = input<SupportedAlignItems | null>(null, {alias: 'align-items'})
   justify_content = input<SupportedJustifyContent | null>(null, {alias: 'justify-content'})
   align_content = input<SupportedAlignContent>('stretch', {alias: 'align-content'})

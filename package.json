@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "build": "ng build",
+    "build:component-library": "ng run component-library:build",
     "lint": "ng run component-library:lint",
     "ng": "ng",
     "start": "ng serve",

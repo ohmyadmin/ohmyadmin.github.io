@@ -9,7 +9,8 @@ import {
 } from '@angular/core';
 import {AvatarComponent} from '../avatar/avatar.component';
 import {TAILWIND_SIZES} from '../../types/tailwind-sizes.type';
-import {WholeNumberPipe} from 'component-library/pipes/whole-number/whole-number.pipe';
+import {WholeNumberPipe} from '../../pipes/whole-number/whole-number.pipe';
+import {PixelsPipe} from '../../pipes/pixels/pixels.pipe';
 
 @Component({
   selector: 'lib-avatar-group',
@@ -19,7 +20,8 @@ import {WholeNumberPipe} from 'component-library/pipes/whole-number/whole-number
     AvatarComponent,
   ],
   providers: [
-    WholeNumberPipe
+    WholeNumberPipe,
+    PixelsPipe
   ],
   host: {
     'class': 'avatar-group',
@@ -30,7 +32,8 @@ import {WholeNumberPipe} from 'component-library/pipes/whole-number/whole-number
 })
 export class AvatarGroupComponent {
   private whole_number_pipe = inject(WholeNumberPipe);
-  overlap = input<string|number>();
+  private px_pipe = inject(PixelsPipe);
+  overlap = input<string|0|undefined, string|undefined|number>(undefined, {transform: this.px_pipe.transform});
   bordered = input<boolean>();
   layering = input<'first_on_top' | 'last_on_top'>('last_on_top');
   limit = input<number, number | string | undefined>(undefined, {transform: this.whole_number_pipe.transform});

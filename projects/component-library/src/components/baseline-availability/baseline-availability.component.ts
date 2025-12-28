@@ -1,5 +1,6 @@
 import {ChangeDetectionStrategy, Component, input} from '@angular/core';
-import {AvatarComponent, AvatarGroupComponent} from 'component-library';
+import {AvatarComponent} from '../avatar/avatar.component';
+import {AvatarGroupComponent} from '../avatar-group/avatar-group.component';
 
 @Component({
   selector: 'lib-baseline-availability',

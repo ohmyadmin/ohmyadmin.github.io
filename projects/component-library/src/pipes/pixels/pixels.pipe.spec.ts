@@ -1,8 +1,8 @@
-import { PxPipe } from './px.pipe';
+import { PixelsPipe } from './pixels.pipe';
 import { describe, it, expect } from 'vitest';
 
-describe('PxPipe', () => {
-  const pipe = new PxPipe();
+describe('PixelsPipe', () => {
+  const pipe = new PixelsPipe();
 
   it('should create an instance', () => {
     expect(pipe).toBeTruthy();
