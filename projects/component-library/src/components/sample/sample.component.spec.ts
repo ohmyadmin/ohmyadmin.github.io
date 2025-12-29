@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 import {describe, it, expect, beforeEach} from 'vitest';
-import { SampleComponent } from './sample.component';
+import {SampleComponent} from './sample.component';
 
 describe('SampleComponent', () => {
   beforeEach(async () => {
