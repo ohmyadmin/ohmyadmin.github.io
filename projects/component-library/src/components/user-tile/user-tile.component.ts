@@ -13,7 +13,7 @@ import {tailwind_size} from 'component-library/types/tailwind-sizes.type';
   },
   imports: [
     AvatarComponent,
-    RouterLink,
+    RouterLink
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })

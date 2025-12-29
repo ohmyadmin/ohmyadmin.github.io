@@ -15,7 +15,7 @@ const meta: Meta<UserTileComponent> = {
   argTypes: {
     size: {
       control: 'select',
-      options: tailwind_sizes_values,
+      options: tailwind_sizes_values
     }
   },
   args: {
