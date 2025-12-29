@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, computed, input} from '@angular/core';
 import {AvatarComponent} from '../avatar/avatar.component';
 import {RouterLink} from '@angular/router';
-import {tailwind_size} from 'component-library/types/tailwind-sizes.type';
+import {tailwind_size} from '../../types/tailwind-sizes.type';
 
 @Component({
   selector: 'lib-user-tile',
