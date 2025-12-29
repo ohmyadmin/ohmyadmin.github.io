@@ -8,9 +8,9 @@ import {
   input
 } from '@angular/core';
 import {AvatarComponent} from '../avatar/avatar.component';
-import {TAILWIND_SIZES} from '../../types/tailwind-sizes.type';
 import {WholeNumberPipe} from '../../pipes/whole-number/whole-number.pipe';
 import {PixelsPipe} from '../../pipes/pixels/pixels.pipe';
+import {tailwind_size} from '../../types/tailwind-sizes.type';
 
 @Component({
   selector: 'lib-avatar-group',
@@ -39,7 +39,7 @@ export class AvatarGroupComponent {
   bordered = input<boolean>();
   layering = input<'first_on_top' | 'last_on_top'>('last_on_top');
   limit = input<number, number | string | undefined>(undefined, {transform: this.whole_number_pipe.transform});
-  size = input<TAILWIND_SIZES>();
+  size = input<tailwind_size>();
 
   protected avatar_items_as_html = contentChildren(AvatarComponent, {read: ElementRef});
   private avatar_items_as_component = contentChildren(AvatarComponent);

@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, computed, input, signal} from '@angular/core';
 import {InitialsPipe} from '../../pipes/initials/initials.pipe';
-import {TAILWIND_SIZES} from '../../types/tailwind-sizes.type'
+import {tailwind_size} from '../../types/tailwind-sizes.type';
 
 @Component({
   selector: 'lib-avatar',
@@ -14,15 +14,14 @@ import {TAILWIND_SIZES} from '../../types/tailwind-sizes.type'
     '[attr.aria-label]': 'name()',
     '[style.--border-style]': `bordered() ? 'solid' : undefined`,
     '[style.--size]': 'css_size_variable()',
-    'class': 'avatar',
-    'role': 'img'
+    'class': 'avatar'
   }
 })
 export class AvatarComponent {
   bordered = input<boolean>();
   image_url = input<string>();
   name = input<string>();
-  size = input<TAILWIND_SIZES>();
+  size = input<tailwind_size>();
   status = input<'away' | 'busy' | 'offline' | 'online'>();
 
   protected css_size_variable = computed<string | undefined>(() => {

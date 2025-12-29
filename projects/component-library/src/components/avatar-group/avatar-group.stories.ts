@@ -3,6 +3,7 @@ import {
   AvatarComponent,
   AvatarGroupComponent, RandomMilkyBackgroundDirective
 } from 'component-library';
+import {tailwind_sizes_values} from 'component-library/constants/tailwind-sizes';
 
 const meta: Meta<AvatarGroupComponent> = {
   component: AvatarGroupComponent,
@@ -34,7 +35,7 @@ const meta: Meta<AvatarGroupComponent> = {
       control: 'text'
     },
     size: {
-      options: ['7xs', '6xs', '5xs', '4xs', '3xs', '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl', '5xl', '6xl', '7xl'],
+      options: tailwind_sizes_values,
       control: 'select'
     }
   }
