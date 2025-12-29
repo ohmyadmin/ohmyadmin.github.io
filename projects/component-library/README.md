@@ -45,3 +45,42 @@ ng generate component $component_name --project component-library
 directive_name="RandomMilkyBackground"
 ng generate directive $directive_name --project component-library
 ```
+
+### Enum
+```shell
+enum_name="Tailwind_Sizes"
+ng generate enum $enum_name --project component-library
+```
+
+---
+
+## Schematics
+### Component
+```shell
+ng config projects.component-library.schematics.@schematics/angular:component.addTypeToClassName true
+ng config projects.component-library.schematics.@schematics/angular:component.changeDetection OnPush
+ng config projects.component-library.schematics.@schematics/angular:component.path projects/component-library/src/components
+ng config projects.component-library.schematics.@schematics/angular:component.style scss
+ng config projects.component-library.schematics.@schematics/angular:component.type component
+```
+
+### Directive
+```shell
+ng config projects.component-library.schematics.@schematics/angular:directive.addTypeToClassName true
+ng config projects.component-library.schematics.@schematics/angular:directive.flat false
+ng config projects.component-library.schematics.@schematics/angular:directive.path projects/component-library/src/directives
+ng config projects.component-library.schematics.@schematics/angular:directive.type directive
+```
+
+### Pipe
+```shell
+ng config projects.component-library.schematics.@schematics/angular:pipe.flat false
+ng config projects.component-library.schematics.@schematics/angular:pipe.path projects/component-library/src/pipes
+ng config projects.component-library.schematics.@schematics/angular:pipe.typeSeparator .
+```
+
+### Enum
+```shell
+ng config projects.component-library.schematics.@schematics/angular:enum.path projects/component-library/src/enums
+ng config projects.component-library.schematics.@schematics/angular:enum.type enum
+```

@@ -5,9 +5,10 @@ import {
 } from 'component-library';
 import {expect} from 'storybook/test';
 import {InputType} from 'storybook/internal/csf';
+import {tailwind_sizes_values} from 'component-library/constants/tailwind-sizes';
 
 const size_arg_type: InputType = {
-  options: ['7xs', '6xs', '5xs', '4xs', '3xs', '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl', '5xl', '6xl', '7xl'],
+  options: tailwind_sizes_values,
   control: 'select'
 }
 
@@ -120,6 +121,9 @@ export const AllSizes: Story = {
   ],
   render: (args) => {
     const status_attribute = args.status ? `[status]="'${args.status}'"` : '';
+    const template_string = tailwind_sizes_values
+      .map(i => `<lib-avatar libRandomMilkyBackground [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="${i}" />`)
+      .join('\n')
     return {
       styles: [
         `:host {
@@ -128,21 +132,7 @@ export const AllSizes: Story = {
           row-gap: 5px;
        }`
       ],
-      template: `
-        <lib-avatar libRandomMilkyBackground [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="3xs" />
-        <lib-avatar libRandomMilkyBackground [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="2xs" />
-        <lib-avatar libRandomMilkyBackground [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="xs" />
-        <lib-avatar libRandomMilkyBackground [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="sm" />
-        <lib-avatar libRandomMilkyBackground [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="md" />
-        <lib-avatar libRandomMilkyBackground [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="lg" />
-        <lib-avatar libRandomMilkyBackground [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="xl" />
-        <lib-avatar libRandomMilkyBackground [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="2xl" />
-        <lib-avatar libRandomMilkyBackground [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="3xl" />
-        <lib-avatar libRandomMilkyBackground [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="4xl" />
-        <lib-avatar libRandomMilkyBackground [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="5xl" />
-        <lib-avatar libRandomMilkyBackground [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="6xl" />
-        <lib-avatar libRandomMilkyBackground [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="7xl" />
-      `
+      template: template_string
     }
   },
   args: Sample['args']

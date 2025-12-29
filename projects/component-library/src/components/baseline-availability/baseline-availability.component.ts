@@ -1,7 +1,8 @@
 import {ChangeDetectionStrategy, Component, input} from '@angular/core';
 import {AvatarComponent} from '../avatar/avatar.component';
 import {AvatarGroupComponent} from '../avatar-group/avatar-group.component';
-import {TAILWIND_SIZES} from '../../types/tailwind-sizes.type';
+import {tailwind_sizes} from '../../enums/tailwind-sizes.enum';
+import {tailwind_size} from '../../types/tailwind-sizes.type';
 
 @Component({
   selector: 'lib-baseline-availability',
@@ -14,7 +15,7 @@ import {TAILWIND_SIZES} from '../../types/tailwind-sizes.type';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BaselineAvailabilityComponent {
-  size = input<TAILWIND_SIZES>('3xs');
+  size = input<tailwind_size>(tailwind_sizes['3xs']);
   chrome = input<boolean>(true);
   edge = input<boolean>(true);
   firefox = input<boolean>(true);

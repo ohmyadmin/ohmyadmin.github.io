@@ -1,1 +1,3 @@
-export type TAILWIND_SIZES = '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl'
+import { tailwind_sizes } from '../enums/tailwind-sizes.enum';
+
+export type tailwind_size = tailwind_sizes;

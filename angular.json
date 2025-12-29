@@ -158,14 +158,18 @@
         },
         "@schematics/angular:directive": {
           "addTypeToClassName": true,
+          "flat": false,
           "path": "projects/component-library/src/directives",
-          "type": "directive",
-          "flat": false
+          "type": "directive"
+        },
+        "@schematics/angular:enum": {
+          "path": "projects/component-library/src/enums",
+          "type": "enum"
         },
         "@schematics/angular:pipe": {
+          "flat": false,
           "path": "projects/component-library/src/pipes",
-          "typeSeparator": ".",
-          "flat": false
+          "typeSeparator": "."
         }
       }
     }
