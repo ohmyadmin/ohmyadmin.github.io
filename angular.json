@@ -104,7 +104,10 @@
               "-d",
               "projects/component-library"
             ],
-            "outputDir": "dist/storybook/component-library"
+            "outputDir": "dist/storybook/component-library",
+            "styles": [
+              "projects/component-library/src/styles/global.scss"
+            ]
           }
         },
         "lint": {
@@ -130,7 +133,7 @@
             ],
             "port": 6006,
             "styles": [
-              "projects/component-library/.storybook/preview.css"
+              "projects/component-library/src/styles/global.scss"
             ]
           }
         },
