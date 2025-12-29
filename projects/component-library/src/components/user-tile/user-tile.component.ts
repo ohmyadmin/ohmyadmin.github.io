@@ -1,6 +1,7 @@
 import {ChangeDetectionStrategy, Component, computed, input} from '@angular/core';
 import {AvatarComponent} from '../avatar/avatar.component';
 import {RouterLink} from '@angular/router';
+import {tailwind_size} from 'component-library/types/tailwind-sizes.type';
 
 @Component({
   selector: 'lib-user-tile',
@@ -17,10 +18,11 @@ import {RouterLink} from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserTileComponent {
-  name = input.required<string>();
-  image_url = input<string>();
   bordered = input(false);
+  image_url = input<string>();
   link = input<string>();
+  name = input.required<string>();
+  size = input<tailwind_size>();
 
   protected readonly is_external_link = computed<boolean>(() => {
     const link = this.link();

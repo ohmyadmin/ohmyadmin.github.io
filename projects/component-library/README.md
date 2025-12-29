@@ -95,3 +95,5 @@ ng config projects.component-library.schematics.@schematics/angular:enum.type en
 * [ ] avatar small images: https://picsum.photos/
 * [ ] avatar not square aspect ratio https://picsum.photos/
 * [ ] baseline background
+* [ ] User Tile text does not adjust to the avatar size
+* [ ] Avatar, Avatar-Group, Baseline and User Tile all use very similar inputs to avatar, find a better way
