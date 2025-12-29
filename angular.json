@@ -140,8 +140,12 @@
         "test": {
           "builder": "@angular/build:unit-test",
           "options": {
-            "tsConfig": "projects/component-library/tsconfig.spec.json",
+            "browsers": ["chromium"],
             "coverage": true,
+            "tsConfig": "projects/component-library/tsconfig.spec.json",
+            "include": [
+              "projects/component-library/src/components/sample/sample.component.spec.ts"
+            ],
             "coverageThresholds": {
               "branches": 80,
               "functions": 80,

@@ -21,7 +21,6 @@ Below is a breakdown of why
 | Great for documentation                  |                    | -       | Y         |
 | Accessibility Checks                     |                    | -       | Y         |
 
-My rule of thumb is:
 
 | Function                                 | Approach          |
 |------------------------------------------|-------------------|
@@ -97,3 +96,4 @@ ng config projects.component-library.schematics.@schematics/angular:enum.type en
 * [ ] baseline background
 * [ ] User Tile text does not adjust to the avatar size
 * [ ] Avatar, Avatar-Group, Baseline and User Tile all use very similar inputs to avatar, find a better way
+* [ ] Delete example stories
