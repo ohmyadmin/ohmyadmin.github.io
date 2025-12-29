@@ -22,7 +22,7 @@ const meta: Meta<AvatarGroupComponent> = {
     },
     density: {
       control: 'select',
-      options: ['density', 'loose']
+      options: ['compact', 'loose']
     },
     limit: {
       control: 'range'

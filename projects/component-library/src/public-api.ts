@@ -4,6 +4,9 @@ export * from './components/baseline-availability/baseline-availability.componen
 export * from './components/flexbox/column/flexbox-column.component';
 export * from './components/flexbox/row/flexbox-row.component';
 export * from './components/google-ticket/google-ticket.component';
+export * from './components/user-tile/user-tile.component';
 export * from './components/vuexy/theme-customizer-trigger/theme-customizer-trigger.component';
 export * from './directives/random-milky-background/random-milky-background.directive';
 export * from './pipes/initials/initials.pipe';
+export * from './pipes/pixels/pixels.pipe';
+export * from './pipes/whole-number/whole-number.pipe';
