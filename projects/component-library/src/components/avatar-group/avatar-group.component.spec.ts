@@ -1,23 +1,23 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {AvatarGroupComponent} from 'component-library';
-import {describe, it, expect, beforeEach} from 'vitest';
+import { beforeEach, describe, expect, it } from "vitest";
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AvatarGroupComponent } from 'component-library';
 
 describe('AvatarGroupComponent', () => {
-  let component: AvatarGroupComponent;
-  let fixture: ComponentFixture<AvatarGroupComponent>;
+    let component: AvatarGroupComponent;
+    let fixture: ComponentFixture<AvatarGroupComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [AvatarGroupComponent]
-    }).compileComponents();
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            imports: [AvatarGroupComponent]
+        }).compileComponents();
 
-    fixture = TestBed.createComponent(AvatarGroupComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+        fixture = TestBed.createComponent(AvatarGroupComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 
 });

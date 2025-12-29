@@ -1,23 +1,23 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {describe, it, expect, beforeEach} from 'vitest';
-import {BaselineAvailabilityComponent} from 'component-library';
+import { beforeEach, describe, expect, it } from "vitest";
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BaselineAvailabilityComponent } from 'component-library';
 
 describe('BaselineAvailabilityComponent', () => {
-  let component: BaselineAvailabilityComponent;
-  let fixture: ComponentFixture<BaselineAvailabilityComponent>;
+    let component: BaselineAvailabilityComponent;
+    let fixture: ComponentFixture<BaselineAvailabilityComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [BaselineAvailabilityComponent]
-    })
-      .compileComponents();
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            imports: [BaselineAvailabilityComponent]
+        })
+            .compileComponents();
 
-    fixture = TestBed.createComponent(BaselineAvailabilityComponent);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
-  });
+        fixture = TestBed.createComponent(BaselineAvailabilityComponent);
+        component = fixture.componentInstance;
+        await fixture.whenStable();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

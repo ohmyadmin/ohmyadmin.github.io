@@ -1,5 +1,5 @@
+import { beforeEach, describe, expect, it } from "vitest";
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import {describe, it, expect, beforeEach} from 'vitest';
 import { GoogleTicketComponent } from 'component-library';
 
 // describe('GoogleTicket', () => {
@@ -30,22 +30,20 @@ import { GoogleTicketComponent } from 'component-library';
 
 
 describe('GoogleTicket', () => {
-  let fixture: ComponentFixture<GoogleTicketComponent>;
-  let component: GoogleTicketComponent;
+    let fixture: ComponentFixture<GoogleTicketComponent>;
+    let component: GoogleTicketComponent;
 
-  beforeEach(() =>
-    TestBed.configureTestingModule({
-      imports: [GoogleTicketComponent],
-    }),
-  );
+    beforeEach(() => TestBed.configureTestingModule({
+        imports: [GoogleTicketComponent],
+    }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(GoogleTicketComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(GoogleTicketComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create the app', () => {
-    expect(fixture).toMatchSnapshot();
-  });
+    it('should create the app', () => {
+        expect(fixture).toMatchSnapshot();
+    });
 });
