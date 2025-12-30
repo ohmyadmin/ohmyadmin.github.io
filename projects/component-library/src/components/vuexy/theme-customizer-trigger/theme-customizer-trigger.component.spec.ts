@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ThemeCustomizerTriggerComponent } from './theme-customizer-trigger.component';
-import {describe, it, expect, beforeEach, beforeAll} from 'vitest';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {describe, it, expect, beforeEach} from 'vitest';
+import {ThemeCustomizerTriggerComponent} from './theme-customizer-trigger.component';
 
 describe('ThemeCustomizerTrigger', () => {
   let component: ThemeCustomizerTriggerComponent;
@@ -10,7 +10,7 @@ describe('ThemeCustomizerTrigger', () => {
     await TestBed.configureTestingModule({
       imports: [ThemeCustomizerTriggerComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(ThemeCustomizerTriggerComponent);
     component = fixture.componentInstance;

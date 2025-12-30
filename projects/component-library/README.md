@@ -33,7 +33,6 @@ Below is a breakdown of why
 ### MakeUseOf:
 * SassDoc
 
-
 ## Scaffolding
 
 ### Components
