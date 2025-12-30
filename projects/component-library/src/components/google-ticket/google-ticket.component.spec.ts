@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 import {describe, it, expect, beforeEach} from 'vitest';
-import { GoogleTicketComponent } from 'component-library';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {GoogleTicketComponent} from './google-ticket.component';
 
 describe('GoogleTicket', () => {
   let component: GoogleTicketComponent;

@@ -1,6 +1,6 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {describe, it, expect, beforeEach} from 'vitest';
-import {FlexboxColumnComponent} from 'component-library';
+import {FlexboxColumnComponent} from './flexbox-column.component';
 
 describe('RowComponent', () => {
   let component: FlexboxColumnComponent;
