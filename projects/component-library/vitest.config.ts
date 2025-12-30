@@ -13,6 +13,8 @@ export default defineConfig({
     // reporters: ['default'],
     // include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     include: [
+      'src/components/flexbox/row/flexbox-row.component.spec.ts',
+      'src/components/flexbox/column/flexbox-column.component.spec.ts',
       'src/components/sample/sample.component.spec.ts',
       'src/components/google-ticket/google-ticket.component.spec.ts',
       'src/components/vuexy/theme-customizer-trigger/theme-customizer-trigger.component.spec.ts'
