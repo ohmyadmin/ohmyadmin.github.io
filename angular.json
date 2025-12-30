@@ -114,6 +114,7 @@
           "builder": "@angular-eslint/builder:lint",
           "options": {
             "lintFilePatterns": [
+              "!projects/component/coverage/**/*.html",
               "projects/component-library/**/*.ts",
               "projects/component-library/**/*.html"
             ]

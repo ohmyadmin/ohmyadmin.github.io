@@ -8,5 +8,5 @@ export default defineConfig({
     },
     specPattern: '**/*.cy.ts',
     watchForFileChanges: true
-  },
+  }
 });
