@@ -10,7 +10,7 @@ export default defineConfig({
     setupFiles: [
       'test-setup.ts'
     ],
-    // reporters: ['default'],
+    reporters: ['default'],
     // include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     include: [
       'src/components/flexbox/row/flexbox-row.component.spec.ts',
@@ -24,6 +24,13 @@ export default defineConfig({
       headless: false,
       provider: playwright(),
       instances: [{ browser: 'chromium' }]
+    },
+    coverage: {
+      enabled: true,
+      provider: 'v8'
     }
+  },
+  optimizeDeps: {
+    include: ['@vitest/coverage-v8/browser']
   }
 });

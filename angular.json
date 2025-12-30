@@ -140,7 +140,8 @@
         "test": {
           "builder": "@analogjs/vitest-angular:test",
           "options": {
-            "watch": true
+            "watch": true,
+            "coverage": true
           }
         }
       },

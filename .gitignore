@@ -46,6 +46,9 @@ Thumbs.db
 # Cypress
 cypress/screenshots
 
+# Vitest
+projects/component-library/coverage
+
 # Storybook - https://storybook.js.org/docs/angular/sharing/publish-storybook#versioning-storybook
 /storybook-static
 *.storybook.log
