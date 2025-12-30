@@ -2,7 +2,7 @@ import { beforeEach, describe, expect, it } from "vitest";
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { RandomMilkyBackgroundDirective } from 'component-library';
+import { RandomMilkyBackgroundDirective } from './random-milky-background.directive';
 
 @Component({
     standalone: true,

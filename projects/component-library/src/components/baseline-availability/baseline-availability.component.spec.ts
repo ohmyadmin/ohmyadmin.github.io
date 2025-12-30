@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from "vitest";
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { BaselineAvailabilityComponent } from 'component-library';
+import { BaselineAvailabilityComponent } from './baseline-availability.component';
 
 describe('BaselineAvailabilityComponent', () => {
     let component: BaselineAvailabilityComponent;

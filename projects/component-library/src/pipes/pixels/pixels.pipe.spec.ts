@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { PixelsPipe } from 'component-library';
+import { PixelsPipe } from './pixels.pipe';
 
 describe('PixelsPipe', () => {
     const pipe = new PixelsPipe();

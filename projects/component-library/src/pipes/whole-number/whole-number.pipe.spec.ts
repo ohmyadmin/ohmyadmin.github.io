@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { WholeNumberPipe } from 'component-library';
+import { WholeNumberPipe } from './whole-number.pipe';
 
 describe('WholeNumberPipe', () => {
     const pipe = new WholeNumberPipe();
