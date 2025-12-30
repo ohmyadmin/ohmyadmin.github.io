@@ -42,6 +42,8 @@ __screenshots__/
 .DS_Store
 Thumbs.db
 
+# Vitest
+projects/component-library/coverage
 
 # Cypress
 cypress/screenshots

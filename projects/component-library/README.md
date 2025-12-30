@@ -21,8 +21,6 @@ Below is a breakdown of why
 | Great for documentation                  |                    | -       | Y         |
 | Accessibility Checks                     |                    | -       | Y         |
 
-My rule of thumb is:
-
 | Function                                 | Approach          |
 |------------------------------------------|-------------------|
 | Logic tests                              | Angular Unit Test |
@@ -87,13 +85,3 @@ ng config projects.component-library.schematics.@schematics/angular:pipe.typeSep
 ng config projects.component-library.schematics.@schematics/angular:enum.path projects/component-library/src/enums
 ng config projects.component-library.schematics.@schematics/angular:enum.type enum
 ```
-
----
-
-## TODO:
-* [ ] https://vitest.dev/guide/browser/
-* [ ] avatar small images: https://picsum.photos/
-* [ ] avatar not square aspect ratio https://picsum.photos/
-* [ ] baseline background
-* [ ] User Tile text does not adjust to the avatar size
-* [ ] Avatar, Avatar-Group, Baseline and User Tile all use very similar inputs to avatar, find a better way

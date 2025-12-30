@@ -1,5 +1,5 @@
-import {InitialsPipe} from 'component-library';
 import {describe, it, expect} from 'vitest';
+import {InitialsPipe} from './initials.pipe';
 
 describe('InitialsPipe', () => {
   const pipe = new InitialsPipe()

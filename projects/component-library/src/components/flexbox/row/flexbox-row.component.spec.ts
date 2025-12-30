@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FlexboxRowComponent } from 'component-library';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {describe, it, expect, beforeEach} from 'vitest';
+import {FlexboxRowComponent} from './flexbox-row.component';
 
 describe('FlexboxRowComponent', () => {
   let component: FlexboxRowComponent;
@@ -10,7 +10,7 @@ describe('FlexboxRowComponent', () => {
     await TestBed.configureTestingModule({
       imports: [FlexboxRowComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(FlexboxRowComponent);
     component = fixture.componentInstance;
