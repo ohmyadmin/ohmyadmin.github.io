@@ -1,7 +1,7 @@
 import {beforeEach, describe, expect, it} from "vitest";
 import {TestBed} from '@angular/core/testing';
-import {UserTileComponent} from './user-tile.component';
 import {provideRouter} from '@angular/router';
+import {UserTileComponent} from './user-tile.component';
 
 describe('UserTileComponent', () => {
 
@@ -33,6 +33,6 @@ describe('UserTileComponent', () => {
 
     fixture.detectChanges();
 
-    expect((fixture.componentInstance as any).is_external_link()).toBe(true);
+    expect((fixture.componentInstance as UserTileComponent).is_external_link()).toBe(true);
   });
 });

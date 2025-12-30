@@ -5,7 +5,13 @@ const cypress = require('eslint-plugin-cypress/flat');
 
 module.exports = ts_eslint.config(
   {
-    ignores: ['projects/component-library/src/stories/*'],
+    ignores: [
+      'dist',
+      'src/app/app.ts',
+      'cypress/support/component.ts',
+      'projects/component-library/coverage/',
+      'projects/component-library/src/stories/*'
+    ],
   },
   {
     files: ['**/*.cy.ts'],
