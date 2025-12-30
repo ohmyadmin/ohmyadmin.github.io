@@ -33,6 +33,7 @@ describe('UserTileComponent', () => {
 
     fixture.detectChanges();
 
-    expect((fixture.componentInstance as UserTileComponent).is_external_link()).toBe(true);
+    const anchor = fixture.nativeElement.querySelector('a');
+    expect(anchor.getAttribute('href')).toBe('https://example.com');
   });
 });
