@@ -11,22 +11,7 @@ export default defineConfig({
       'test-setup.ts'
     ],
     reporters: ['default'],
-    // include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-    include: [
-      'src/components/avatar/avatar.component.spec.ts',
-      'src/components/avatar-group/avatar-group.component.spec.ts',
-      'src/components/baseline-availability/baseline-availability.component.spec.ts',
-      'src/components/user-tile/user-tile.component.spec.ts',
-      'src/components/flexbox/row/flexbox-row.component.spec.ts',
-      'src/components/flexbox/column/flexbox-column.component.spec.ts',
-      'src/components/sample/sample.component.spec.ts',
-      'src/components/google-ticket/google-ticket.component.spec.ts',
-      'src/components/vuexy/theme-customizer-trigger/theme-customizer-trigger.component.spec.ts',
-      'src/directives/random-milky-background/random-milky-background.directive.spec.ts',
-      'src/pipes/pixels/pixels.pipe.spec.ts',
-      'src/pipes/whole-number/whole-number.pipe.spec.ts',
-      'src/pipes/initials/initials.pipe.spec.ts'
-    ],
+    include: ['src/**/*.{test,spec}.ts'],
     browser: {
       enabled: true,
       headless: false,

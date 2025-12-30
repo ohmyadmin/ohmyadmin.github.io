@@ -28,3 +28,4 @@ npm install @analogjs/platform --save-dev
 * [ ] Avatar, Avatar-Group, Baseline and User Tile all use very similar inputs to avatar, find a better way
 * [ ] Delete example stories
 * [ ] Global Styles for vitest examples
+* [ ] Code Coverage Cypress?
