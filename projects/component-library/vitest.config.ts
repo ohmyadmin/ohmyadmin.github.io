@@ -16,6 +16,7 @@ export default defineConfig({
       'src/components/avatar/avatar.component.spec.ts',
       'src/components/avatar-group/avatar-group.component.spec.ts',
       'src/components/baseline-availability/baseline-availability.component.spec.ts',
+      'src/components/user-tile/user-tile.component.spec.ts',
       'src/components/flexbox/row/flexbox-row.component.spec.ts',
       'src/components/flexbox/column/flexbox-column.component.spec.ts',
       'src/components/sample/sample.component.spec.ts',
