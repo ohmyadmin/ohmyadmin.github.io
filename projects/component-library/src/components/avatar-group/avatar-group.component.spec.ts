@@ -3,21 +3,21 @@ import {describe, it, expect, beforeEach} from 'vitest';
 import {AvatarGroupComponent} from './avatar-group.component';
 
 describe('AvatarGroupComponent', () => {
-    let component: AvatarGroupComponent;
-    let fixture: ComponentFixture<AvatarGroupComponent>;
+  let component: AvatarGroupComponent;
+  let fixture: ComponentFixture<AvatarGroupComponent>;
 
-    beforeEach(async () => {
-        await TestBed.configureTestingModule({
-            imports: [AvatarGroupComponent]
-        }).compileComponents();
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [AvatarGroupComponent]
+    }).compileComponents();
 
-        fixture = TestBed.createComponent(AvatarGroupComponent);
-        component = fixture.componentInstance;
-        fixture.detectChanges();
-    });
+    fixture = TestBed.createComponent(AvatarGroupComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
-    it('should create', () => {
-        expect(component).toBeTruthy();
-    });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 
 });

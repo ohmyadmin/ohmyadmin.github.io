@@ -3,7 +3,6 @@ import {App} from './app';
 import {describe, it, expect, beforeEach} from 'vitest';
 
 describe('App', () => {
-
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [App]

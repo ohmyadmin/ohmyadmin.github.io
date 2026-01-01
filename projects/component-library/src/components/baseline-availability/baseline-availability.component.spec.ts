@@ -3,21 +3,21 @@ import {describe, it, expect, beforeEach} from 'vitest';
 import {BaselineAvailabilityComponent} from './baseline-availability.component';
 
 describe('BaselineAvailabilityComponent', () => {
-    let component: BaselineAvailabilityComponent;
-    let fixture: ComponentFixture<BaselineAvailabilityComponent>;
+  let component: BaselineAvailabilityComponent;
+  let fixture: ComponentFixture<BaselineAvailabilityComponent>;
 
-    beforeEach(async () => {
-        await TestBed.configureTestingModule({
-            imports: [BaselineAvailabilityComponent]
-        })
-            .compileComponents();
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [BaselineAvailabilityComponent]
+    })
+      .compileComponents();
 
-        fixture = TestBed.createComponent(BaselineAvailabilityComponent);
-        component = fixture.componentInstance;
-        await fixture.whenStable();
-    });
+    fixture = TestBed.createComponent(BaselineAvailabilityComponent);
+    component = fixture.componentInstance;
+    await fixture.whenStable();
+  });
 
-    it('should create', () => {
-        expect(component).toBeTruthy();
-    });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 });

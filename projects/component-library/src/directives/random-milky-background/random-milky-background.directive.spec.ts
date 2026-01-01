@@ -5,41 +5,41 @@ import {By} from '@angular/platform-browser';
 import {RandomMilkyBackgroundDirective} from './random-milky-background.directive';
 
 @Component({
-    standalone: true,
-    imports: [RandomMilkyBackgroundDirective],
-    template: `
+  standalone: true,
+  imports: [RandomMilkyBackgroundDirective],
+  template: `
     <div libRandomMilkyBackground>Test Element</div>`,
-    changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 class TestHostComponent {
 }
 
 describe('RandomMilkyBackgroundDirective', () => {
-    let fixture: ComponentFixture<TestHostComponent>;
+  let fixture: ComponentFixture<TestHostComponent>;
 
-    beforeEach(async () => {
-        await TestBed.configureTestingModule({
-            imports: [TestHostComponent, RandomMilkyBackgroundDirective]
-        }).compileComponents();
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [TestHostComponent, RandomMilkyBackgroundDirective]
+    }).compileComponents();
 
-        fixture = TestBed.createComponent(TestHostComponent);
-        fixture.detectChanges(); // Trigger initial data binding
-    });
+    fixture = TestBed.createComponent(TestHostComponent);
+    fixture.detectChanges(); // Trigger initial data binding
+  });
 
-    it('should create the host component', () => {
-        expect(fixture).toBeTruthy();
-    });
+  it('should create the host component', () => {
+    expect(fixture).toBeTruthy();
+  });
 
-    it('should apply an HSL background color to the host element', () => {
-        const debugElement = fixture.debugElement.query(By.directive(RandomMilkyBackgroundDirective));
-        const htmlElement = debugElement.nativeElement as HTMLElement;
+  it('should apply an HSL background color to the host element', () => {
+    const debugElement = fixture.debugElement.query(By.directive(RandomMilkyBackgroundDirective));
+    const htmlElement = debugElement.nativeElement as HTMLElement;
 
-        // Check if background-color style is set
-        // Note: Browsers often convert HSL to RGB when reading from style.backgroundColor
-        const bgColor = htmlElement.style.backgroundColor;
+    // Check if background-color style is set
+    // Note: Browsers often convert HSL to RGB when reading from style.backgroundColor
+    const bgColor = htmlElement.style.backgroundColor;
 
-        expect(bgColor).not.toBe('');
-        // We check for 'rgb' because most test environments (jsdom) normalize the HSL output
-        expect(bgColor).toMatch(/rgb|hsl/);
-    });
+    expect(bgColor).not.toBe('');
+    // We check for 'rgb' because most test environments (jsdom) normalize the HSL output
+    expect(bgColor).toMatch(/rgb|hsl/);
+  });
 });

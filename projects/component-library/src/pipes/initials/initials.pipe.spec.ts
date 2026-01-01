@@ -2,7 +2,7 @@ import {describe, it, expect} from 'vitest';
 import {InitialsPipe} from './initials.pipe';
 
 describe('InitialsPipe', () => {
-  const pipe = new InitialsPipe();
+  const pipe = new InitialsPipe()
 
   it('should return "UU" for an empty string', () => {
     expect(pipe.transform('')).toBe('UU');

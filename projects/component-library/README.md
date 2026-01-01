@@ -21,7 +21,6 @@ Below is a breakdown of why
 | Great for documentation                  |                    | -       | Y         |
 | Accessibility Checks                     |                    | -       | Y         |
 
-
 | Function                                 | Approach          |
 |------------------------------------------|-------------------|
 | Logic tests                              | Angular Unit Test |
@@ -32,6 +31,7 @@ Below is a breakdown of why
 
 ### MakeUseOf:
 * SassDoc
+
 
 ## Scaffolding
 
