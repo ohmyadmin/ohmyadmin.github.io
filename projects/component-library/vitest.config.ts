@@ -20,7 +20,13 @@ export default defineConfig({
     },
     coverage: {
       enabled: true,
-      provider: 'v8'
+      provider: 'v8',
+      thresholds: {
+        statements: 97,
+        branches: 77, // global threshold // TODO: all coverage should be 90
+        functions: 100,
+        lines: 97
+      }
     }
   },
   optimizeDeps: {
