@@ -21,41 +21,41 @@ permissions:
   contents: write
 
 jobs:
-#  lint:
-#    name: Lint
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v6
-#      - uses: actions/setup-node@v4
-#        with:
-#          node-version: '24.12.0'
-#          cache: 'npm'
-#      - run: npm ci
-#      - run: npm run lint
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.12.0'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run lint
 
-#  build:
-#    name: Build
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v6
-#      - uses: actions/setup-node@v4
-#        with:
-#          node-version: '24.12.0'
-#          cache: 'npm'
-#      - run: npm ci
-#      - run: npm run build:component-library
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.12.0'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run build:component-library
 
-#  cypress_tests:
-#    name: Cypress Tests
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v6
-#      - uses: actions/setup-node@v4
-#        with:
-#          node-version: '24.12.0'
-#          cache: 'npm'
-#      - run: npm ci
-#      - run: npm run test:cypress:component
+  cypress_tests:
+    name: Cypress Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.12.0'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run test:cypress:component
 
   angular_tests:
     name: Angular Tests

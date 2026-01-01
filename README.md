@@ -29,3 +29,5 @@ npm install @analogjs/platform --save-dev
 * [ ] Delete example stories
 * [ ] Global Styles for vitest examples
 * [ ] Code Coverage Cypress?
+* [ ] No Playwright in unit tests ci
+* [ ] Code Coverage report artifact
