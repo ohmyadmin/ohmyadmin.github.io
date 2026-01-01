@@ -67,4 +67,5 @@ jobs:
           node-version: '24.12.0'
           cache: 'npm'
       - run: npm ci
+      - run: npx playwright install
       - run: npm run test:component-library:ci
