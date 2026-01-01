@@ -6,7 +6,7 @@ import {By} from '@angular/platform-browser';
 describe('SampleComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SampleComponent],
+      imports: [SampleComponent]
     }).compileComponents();
   });
 

@@ -9,7 +9,7 @@ module.exports = ts_eslint.config(
       'dist',
       'src/app/app.ts',
       'cypress/support/component.ts',
-      'projects/component-library/coverage/',
+      'projects/component-library/coverage/*',
       'projects/component-library/src/stories/*'
     ],
   },
