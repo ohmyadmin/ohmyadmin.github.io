@@ -6,6 +6,9 @@
     "paths": {
       "component-library": [
         "./projects/component-library/src/public-api"
+      ],
+      "component-library/*": [
+        "./projects/component-library/src/*"
       ]
     },
     "strict": true,
