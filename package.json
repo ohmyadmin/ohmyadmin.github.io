@@ -15,7 +15,7 @@
     "storybook": "ng run component-library:storybook",
     "test": "ng test",
     "test:component-library": "ng run component-library:test",
-    "test:component-library:ci": "ng run component-library:test --no-watch",
+    "test:component-library:ci": "ng run component-library:test --no-watch --browser.headless=false",
     "test:cypress:component": "cypress run --component",
     "watch": "ng build --watch --configuration development"
   },
