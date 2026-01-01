@@ -14,7 +14,7 @@ export default defineConfig({
     include: ['src/**/*.{test,spec}.ts'],
     browser: {
       enabled: true,
-      headless: false,
+      headless: true,
       provider: playwright(),
       instances: [{ browser: 'chromium' }]
     },
