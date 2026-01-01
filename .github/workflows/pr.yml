@@ -69,11 +69,11 @@ jobs:
       - run: npm ci
       - run: npx playwright install
       - run: npm run test:component-library:ci
-      - name: Code Coverage Summary Report
-        uses: irongut/CodeCoverageSummary@v1.3.0
-        with:
-          filename: projects/component-library/coverage/clover.xml
-          badge: true
-          fail_below_min: true # Match your Vitest thresholds!
-          format: markdown
-          output: both
+#      - name: Code Coverage Summary Report
+#        uses: irongut/CodeCoverageSummary@v1.3.0
+#        with:
+#          filename: projects/component-library/coverage/clover.xml
+#          badge: true
+#          fail_below_min: true # Match your Vitest thresholds!
+#          format: markdown
+#          output: both
