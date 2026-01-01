@@ -69,7 +69,9 @@ describe('AvatarComponent', () => {
     fixture.componentRef.setInput('image_url', 'bad_url');
     fixture.detectChanges();
 
-    const spy = vi.spyOn(component as unknown as { on_image_error: () => void }, 'on_image_error');
+    const spy = vi.spyOn(component as unknown as {
+      on_image_error: () => void;
+    }, 'on_image_error');
     const img = fixture.debugElement.query(By.css('img'));
 
     img.triggerEventHandler('error', null);
