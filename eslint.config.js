@@ -6,6 +6,7 @@ const cypress = require('eslint-plugin-cypress/flat');
 module.exports = ts_eslint.config(
   {
     ignores: [
+      'coverage/*',
       'dist',
       'src/app/app.ts',
       'cypress/support/component.ts',
