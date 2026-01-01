@@ -14,7 +14,7 @@
     "start:cypress": "cypress open",
     "storybook": "ng run component-library:storybook",
     "test": "ng test",
-    "test:component-library": "ng run component-library:test",
+    "test:component-library": "VITEST_HEADLESS=false ng run component-library:test",
     "test:component-library:ci": "ng run component-library:test --no-watch",
     "test:cypress:component": "cypress run --component",
     "watch": "ng build --watch --configuration development"
@@ -43,6 +43,9 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@analogjs/platform": "^2.2.0",
+    "@analogjs/vite-plugin-angular": "^2.2.0",
+    "@analogjs/vitest-angular": "^2.2.0",
     "@angular-devkit/architect": "^0.2100.0",
     "@angular-devkit/build-angular": "^21.0.4",
     "@angular-devkit/core": "^21.0.0",
@@ -58,6 +61,7 @@
     "@storybook/addon-docs": "^10.1.10",
     "@storybook/addon-onboarding": "^10.1.10",
     "@storybook/angular": "^10.1.10",
+    "@vitest/browser-playwright": "^4.0.16",
     "@vitest/coverage-v8": "^4.0.16",
     "angular-eslint": "^18.4.3",
     "cypress": "^15.8.1",
@@ -65,9 +69,11 @@
     "eslint-plugin-cypress": "^5.2.0",
     "jsdom": "^27.4.0",
     "ng-packagr": "^21.0.0",
+    "playwright": "^1.57.0",
     "storybook": "^10.1.10",
     "typescript": "~5.9.2",
     "typescript-eslint": "^8.0.0",
+    "vite-tsconfig-paths": "^6.0.3",
     "vitest": "^4.0.8"
   }
 }
