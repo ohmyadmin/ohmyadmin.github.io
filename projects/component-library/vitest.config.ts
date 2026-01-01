@@ -21,7 +21,6 @@ export default defineConfig({
     coverage: {
       enabled: true,
       provider: 'v8',
-      reporter: ['text', 'json', 'html', 'lcov'],
       thresholds: {
         statements: 97,
         branches: 77, // global threshold // TODO: all coverage should be 90
