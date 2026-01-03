@@ -1,8 +1,5 @@
-import {Meta, moduleMetadata, StoryObj} from '@storybook/angular';
-import {
-  AvatarComponent,
-  RandomMilkyBackgroundDirective
-} from 'component-library';
+import {Meta, StoryObj} from '@storybook/angular';
+import {AvatarComponent} from 'component-library';
 import {expect} from 'storybook/test';
 import {InputType} from 'storybook/internal/csf';
 import {tailwind_sizes_values} from 'component-library/constants/tailwind-sizes';
