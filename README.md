@@ -31,3 +31,8 @@ npm install @analogjs/platform --save-dev
 * [ ] Diagonal stack
 * [ ] GitHub Actions Bot
 * [ ] precommit
+* [ ] Colorful Icon Library
+  * [ ] Google Chrome
+  * [ ] Firefox
+  * [ ] Edge
+  * [ ] Safari
