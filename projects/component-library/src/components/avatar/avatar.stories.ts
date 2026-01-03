@@ -1,4 +1,4 @@
-import {Meta, StoryObj} from '@storybook/angular';
+import {Meta, moduleMetadata, StoryObj} from '@storybook/angular';
 import {AvatarComponent} from 'component-library';
 import {expect} from 'storybook/test';
 import {InputType} from 'storybook/internal/csf';

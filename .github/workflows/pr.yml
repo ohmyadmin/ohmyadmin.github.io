@@ -19,6 +19,7 @@ concurrency:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   lint:
@@ -31,7 +32,12 @@ jobs:
           node-version: '24.12.0'
           cache: 'npm'
       - run: npm ci
-      - run: npm run lint
+      - run: ng lint
+      - uses: reviewdog/action-eslint@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-review
+          level: error
 
   build:
     name: Build
