@@ -43,13 +43,13 @@ ng generate component $component_name --project component-library
 
 ### Directives
 ```shell
-directive_name="RandomMilkyBackground"
+directive_name=""
 ng generate directive $directive_name --project component-library
 ```
 
 ### Enum
 ```shell
-enum_name="Tailwind_Sizes"
+enum_name=""
 ng generate enum $enum_name --project component-library
 ```
 

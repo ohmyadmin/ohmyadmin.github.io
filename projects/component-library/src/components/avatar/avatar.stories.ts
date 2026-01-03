@@ -1,8 +1,5 @@
-import {Meta, moduleMetadata, StoryObj} from '@storybook/angular';
-import {
-  AvatarComponent,
-  RandomMilkyBackgroundDirective
-} from 'component-library';
+import {Meta, StoryObj} from '@storybook/angular';
+import {AvatarComponent} from 'component-library';
 import {expect} from 'storybook/test';
 import {InputType} from 'storybook/internal/csf';
 import {tailwind_sizes_values} from 'component-library/constants/tailwind-sizes';
@@ -112,17 +109,10 @@ export const BrokenImage: Story = {
 export const NoNameNoImage: Story = {}
 
 export const AllSizes: Story = {
-  decorators: [
-    moduleMetadata({
-      imports: [
-        RandomMilkyBackgroundDirective
-      ]
-    })
-  ],
   render: (args) => {
     const status_attribute = args.status ? `[status]="'${args.status}'"` : '';
     const template_string = tailwind_sizes_values
-      .map(i => `<lib-avatar libRandomMilkyBackground [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="${i}" />`)
+      .map(i => `<lib-avatar [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="${i}" />`)
       .join('\n')
     return {
       styles: [
