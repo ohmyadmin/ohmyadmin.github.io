@@ -1,8 +1,10 @@
-import {ChangeDetectionStrategy, Component, input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, computed, input} from '@angular/core';
 import {AvatarComponent} from '../avatar/avatar.component';
 import {AvatarGroupComponent} from '../avatar-group/avatar-group.component';
 import {tailwind_sizes} from '../../enums/tailwind-sizes.enum';
 import {tailwind_size} from '../../types/tailwind-sizes.type';
+
+export type BrowserKey = 'chrome' | 'edge' | 'firefox' | 'safari';
 
 @Component({
   selector: 'lib-baseline-availability',
@@ -12,18 +14,35 @@ import {tailwind_size} from '../../types/tailwind-sizes.type';
   ],
   templateUrl: './baseline-availability.component.html',
   styleUrl: './baseline-availability.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    class: 'baseline-availability'
+  }
 })
 export class BaselineAvailabilityComponent {
   size = input<tailwind_size>(tailwind_sizes['3xs']);
-  chrome = input<boolean>(true);
-  edge = input<boolean>(true);
-  firefox = input<boolean>(true);
-  safari = input<boolean>(false);
+  supported = input<BrowserKey[]>([]);
 
-  protected image_url_supported = 'https://raw.githubusercontent.com/web-platform-dx/developer-signals/refs/heads/main/img/available.svg'
-  protected image_url_unsupported = 'https://raw.githubusercontent.com/web-platform-dx/developer-signals/refs/heads/main/img/unavailable.svg'
+  protected readonly image_url_supported = 'https://raw.githubusercontent.com/web-platform-dx/developer-signals/refs/heads/main/img/available.svg' as const;
+  protected readonly image_url_unsupported = 'https://raw.githubusercontent.com/web-platform-dx/developer-signals/refs/heads/main/img/unavailable.svg' as const;
 
-  // protected image_url_supported = 'https://developer.mozilla.org/static/client/browser-check.20ed6fe43e745587.svg';
-  // protected image_url_unsupported = 'https://developer.mozilla.org/static/client/browser-cross.196cc93721b774d9.svg';
+  private readonly ALL_BROWSERS = ['chrome', 'edge', 'firefox', 'safari'] as const;
+
+  private readonly BROWSER_CONFIG = {
+    'chrome': { id: 'chrome', icon: 'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-chrome-icon.svg' },
+    'firefox': { id: 'firefox', icon: 'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/firefox-browser-icon.svg' },
+    'edge': { id: 'edge', icon: 'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/edge-browser-icon.svg' },
+    'safari': { id: 'safari', icon: 'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/safari-icon.svg' }
+  } as const;
+
+  protected groups = computed(() => {
+    const supported_browsers = this.supported();
+
+    return {
+      supported: supported_browsers.map(key => this.BROWSER_CONFIG[key]),
+      unsupported: this.ALL_BROWSERS
+        .filter(key => !supported_browsers.includes(key))
+        .map(key => this.BROWSER_CONFIG[key])
+    };
+  });
 }

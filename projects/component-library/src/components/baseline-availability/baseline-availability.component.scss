@@ -1,4 +1,23 @@
+:host {
+  display: inline-flex;
+  column-gap: 10px;
+}
+
 :host ::ng-deep .avatar img {
   border-radius: unset;
   object-fit: contain;
+}
+
+.group {
+  border-radius: 35px;
+  padding: 15px;
+  display: inline-flex;
+
+  &.supported {
+    background: #d7eddf;
+  }
+
+  &.unsupported {
+    background: hsl(210, 6%, 86%);
+  }
 }

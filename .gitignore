@@ -45,6 +45,9 @@ Thumbs.db
 # Vitest
 projects/component-library/coverage
 
+# Eslint
+.eslintcache
+
 # Cypress
 cypress/screenshots
 

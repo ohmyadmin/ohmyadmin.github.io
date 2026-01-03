@@ -1,16 +1,23 @@
-<lib-avatar-group layering="first_on_top" density="loose" [size]="size()">
-  <lib-avatar style='--background-color: transparent' image_url="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-chrome-icon.svg" />
-  <lib-avatar style='--background-color: transparent' [image_url]="chrome() ? image_url_supported : image_url_unsupported" />
-</lib-avatar-group>
-<lib-avatar-group limit="${args.limit}" layering="first_on_top" density="loose" [size]="size()">
-  <lib-avatar style='--background-color: transparent' image_url="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/edge-browser-icon.svg" />
-  <lib-avatar style='--background-color: transparent' [image_url]="edge() ? image_url_supported : image_url_unsupported" />
-</lib-avatar-group>
-<lib-avatar-group limit="${args.limit}" layering="first_on_top" density="loose" [size]="size()">
-  <lib-avatar style='--background-color: transparent' image_url="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/firefox-browser-icon.svg" />
-  <lib-avatar style='--background-color: transparent' [image_url]="firefox() ? image_url_supported : image_url_unsupported" />
-</lib-avatar-group>
-<lib-avatar-group limit="${args.limit}" layering="first_on_top" density="loose" [size]="size()">
-  <lib-avatar style='--background-color: transparent' image_url="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/safari-icon.svg" />
-  <lib-avatar style='--background-color: transparent' [image_url]="safari() ? image_url_supported : image_url_unsupported" />
-</lib-avatar-group>
+@let group_config = [
+  { items: groups().supported, status: 'supported', status_icon: image_url_supported },
+  { items: groups().unsupported, status: 'unsupported', status_icon: image_url_unsupported }
+];
+
+@for (group of group_config; track group.status) {
+  @if (group.items.length) {
+    <div [class]="group.status + ' group'">
+      @for (browser of group.items; track browser.id) {
+        <lib-avatar-group layering="first_on_top" density="loose" [size]="size()">
+          <lib-avatar
+            style="--background-color: transparent"
+            [image_url]="browser.icon"
+          />
+          <lib-avatar
+            style="--background-color: transparent"
+            [image_url]="group.status_icon"
+          />
+        </lib-avatar-group>
+      }
+    </div>
+  }
+}

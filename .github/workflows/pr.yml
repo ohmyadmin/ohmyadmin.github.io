@@ -82,6 +82,13 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run test:cypress:component
+      - name: Upload Cypress screenshots
+        uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+          if-no-files-found: ignore
 
   angular_tests:
     name: Angular Tests
