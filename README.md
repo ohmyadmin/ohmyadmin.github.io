@@ -16,18 +16,17 @@ npm install @analogjs/platform --save-dev
 ? ng g @analogjs/platform:setup-vitest --project component-library
 ```
 
-
 ---
 
 ## TODO:
 * [ ] https://vitest.dev/guide/browser/
 * [ ] avatar small images: https://picsum.photos/
 * [ ] avatar not square aspect ratio https://picsum.photos/
-* [ ] baseline background
 * [ ] User Tile text does not adjust to the avatar size
 * [ ] Avatar, Avatar-Group, Baseline and User Tile all use very similar inputs to avatar, find a better way
 * [ ] Delete example stories
 * [ ] Global Styles for vitest examples
 * [ ] Code Coverage Cypress?
-* [ ] No Playwright in unit tests ci
 * [ ] Code Coverage report artifact
+* [ ] Diagonal stack
+* [ ] GitHub Actions Bot

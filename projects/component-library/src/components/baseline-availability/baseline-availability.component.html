@@ -1,16 +1,20 @@
-<lib-avatar-group layering="first_on_top" density="loose" [size]="size()">
-  <lib-avatar style='--background-color: transparent' image_url="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-chrome-icon.svg" />
-  <lib-avatar style='--background-color: transparent' [image_url]="chrome() ? image_url_supported : image_url_unsupported" />
-</lib-avatar-group>
-<lib-avatar-group limit="${args.limit}" layering="first_on_top" density="loose" [size]="size()">
-  <lib-avatar style='--background-color: transparent' image_url="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/edge-browser-icon.svg" />
-  <lib-avatar style='--background-color: transparent' [image_url]="edge() ? image_url_supported : image_url_unsupported" />
-</lib-avatar-group>
-<lib-avatar-group limit="${args.limit}" layering="first_on_top" density="loose" [size]="size()">
-  <lib-avatar style='--background-color: transparent' image_url="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/firefox-browser-icon.svg" />
-  <lib-avatar style='--background-color: transparent' [image_url]="firefox() ? image_url_supported : image_url_unsupported" />
-</lib-avatar-group>
-<lib-avatar-group limit="${args.limit}" layering="first_on_top" density="loose" [size]="size()">
-  <lib-avatar style='--background-color: transparent' image_url="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/safari-icon.svg" />
-  <lib-avatar style='--background-color: transparent' [image_url]="safari() ? image_url_supported : image_url_unsupported" />
-</lib-avatar-group>
+@if(groups().supported.length){
+  <div class="supported group">
+    @for (browser of groups().supported; track browser) {
+      <lib-avatar-group layering="first_on_top" density="loose" [size]="size()">
+        <lib-avatar style='--background-color: transparent' [image_url]="browser_image_urls[browser]"/>
+        <lib-avatar style='--background-color: transparent' [image_url]="image_url_supported"/>
+      </lib-avatar-group>
+    }
+  </div>
+}
+@if(groups().unsupported.length){
+  <div class="unsupported group">
+    @for (browser of groups().unsupported; track browser) {
+      <lib-avatar-group layering="first_on_top" density="loose" [size]="size()">
+        <lib-avatar style='--background-color: transparent' [image_url]="browser_image_urls[browser]"/>
+        <lib-avatar style='--background-color: transparent' [image_url]="image_url_unsupported"/>
+      </lib-avatar-group>
+    }
+  </div>
+}
