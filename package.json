@@ -8,7 +8,7 @@
     "build": "ng build",
     "build:component-library": "ng run component-library:build",
     "build:component-library:storybook": "ng run component-library:build-storybook",
-    "lint": "ng run component-library:lint",
+    "lint": "ng lint --cache",
     "ng": "ng",
     "start": "ng serve",
     "start:cypress": "cypress open",

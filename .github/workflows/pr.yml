@@ -19,8 +19,22 @@ concurrency:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
+  review_dog:
+    name: ReviewDog
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v6
+      - uses: reviewdog/action-eslint@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-review
+          eslint_flags: '.'
   lint:
     name: Lint
     runs-on: ubuntu-latest
