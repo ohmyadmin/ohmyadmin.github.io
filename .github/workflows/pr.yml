@@ -34,8 +34,11 @@ jobs:
       - run: npm ci
       - uses: reviewdog/action-eslint@v1
         with:
-          filter_mode: added
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-review
+          level: error
           fail_on_error: true
+          eslint_flags: '.'
 
   build:
     name: Build
