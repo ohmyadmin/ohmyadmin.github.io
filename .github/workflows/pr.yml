@@ -22,8 +22,8 @@ permissions:
   pull-requests: write
 
 jobs:
-  eslint:
-    name: runner / eslint
+  review_dog:
+    name: ReviewDog
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -45,7 +45,7 @@ jobs:
           node-version: '24.12.0'
           cache: 'npm'
       - run: npm ci
-      - run: ng lint
+      - run: npm run lint
 
   build:
     name: Build
