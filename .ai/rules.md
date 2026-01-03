@@ -8,6 +8,11 @@ I want you to challenge my ideas
 - Prefer type inference when the type is obvious
 - Avoid the `any` type; use `unknown` when type is uncertain
 
+### TypeScript Coding Standards
+- **Const Assertions:** ALWAYS use `as const` for static configuration objects, lookup maps, and literal arrays defined within classes or files.
+- **Type Inference:** Prefer `as const` over explicit type annotations for constants to allow TypeScript to infer the narrowest possible literal types and ensure immutability via `readonly`.
+- **Enums:** Prefer `as const` objects over `enum` for better tree-shaking and type safety.
+
 ## Angular Best Practices
 
 - Always use standalone components over NgModules

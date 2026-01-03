@@ -1,20 +1,14 @@
-@if(groups().supported.length){
-  <div class="supported group">
-    @for (browser of groups().supported; track browser) {
-      <lib-avatar-group layering="first_on_top" density="loose" [size]="size()">
-        <lib-avatar style='--background-color: transparent' [image_url]="browser_image_urls[browser]"/>
-        <lib-avatar style='--background-color: transparent' [image_url]="image_url_supported"/>
-      </lib-avatar-group>
-    }
-  </div>
-}
-@if(groups().unsupported.length){
-  <div class="unsupported group">
-    @for (browser of groups().unsupported; track browser) {
-      <lib-avatar-group layering="first_on_top" density="loose" [size]="size()">
-        <lib-avatar style='--background-color: transparent' [image_url]="browser_image_urls[browser]"/>
-        <lib-avatar style='--background-color: transparent' [image_url]="image_url_unsupported"/>
-      </lib-avatar-group>
-    }
-  </div>
+@for (group of [{ items: supported_browsers(), status: 'supported', icon: image_url_supported },
+                { items: unsupported_browsers(), status: 'unsupported', icon: image_url_unsupported }];
+      track group.status) {
+  @if (group.items.length) {
+    <div [class]="group.status + ' group'">
+      @for (browser of group.items; track browser.id) {
+        <lib-avatar-group layering="first_on_top" density="loose" [size]="size()">
+          <lib-avatar style='--background-color: transparent' [image_url]="browser.icon"/>
+          <lib-avatar style='--background-color: transparent' [image_url]="group.icon"/>
+        </lib-avatar-group>
+      }
+    </div>
+  }
 }
