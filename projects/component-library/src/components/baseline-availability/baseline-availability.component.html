@@ -1,12 +1,21 @@
-@for (group of [{ items: supported_browsers(), status: 'supported', icon: image_url_supported },
-                { items: unsupported_browsers(), status: 'unsupported', icon: image_url_unsupported }];
-      track group.status) {
+@let group_config = [
+  { items: groups().supported, status: 'supported', status_icon: image_url_supported },
+  { items: groups().unsupported, status: 'unsupported', status_icon: image_url_unsupported }
+];
+
+@for (group of group_config; track group.status) {
   @if (group.items.length) {
     <div [class]="group.status + ' group'">
       @for (browser of group.items; track browser.id) {
         <lib-avatar-group layering="first_on_top" density="loose" [size]="size()">
-          <lib-avatar style='--background-color: transparent' [image_url]="browser.icon"/>
-          <lib-avatar style='--background-color: transparent' [image_url]="group.icon"/>
+          <lib-avatar
+            style="--background-color: transparent"
+            [image_url]="browser.icon"
+          />
+          <lib-avatar
+            style="--background-color: transparent"
+            [image_url]="group.status_icon"
+          />
         </lib-avatar-group>
       }
     </div>

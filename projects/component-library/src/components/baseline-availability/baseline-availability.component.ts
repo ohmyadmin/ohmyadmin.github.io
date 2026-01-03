@@ -4,6 +4,8 @@ import {AvatarGroupComponent} from '../avatar-group/avatar-group.component';
 import {tailwind_sizes} from '../../enums/tailwind-sizes.enum';
 import {tailwind_size} from '../../types/tailwind-sizes.type';
 
+export type BrowserKey = 'chrome' | 'edge' | 'firefox' | 'safari';
+
 @Component({
   selector: 'lib-baseline-availability',
   imports: [
@@ -16,33 +18,28 @@ import {tailwind_size} from '../../types/tailwind-sizes.type';
 })
 export class BaselineAvailabilityComponent {
   size = input<tailwind_size>(tailwind_sizes['3xs']);
-  chrome = input<boolean>(false);
-  edge = input<boolean>(false);
-  firefox = input<boolean>(false);
-  safari = input<boolean>(false);
+  supported = input<BrowserKey[]>([]);
 
-  private browser_image_urls = {
-    'chrome': 'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-chrome-icon.svg',
-    'firefox': 'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/firefox-browser-icon.svg',
-    'edge': 'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/edge-browser-icon.svg',
-    'safari': 'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/safari-icon.svg'
+  protected readonly image_url_supported = 'https://raw.githubusercontent.com/web-platform-dx/developer-signals/refs/heads/main/img/available.svg' as const;
+  protected readonly image_url_unsupported = 'https://raw.githubusercontent.com/web-platform-dx/developer-signals/refs/heads/main/img/unavailable.svg' as const;
+
+  private readonly ALL_BROWSERS = ['chrome', 'edge', 'firefox', 'safari'] as const;
+
+  private readonly BROWSER_CONFIG = {
+    'chrome': { id: 'chrome', icon: 'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-chrome-icon.svg' },
+    'firefox': { id: 'firefox', icon: 'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/firefox-browser-icon.svg' },
+    'edge': { id: 'edge', icon: 'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/edge-browser-icon.svg' },
+    'safari': { id: 'safari', icon: 'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/safari-icon.svg' }
   } as const;
 
-  protected image_url_supported = 'https://raw.githubusercontent.com/web-platform-dx/developer-signals/refs/heads/main/img/available.svg';
-  protected image_url_unsupported = 'https://raw.githubusercontent.com/web-platform-dx/developer-signals/refs/heads/main/img/unavailable.svg';
+  protected groups = computed(() => {
+    const supported_browsers = this.supported();
 
-  protected browser_states = computed(() => [
-    { id: 'chrome', is_supported: this.chrome(), icon: this.browser_image_urls.chrome },
-    { id: 'edge', is_supported: this.edge(), icon: this.browser_image_urls.edge },
-    { id: 'firefox', is_supported: this.firefox(), icon: this.browser_image_urls.firefox },
-    { id: 'safari', is_supported: this.safari(), icon: this.browser_image_urls.safari }
-  ]);
-
-  protected supported_browsers = computed(() =>
-    this.browser_states().filter(b => b.is_supported)
-  );
-
-  protected unsupported_browsers = computed(() =>
-    this.browser_states().filter(b => !b.is_supported)
-  );
+    return {
+      supported: supported_browsers.map(key => this.BROWSER_CONFIG[key]),
+      unsupported: this.ALL_BROWSERS
+        .filter(key => !supported_browsers.includes(key))
+        .map(key => this.BROWSER_CONFIG[key])
+    };
+  });
 }

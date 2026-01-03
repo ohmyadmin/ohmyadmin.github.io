@@ -30,3 +30,4 @@ npm install @analogjs/platform --save-dev
 * [ ] Code Coverage report artifact
 * [ ] Diagonal stack
 * [ ] GitHub Actions Bot
+* [ ] precommit

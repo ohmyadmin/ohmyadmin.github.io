@@ -8,6 +8,10 @@ const meta: Meta<BaselineAvailabilityComponent> = {
     size: {
       options: tailwind_sizes_values,
       control: 'select'
+    },
+    supported: {
+      options: ['chrome', 'safari', 'firefox', 'edge'],
+      control: 'check'
     }
   },
   component: BaselineAvailabilityComponent,
@@ -19,7 +23,7 @@ export default meta;
 type Story = StoryObj<BaselineAvailabilityComponent>;
 export const Sample: Story = {
   args: {
-    chrome: true,
+    supported: ['chrome'],
     size: tailwind_sizes['3xs']
   }
 };
@@ -31,10 +35,14 @@ export const AllUnsupported: Story = {
 
 export const AllSupported: Story = {
   args: {
-    chrome: true,
-    firefox: true,
-    edge: true,
-    safari: true,
+    supported: ['chrome', 'edge', 'safari', 'firefox'],
+    size: tailwind_sizes['3xs']
+  }
+};
+
+export const DifferentOrder: Story = {
+  args: {
+    supported: ['firefox', 'safari', 'edge', 'chrome'],
     size: tailwind_sizes['3xs']
   }
 };
