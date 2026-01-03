@@ -14,7 +14,10 @@ export type BrowserKey = 'chrome' | 'edge' | 'firefox' | 'safari';
   ],
   templateUrl: './baseline-availability.component.html',
   styleUrl: './baseline-availability.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    class: 'baseline-availability'
+  }
 })
 export class BaselineAvailabilityComponent {
   size = input<tailwind_size>(tailwind_sizes['3xs']);
