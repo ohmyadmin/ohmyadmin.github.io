@@ -33,6 +33,9 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - uses: reviewdog/action-eslint@v1
+        with:
+          filter_mode: added
+          fail_on_error: true
 
   build:
     name: Build
