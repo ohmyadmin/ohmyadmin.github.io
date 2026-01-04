@@ -4,17 +4,17 @@ import {tailwind_sizes} from '../../enums/tailwind-sizes.enum';
 import {AvatarComponent} from '../avatar/avatar.component';
 
 @Component({
-  selector: 'lib-avatar-badge',
+  selector: 'lib-avatar-status',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './avatar-badge.component.html',
-  styleUrl: 'avatar-badge.component.scss',
+  templateUrl: './avatar-status.component.html',
+  styleUrl: 'avatar-status.component.scss',
   host: {
-    'class': 'avatar-badge',
+    'class': 'avatar-status',
     '[class]': 'status()',
     '[style.--size]': 'css_size_var()'
   }
 })
-export class AvatarBadgeComponent {
+export class AvatarStatusComponent {
   status = input<'away' | 'busy' | 'offline' | 'online'>('offline');
   size = input<tailwind_size>(tailwind_sizes.md);
   private avatars = contentChildren(AvatarComponent);

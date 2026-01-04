@@ -1,18 +1,18 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {describe, expect, beforeEach, it} from 'vitest';
-import {AvatarBadgeComponent} from './avatar-badge.component';
+import {AvatarStatusComponent} from './avatar-status.component';
 
 describe('AvatarBadgeComponent', () => {
-  let component: AvatarBadgeComponent;
-  let fixture: ComponentFixture<AvatarBadgeComponent>;
+  let component: AvatarStatusComponent;
+  let fixture: ComponentFixture<AvatarStatusComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AvatarBadgeComponent]
+      imports: [AvatarStatusComponent]
     })
       .compileComponents();
 
-    fixture = TestBed.createComponent(AvatarBadgeComponent);
+    fixture = TestBed.createComponent(AvatarStatusComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
