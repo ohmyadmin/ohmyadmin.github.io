@@ -17,8 +17,12 @@ describe('AvatarComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Should display an Unknown User Avatar', async () => {
     expect(component).toBeTruthy();
+    expect(fixture.debugElement.query(By.css('img'))).toBeNull();
+    expect(fixture.debugElement.nativeElement.textContent).to.have.lengthOf(2);
+    expect(fixture.debugElement.nativeElement.textContent).to.have.string('UU');
+    await expect(fixture.debugElement.nativeElement).toMatchScreenshot('avatar-unknown-user');
   });
 
   it('should display initials when no image url is provided', () => {

@@ -10,17 +10,19 @@ export default defineConfig({
     setupFiles: [
       'test-setup.ts'
     ],
-    reporters: ['default'],
-    include: ['src/**/*.{test,spec}.ts'],
+    reporters: ['verbose'],
+    include: ['src/**/*.spec.ts'],
     browser: {
       enabled: true,
       headless: process.env['VITEST_HEADLESS'] !== 'false',
       provider: playwright(),
       instances: [{ browser: 'chromium' }]
+
     },
     coverage: {
       enabled: true,
       provider: 'v8',
+      reporter: ['html'],
       thresholds: {
         statements: 97,
         branches: 77, // global threshold // TODO: all coverage should be 90

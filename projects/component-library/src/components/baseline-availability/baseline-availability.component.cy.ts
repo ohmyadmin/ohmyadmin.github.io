@@ -1,7 +1,7 @@
 import {mount} from 'cypress/angular-zoneless'
 import {BaselineAvailabilityComponent} from 'component-library';
 
-describe('BaselineAvailability [TEXT]', () => {
+describe('BaselineAvailability', () => {
   it('All Supported', () => {
     mount(`<lib-baseline-availability [supported]="['chrome', 'firefox', 'edge', 'safari']"/>`, {
       imports: [

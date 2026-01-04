@@ -1,6 +1,7 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {describe, it, expect, beforeEach} from 'vitest';
 import {AvatarGroupComponent} from './avatar-group.component';
+import {By} from '@angular/platform-browser';
 
 describe('AvatarGroupComponent', () => {
   let component: AvatarGroupComponent;
@@ -20,4 +21,8 @@ describe('AvatarGroupComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('When empty, should inform that there are no avatars', () => {
+    expect(fixture.debugElement.nativeElement.children).to.have.length(0)
+    expect(fixture.debugElement.nativeElement.textContent).to.have.string('No Avatars Found')
+  });
 });
