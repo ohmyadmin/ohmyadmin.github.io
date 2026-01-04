@@ -27,31 +27,6 @@ $medium_size: 4em;
   line-height: 1;
 }
 
-.status {
-  --status-size: 25cqmin;
-  aspect-ratio: 1;
-  background: var(--status-color, #{colors.$offline});
-  border-radius: 50%;
-  border-width: var(--border-width);
-  border-style: var(--border-style, none);;
-  bottom: 0;
-  position: absolute;
-  right: 0;
-  width: var(--status-size);
-
-  &.away {
-    --status-color: #{colors.$away};
-  }
-
-  &.busy {
-    --status-color: #{colors.$busy};
-  }
-
-  &.online {
-    --status-color: #{colors.$online};
-  }
-}
-
 img, svg {
   object-fit: cover;
   width: 100%;
