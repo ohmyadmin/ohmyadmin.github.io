@@ -22,7 +22,6 @@ export class AvatarComponent {
   image_url = input<string>();
   name = input<string>();
   size = input<tailwind_size>();
-  status = input<'away' | 'busy' | 'offline' | 'online'>();
 
   protected css_size_variable = computed<string | undefined>(() => {
     const size = this.size();

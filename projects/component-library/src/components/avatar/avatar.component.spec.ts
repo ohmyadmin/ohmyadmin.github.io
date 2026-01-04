@@ -114,7 +114,6 @@ describe('AvatarComponent', () => {
     fixture.componentRef.setInput('image_url', undefined);
     fixture.componentRef.setInput('name', 'Test User');
     fixture.componentRef.setInput('size', 'lg');
-    fixture.componentRef.setInput('status', 'away');
 
     fixture.detectChanges();
 
@@ -122,9 +121,6 @@ describe('AvatarComponent', () => {
     expect(hostElement.getAttribute('aria-label')).toBe('Test User');
     expect(hostElement.style.getPropertyValue('--border-style')).toBe('');
     expect(hostElement.style.getPropertyValue('--size')).toBe('var(--size-lg)');
-
-    const statusElement = fixture.debugElement.query(By.css('.status.away'));
-    expect(statusElement).toBeTruthy();
   });
 
   it('should fully exercise css_size_variable computed signal', () => {
@@ -140,18 +136,15 @@ describe('AvatarComponent', () => {
   });
 
   it('should exercise all input signal definitions', () => {
-    // Explicitly setting every input ensures the signal "write" logic is covered
     fixture.componentRef.setInput('bordered', true);
-    fixture.componentRef.setInput('image_url', 'http://test.com');
+    fixture.componentRef.setInput('image_url', 'https://test.com');
     fixture.componentRef.setInput('name', 'Test');
     fixture.componentRef.setInput('size', 'xl');
-    fixture.componentRef.setInput('status', 'busy');
     fixture.detectChanges();
 
     expect(component.bordered()).toBe(true);
-    expect(component.image_url()).toBe('http://test.com');
+    expect(component.image_url()).toBe('https://test.com');
     expect(component.name()).toBe('Test');
     expect(component.size()).toBe('xl');
-    expect(component.status()).toBe('busy');
   });
 });

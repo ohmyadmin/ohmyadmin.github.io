@@ -1,0 +1,60 @@
+import {mount} from 'cypress/angular-zoneless'
+import {AvatarBadgeComponent} from 'component-library/components/avatar-badge/avatar-badge.component';
+import {AvatarComponent} from 'component-library';
+
+const imports = [
+  AvatarComponent,
+  AvatarBadgeComponent
+]
+
+describe('AvatarBadgeComponent', () => {
+  it('Simple', () => {
+    mount(`<lib-avatar-badge><lib-avatar name="Jane Doe" /></lib-avatar-badge>`, {
+      imports
+    });
+
+    cy.get('.avatar-badge')
+      .should('exist')
+      .should('be.visible');
+
+    cy.get('.avatar-badge')
+      .children()
+      .should('have.length', 2);
+
+    cy.get('.avatar-badge')
+      .children()
+      .should('have.length', 2);
+
+    cy.get('.avatar-badge .avatar')
+      .should('have.length', 1)
+      .should('exist')
+      .should('be.visible');
+
+
+
+    cy.get('.avatar-badge .badge')
+      .should('have.length', 1)
+      .should('exist')
+      .should('be.visible');
+  });
+
+  it('Responsive Test (height is constrained)', () => {
+    mount(`
+      <div class='container' style="height:30px;width:200px;display:flex;container-type:size;background:blue;justify-items:start;align-items: start;">
+        <lib-avatar-badge><lib-avatar name="Jane Doe" /></lib-avatar-badge>
+      </div>
+    `, {
+      imports
+    });
+  })
+
+  it('Responsive Test (width is constrained)', () => {
+    mount(`
+      <div class='container' style="width:30px;height:200px;display:flex;container-type:size;background:blue;justify-items:start;align-items: start;">
+        <lib-avatar-badge><lib-avatar name="Jane Doe" /></lib-avatar-badge>
+      </div>
+    `, {
+      imports
+    });
+  })
+})

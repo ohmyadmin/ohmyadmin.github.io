@@ -21,11 +21,6 @@ const meta: Meta<AvatarComponent> = {
     },
     name: {
       control: 'text'
-    },
-    status: {
-      type: 'string',
-      options: ['away', 'busy', 'offline', 'online'],
-      control:'select'
     }
   }
 }
@@ -44,8 +39,7 @@ export const Sample: Story = {
   args: {
     bordered: true,
     image_url: 'https://mockmind-api.uifaces.co/content/human/1.jpg',
-    name: 'Jane Doe',
-    status: undefined
+    name: 'Jane Doe'
   },
   argTypes: {
     size: size_arg_type
@@ -110,9 +104,14 @@ export const NoNameNoImage: Story = {}
 
 export const AllSizes: Story = {
   render: (args) => {
-    const status_attribute = args.status ? `[status]="'${args.status}'"` : '';
+    const inputs = [
+      args.name ? `[name]="'${args.name}'"` : '',
+      args.image_url ? `[image_url]="'${args.image_url}'"` : '',
+      args.bordered ? `[bordered]="${args.bordered}"` : ''
+    ];
+
     const template_string = tailwind_sizes_values
-      .map(i => `<lib-avatar [name]="'${args.name}'" [image_url]="'${args.image_url}'" ${status_attribute} [bordered]="${args.bordered}" size="${i}" />`)
+      .map(i => `<lib-avatar  ${inputs.join(' ')} size="${i}" />`)
       .join('\n')
     return {
       styles: [

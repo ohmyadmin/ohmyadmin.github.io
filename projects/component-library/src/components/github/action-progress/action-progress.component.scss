@@ -1,0 +1,23 @@
+@use '../../../styles/mixins';
+
+:host {
+  --fgColor-attention: orange;
+  display: flex;
+  font-size: 0;
+  @include mixins.generate-size-variables(64px);
+  width: var(--size-md);
+}
+
+svg {
+  animation: rotate 1s linear infinite;
+  //animation-play-state: paused;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
