@@ -20,4 +20,8 @@ describe('AvatarGroupComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('When empty, should inform that there are no avatars', () => {
+    expect(fixture.debugElement.nativeElement.children).to.have.length(0)
+    expect(fixture.debugElement.nativeElement.textContent).to.have.string('No Avatars Found')
+  });
 });
