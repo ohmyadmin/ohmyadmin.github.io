@@ -58,7 +58,7 @@ jobs:
           fail_level: 'any'
           reporter: github-pr-review
           stylelint_config: '.stylelintrc.json'
-          stylelint_input: 'projects/component-library/**/*.scss'
+          stylelint_input: '**/*.scss'
 
   lint:
     name: Lint
