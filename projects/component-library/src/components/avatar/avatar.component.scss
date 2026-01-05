@@ -1,14 +1,16 @@
 @use '../../styles/mixins';
 @use '../../styles/colors';
 
-$medium_size: 4em;
+$medium-size: 4em;
 
 :host {
-  @include mixins.generate-size-variables($medium_size);
+  @include mixins.generate-size-variables($medium-size);
+
   --border-width: max(1px, calc(var(--size, var(--size-md)) * 0.04));
+
   align-items: center;
   aspect-ratio: 1;
-  background-color: var(--background-color, #{colors.$silvery_white});
+  background-color: var(--background-color, #{colors.$silvery-white});
   border-radius: 50%;
   border-width: var(--border-width);
   border-style: var(--border-style, none);

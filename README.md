@@ -24,8 +24,6 @@ npm install @analogjs/platform --save-dev
 * [ ] avatar not square aspect ratio https://picsum.photos/
 * [ ] User Tile text does not adjust to the avatar size
 * [ ] Avatar, Avatar-Group, Baseline and User Tile all use very similar inputs to avatar, find a better way
-* [ ] Delete example stories
-* [ ] Global Styles for vitest examples
 * [ ] Code Coverage Cypress?
 * [ ] Code Coverage report artifact
 * [ ] Diagonal stack

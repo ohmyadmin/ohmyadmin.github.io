@@ -1,27 +1,23 @@
 :host {
-  z-index: 1001;
-  box-shadow: 0 2px 6px rgba(115,103,240, .3);
-
   --button-height: 38px;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-  block-size: var(--button-height);
-  inline-size: calc(var(--button-height) + 2px);
-
-  position: fixed;
-  inset-block-start: 20%;
-  inset-inline-end: -2px;
-
   --color-primary: 115, 103, 240;
   --color-on-primary: 255, 255, 255;
 
   background-color: rgb(var(--color-primary));
-  color: rgb(var(--color-on-primary));
-
-  padding: 8px;
+  block-size: var(--button-height);
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  box-shadow: 0 2px 6px rgb(115 103 240 / 30%);
   box-sizing: border-box;
+  color: rgb(var(--color-on-primary));
   cursor: pointer;
+  inline-size: calc(var(--button-height) + 2px);
+  inset-block-start: 20%;
+  inset-inline-end: -2px;
+  position: fixed;
+  padding: 8px;
   transition: inset-inline-end 0.1s ease-in-out;
+  z-index: 1001;
 
   &:hover {
     inset-inline-end: 0
