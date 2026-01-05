@@ -29,8 +29,6 @@ describe('AvatarBadgeComponent', () => {
       .should('exist')
       .should('be.visible');
 
-
-
     cy.get('.avatar-status .badge')
       .should('have.length', 1)
       .should('exist')
