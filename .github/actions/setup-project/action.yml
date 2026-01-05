@@ -1,0 +1,17 @@
+name: 'Setup Project'
+description: 'Standard setup including checkout, node, and npm install'
+inputs:
+  install:
+    description: 'Whether to run npm ci'
+    default: 'true'
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/setup-node@v4
+      with:
+        node-version: '24.12.0'
+        cache: 'npm'
+    - name: Install dependencies
+      if: ${{ inputs.install == 'true' }}
+      run: npm ci
+      shell: bash
