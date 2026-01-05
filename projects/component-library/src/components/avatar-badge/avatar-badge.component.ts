@@ -11,12 +11,15 @@ import {AvatarComponent} from '../avatar/avatar.component';
   host: {
     'class': 'avatar-badge',
     '[class]': 'status()',
+    '[class.subtract]': 'subtract()',
     '[style.--size]': 'css_size_var()'
   }
 })
 export class AvatarBadgeComponent {
-  status = input<'away' | 'busy' | 'offline' | 'online'>('offline');
+  status = input<'away' | 'busy' | 'focus' | 'offline' | 'online'>('offline');
   size = input<tailwind_size>(tailwind_sizes.md);
+  subtract = input<boolean>(true);
+
   private avatars = contentChildren(AvatarComponent);
 
   protected css_size_var = computed(() => {

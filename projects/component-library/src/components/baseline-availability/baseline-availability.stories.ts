@@ -4,6 +4,13 @@ import {tailwind_sizes_values} from 'component-library/constants/tailwind-sizes'
 import {tailwind_sizes} from 'component-library/enums/tailwind-sizes.enum';
 
 const meta: Meta<BaselineAvailabilityComponent> = {
+  parameters: {
+    docs: {
+      description: {
+        component: 'Based off the baseline component seen at https://developer.mozilla.org/en-US/docs/Glossary/Baseline/Compatibility'
+      }
+    }
+  },
   argTypes: {
     size: {
       options: tailwind_sizes_values,

@@ -20,9 +20,15 @@ const meta: Meta<AvatarBadgeComponent> = {
     },
     status: {
       type: 'string',
-      options: ['away', 'busy', 'offline', 'online'],
+      options: ['away', 'busy', 'focus', 'offline', 'online'],
       control:'select'
+    },
+    subtract: {
+      control: 'boolean'
     }
+  },
+  args: {
+    subtract: true
   }
 }
 
@@ -33,7 +39,8 @@ export const Sample: Story = {
   render: (args) => {
     const inputs = [
       args.size ? `[size]="'${args.size}'"` : '',
-      args.status ? `[status]="'${args.status}'"` : ''
+      args.status ? `[status]="'${args.status}'"` : '',
+      args.subtract ? '[subtract]="true"' : '[subtract]="false"'
     ].join(' ')
     return {
       template: `
@@ -48,7 +55,8 @@ export const Sample: Story = {
 export const AllStatuses: Story = {
   render: (args) => {
     const inputs = [
-      args.size ? `[size]="'${args.size}'"` : ''
+      args.size ? `[size]="'${args.size}'"` : '',
+      args.subtract ? '[subtract]="true"' : '[subtract]="false"'
     ].join(' ')
     return {
       template: `
@@ -59,6 +67,9 @@ export const AllStatuses: Story = {
           <lib-avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" />
         </lib-avatar-badge>
         <lib-avatar-badge ${inputs} status="busy">
+          <lib-avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" />
+        </lib-avatar-badge>
+        <lib-avatar-badge ${inputs} status="focus">
           <lib-avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" />
         </lib-avatar-badge>
         <lib-avatar-badge ${inputs} status="online">
@@ -73,7 +84,8 @@ export const AvatarWithTextOnly: Story = {
   render: (args) => {
     const inputs = [
       args.size ? `[size]="'${args.size}'"` : '',
-      args.status ? `[status]="'${args.status}'"` : ''
+      args.status ? `[status]="'${args.status}'"` : '',
+      args.subtract ? '[subtract]="true"' : '[subtract]="false"'
     ].join(' ')
     return {
       template: `
@@ -88,7 +100,8 @@ export const AvatarWithTextOnly: Story = {
 export const AllStatusesWithTextOnly: Story = {
   render: (args) => {
     const inputs = [
-      args.size ? `[size]="'${args.size}'"` : ''
+      args.size ? `[size]="'${args.size}'"` : '',
+      args.subtract ? '[subtract]="true"' : '[subtract]="false"'
     ].join(' ')
     return {
       template: `
@@ -113,7 +126,8 @@ export const DoNotDisturb: Story = {
   render: (args) => {
     const inputs = [
       args.size ? `[size]="'${args.size}'"` : '',
-      args.status ? `[status]="'${args.status}'"` : ''
+      args.status ? `[status]="'${args.status}'"` : '',
+      args.subtract ? '[subtract]="true"' : '[subtract]="false"'
     ].join(' ')
     return {
       template: `
@@ -143,7 +157,8 @@ export const Birthday: Story = {
   render: (args) => {
     const inputs = [
       args.size ? `[size]="'${args.size}'"` : '',
-      args.status ? `[status]="'${args.status}'"` : ''
+      args.status ? `[status]="'${args.status}'"` : '',
+      args.subtract ? '[subtract]="true"' : '[subtract]="false"'
     ].join(' ')
     return {
       template: `
@@ -155,7 +170,6 @@ export const Birthday: Story = {
     }
   },
   args: {
-    status: 'busy',
     size: tailwind_sizes['4xl']
   }
 };
@@ -171,7 +185,8 @@ export const AddAction: Story = {
   render: (args) => {
     const inputs = [
       args.size ? `[size]="'${args.size}'"` : '',
-      args.status ? `[status]="'${args.status}'"` : ''
+      args.status ? `[status]="'${args.status}'"` : '',
+      args.subtract ? '[subtract]="true"' : '[subtract]="false"'
     ].join(' ')
     return {
       template: `
@@ -190,17 +205,18 @@ export const AddAction: Story = {
   }
 };
 
-export const SelectedBlue: Story = {
+export const Selected: Story = {
   render: (args) => {
     const inputs = [
       args.size ? `[size]="'${args.size}'"` : '',
-      args.status ? `[status]="'${args.status}'"` : ''
+      args.status ? `[status]="'${args.status}'"` : '',
+      args.subtract ? '[subtract]="true"' : '[subtract]="false"'
     ].join(' ')
     return {
       template: `
-        <lib-avatar-badge ${inputs} style="--status-color: #a1bdf0; --border-color: #a1bdf0">
+        <lib-avatar-badge ${inputs}>
           <lib-avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" [bordered]="true"/>
-          <svg ngProjectAs="badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor">
+          <svg ngProjectAs="badge" viewBox="0 -960 960 960" fill="currentColor">
             <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/>
           </svg>
         </lib-avatar-badge>
@@ -208,53 +224,7 @@ export const SelectedBlue: Story = {
     }
   },
   args: {
-    status: 'online',
-    size: tailwind_sizes['4xl']
-  }
-};
-
-export const SelectedDarkBlue: Story = {
-  render: (args) => {
-    const inputs = [
-      args.size ? `[size]="'${args.size}'"` : '',
-      args.status ? `[status]="'${args.status}'"` : ''
-    ].join(' ')
-    return {
-      template: `
-        <lib-avatar-badge ${inputs} style="--status-color: rgb(0, 109, 234); --border-color: rgb(0, 109, 234)">
-          <lib-avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" [bordered]="true"/>
-          <svg ngProjectAs="badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor">
-            <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/>
-          </svg>
-        </lib-avatar-badge>
-      `
-    }
-  },
-  args: {
-    status: 'online',
-    size: tailwind_sizes['4xl']
-  }
-};
-
-export const SelectedDarkBlueAlternate: Story = {
-  render: (args) => {
-    const inputs = [
-      args.size ? `[size]="'${args.size}'"` : '',
-      args.status ? `[status]="'${args.status}'"` : ''
-    ].join(' ')
-    return {
-      template: `
-        <lib-avatar-badge ${inputs} style="--status-color: rgb(0, 109, 234); --border-color: rgb(0, 109, 234)">
-          <lib-avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" [bordered]="true"/>
-          <svg ngProjectAs="badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" style="border-color: white">
-            <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/>
-          </svg>
-        </lib-avatar-badge>
-      `
-    }
-  },
-  args: {
-    status: 'online',
+    status: 'focus',
     size: tailwind_sizes['4xl']
   }
 };
