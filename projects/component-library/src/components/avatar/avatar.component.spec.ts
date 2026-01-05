@@ -147,4 +147,50 @@ describe('AvatarComponent', () => {
     expect(component.name()).toBe('Test');
     expect(component.size()).toBe('xl');
   });
+
+  it('should handle a small image (50x50) when the avatar size (64x64) is larger', () => {
+    fixture.componentRef.setInput('bordered', true);
+    fixture.componentRef.setInput('image_url', 'https://picsum.photos/id/237/50/50');
+    fixture.detectChanges();
+
+    const hostElement = fixture.nativeElement;
+
+    const hostStyles = window.getComputedStyle(hostElement);
+
+    const img = fixture.debugElement.query(By.css('img')).nativeElement;
+    const imgStyles = window.getComputedStyle(img);
+    expect(imgStyles.objectFit).toBe('cover');
+
+    const hostWidth = parseFloat(hostStyles.width);
+    const hostHeight = parseFloat(hostStyles.height);
+    const imgWidth = parseFloat(imgStyles.width);
+    const imgHeight = parseFloat(imgStyles.height);
+
+    expect(imgWidth).toBeLessThanOrEqual(hostWidth);
+    expect(imgHeight).toBeLessThanOrEqual(hostHeight);
+    expect(hostStyles.overflow).toBe('hidden');
+  });
+
+  it('should handle a non square small image (200x300) when the avatar size (64x64) is larger', () => {
+    fixture.componentRef.setInput('bordered', true);
+    fixture.componentRef.setInput('image_url', 'https://picsum.photos/id/237/200/300');
+    fixture.detectChanges();
+
+    const hostElement = fixture.nativeElement;
+
+    const hostStyles = window.getComputedStyle(hostElement);
+
+    const img = fixture.debugElement.query(By.css('img')).nativeElement;
+    const imgStyles = window.getComputedStyle(img);
+    expect(imgStyles.objectFit).toBe('cover');
+
+    const hostWidth = parseFloat(hostStyles.width);
+    const hostHeight = parseFloat(hostStyles.height);
+    const imgWidth = parseFloat(imgStyles.width);
+    const imgHeight = parseFloat(imgStyles.height);
+
+    expect(imgWidth).toBeLessThanOrEqual(hostWidth);
+    expect(imgHeight).toBeLessThanOrEqual(hostHeight);
+    expect(hostStyles.overflow).toBe('hidden');
+  });
 });

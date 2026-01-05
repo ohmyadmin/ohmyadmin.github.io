@@ -71,8 +71,15 @@ export const OnlyImage: Story = {
   }
 }
 
-export const MultipleNames: Story = {
+export const MultipleFirstNamesNames: Story = {
   ...OnlyText,
+  parameters: {
+    docs: {
+      description: {
+        story: 'Users name is "Jane Emily Sandra Doe"'
+      }
+    }
+  },
   args: {
     name: 'Jane Emily Sandra Doe'
   }
@@ -80,6 +87,13 @@ export const MultipleNames: Story = {
 
 export const NameWithExtraSpaces: Story = {
   ...OnlyText,
+  parameters: {
+    docs: {
+      description: {
+        story: 'Users name is "       Jane       Doe       "'
+      }
+    }
+  },
   args: {
     name: '       Jane       Doe       '
   }
@@ -87,6 +101,13 @@ export const NameWithExtraSpaces: Story = {
 
 export const NoLastName: Story = {
   ...OnlyText,
+  parameters: {
+    docs: {
+      description: {
+        story: 'Users name is just "Jane"'
+      }
+    }
+  },
   args: {
     name: 'Jane'
   }
