@@ -32,7 +32,9 @@ const meta: Meta<AvatarGroupComponent> = {
       control: 'select'
     },
     overlap: {
-      control: 'text'
+      control: 'number',
+      min: -100,
+      max: 0
     },
     size: {
       options: tailwind_sizes_values,
@@ -53,10 +55,10 @@ export const Sample: Story = {
       args.limit ? `[limit]="${args.limit}"` : '',
       args.overlap ? `[overlap]="'${args.overlap}'"` : '',
       args.size ? `[size]="'${args.size}'"` : ''
-    ]
+    ].join(' ');
     return {
       template: `
-        <lib-avatar-group ${inputs.join(' ')}>
+        <lib-avatar-group ${inputs}>
           <lib-avatar libRandomMilkyBackground name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" />
           <lib-avatar libRandomMilkyBackground name="Natasha Hinter" image_url="https://mockmind-api.uifaces.co/content/human/2.jpg" />
           <lib-avatar libRandomMilkyBackground name="Joe Soap" />
@@ -79,14 +81,17 @@ export const Sample: Story = {
 
 export const IndividualBorderedValues: Story = {
   render: (args) => {
-    const overlap = args.overlap ? `[size]="'${args.overlap}'"` : '';
-    const bordered = args.bordered ? `[bordered]="${args.bordered}"` : '';
-    const layering = args.layering ? `[layering]="'${args.layering}'"` : '';
-    const limit = args.limit ? `[limit]="${args.limit}"` : ''
-    const size = args.size ? `[limit]="${args.size}"` : ''
+    const inputs = [
+      args.bordered ? `[bordered]="${args.bordered}"` : '',
+      args.density ? `[density]="'${args.density}'"` : '',
+      args.layering ? `[layering]="'${args.layering}'"` : '',
+      args.limit ? `[limit]="${args.limit}"` : '',
+      args.overlap ? `[overlap]="${args.overlap}"` : '',
+      args.size ? `[size]="'${args.size}'"` : ''
+    ].join(' ');
     return {
       template: `
-        <lib-avatar-group ${overlap} ${limit} ${layering} ${bordered} ${size}>
+        <lib-avatar-group ${inputs}>
           <lib-avatar libRandomMilkyBackground name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" />
           <lib-avatar libRandomMilkyBackground name="Natasha Hinter" image_url="https://mockmind-api.uifaces.co/content/human/2.jpg" [bordered]="false" />
           <lib-avatar libRandomMilkyBackground name="Joe Soap" [bordered]="false" />

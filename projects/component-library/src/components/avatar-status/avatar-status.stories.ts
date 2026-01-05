@@ -33,10 +33,10 @@ export const Sample: Story = {
     const inputs = [
       args.size ? `[size]="'${args.size}'"` : '',
       args.status ? `[status]="'${args.status}'"` : ''
-    ]
+    ].join(' ')
     return {
       template: `
-        <lib-avatar-status ${inputs.join(' ')}>
+        <lib-avatar-status ${inputs}>
           <lib-avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" />
         </lib-avatar-status>
       `
@@ -48,19 +48,19 @@ export const AllStatuses: Story = {
   render: (args) => {
     const inputs = [
       args.size ? `[size]="'${args.size}'"` : ''
-    ]
+    ].join(' ')
     return {
       template: `
-        <lib-avatar-status ${inputs.join(' ')}>
+        <lib-avatar-status ${inputs}>
           <lib-avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" />
         </lib-avatar-status>
-        <lib-avatar-status ${inputs.join(' ')} status="away">
+        <lib-avatar-status ${inputs} status="away">
           <lib-avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" />
         </lib-avatar-status>
-        <lib-avatar-status ${inputs.join(' ')} status="busy">
+        <lib-avatar-status ${inputs} status="busy">
           <lib-avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" />
         </lib-avatar-status>
-        <lib-avatar-status ${inputs.join(' ')} status="online">
+        <lib-avatar-status ${inputs} status="online">
           <lib-avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" />
         </lib-avatar-status>
       `
@@ -73,10 +73,10 @@ export const AvatarWithTextOnly: Story = {
     const inputs = [
       args.size ? `[size]="'${args.size}'"` : '',
       args.status ? `[status]="'${args.status}'"` : ''
-    ]
+    ].join(' ')
     return {
       template: `
-        <lib-avatar-status ${inputs.join(' ')}>
+        <lib-avatar-status ${inputs}>
           <lib-avatar name="Craig Wayne" />
         </lib-avatar-status>
       `
@@ -88,19 +88,19 @@ export const AllStatusesWithTextOnly: Story = {
   render: (args) => {
     const inputs = [
       args.size ? `[size]="'${args.size}'"` : ''
-    ]
+    ].join(' ')
     return {
       template: `
-        <lib-avatar-status ${inputs.join(' ')}>
+        <lib-avatar-status ${inputs}>
           <lib-avatar name="Craig Wayne" />
         </lib-avatar-status>
-        <lib-avatar-status ${inputs.join(' ')} status="away">
+        <lib-avatar-status ${inputs} status="away">
           <lib-avatar name="Craig Wayne" />
         </lib-avatar-status>
-        <lib-avatar-status ${inputs.join(' ')} status="busy">
+        <lib-avatar-status ${inputs} status="busy">
           <lib-avatar name="Craig Wayne" />
         </lib-avatar-status>
-        <lib-avatar-status ${inputs.join(' ')} status="online">
+        <lib-avatar-status ${inputs} status="online">
           <lib-avatar name="Craig Wayne" />
         </lib-avatar-status>
       `
