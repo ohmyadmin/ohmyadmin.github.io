@@ -133,6 +133,13 @@ export const DoNotDisturb: Story = {
 };
 
 export const Birthday: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'Based off google contacts birthday avatar. See: https://contacts.google.com'
+      }
+    }
+  },
   render: (args) => {
     const inputs = [
       args.size ? `[size]="'${args.size}'"` : '',
@@ -142,7 +149,7 @@ export const Birthday: Story = {
       template: `
         <lib-avatar-badge ${inputs} style="--status-color: white">
           <lib-avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" />
-          <img ngProjectAs="badge" src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f382/emoji.svg" style="box-shadow: 0 1px 2px rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15);"/>
+          <img alt="birthday icon" ngProjectAs="badge" src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f382/emoji.svg" style="box-shadow: 0 1px 2px rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15);"/>
         </lib-avatar-badge>
       `
     }
@@ -154,6 +161,13 @@ export const Birthday: Story = {
 };
 
 export const AddAction: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'Based off a google contact, when contact card does not have a profile picture. See: https://contacts.google.com'
+      }
+    }
+  },
   render: (args) => {
     const inputs = [
       args.size ? `[size]="'${args.size}'"` : '',
