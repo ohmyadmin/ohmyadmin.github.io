@@ -23,11 +23,9 @@ jobs:
     name: NPM Audit
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v4
+      - uses: ./.github/actions/setup-project
         with:
-          node-version: '24.12.0'
-          cache: 'npm'
+          install: 'false'
       - run: npm audit --audit-level=high
 
   review_dog:
@@ -49,48 +47,28 @@ jobs:
     name: Lint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '24.12.0'
-          cache: 'npm'
-      - run: npm ci
+      - uses: ./.github/actions/setup-project
       - run: npm run lint
 
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '24.12.0'
-          cache: 'npm'
-      - run: npm ci
+      - uses: ./.github/actions/setup-project
       - run: npm run build:component-library
 
   build_storybook:
     name: Build Storybook
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '24.12.0'
-          cache: 'npm'
-      - run: npm ci
+      - uses: ./.github/actions/setup-project
       - run: npm run build:component-library:storybook
 
   cypress_tests:
     name: Cypress Tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '24.12.0'
-          cache: 'npm'
-      - run: npm ci
+      - uses: ./.github/actions/setup-project
       - run: npm run test:cypress:component
       - name: Upload Cypress screenshots
         uses: actions/upload-artifact@v6
@@ -104,12 +82,7 @@ jobs:
     name: Angular Tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '24.12.0'
-          cache: 'npm'
-      - run: npm ci
+      - uses: ./.github/actions/setup-project
       - run: npx playwright install
       - run: npm run test:component-library:ci
 #      - name: Code Coverage Summary Report
