@@ -1,5 +1,5 @@
 export * from './components/avatar/avatar.component';
-export * from './components/avatar-status/avatar-status.component';
+export * from './components/avatar-badge/avatar-badge.component';
 export * from './components/avatar-group/avatar-group.component';
 export * from './components/baseline-availability/baseline-availability.component';
 export * from './components/flexbox/column/flexbox-column.component';
