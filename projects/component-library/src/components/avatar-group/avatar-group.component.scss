@@ -8,12 +8,12 @@
       display: none;
     }
   }
+}
 
-  &.compact ::ng-deep .avatar:not(:last-child) {
-    margin-right: var(--overlap, calc(var(--size, var(--size-md)) * -0.45));
-  }
+:host(.compact) ::ng-deep .avatar:not(:last-child) {
+  margin-right: var(--overlap, calc(var(--size, var(--size-md)) * -0.45));
+}
 
-  &.loose ::ng-deep .avatar:not(:last-child) {
-    margin-right: var(--overlap, calc(var(--size, var(--size-md)) * -0.2));
-  }
+:host(.loose) ::ng-deep .avatar:not(:last-child) {
+  margin-right: var(--overlap, calc(var(--size, var(--size-md)) * -0.2));
 }
