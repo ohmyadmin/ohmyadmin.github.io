@@ -55,9 +55,10 @@ jobs:
       - uses: reviewdog/action-stylelint@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          fail_level: 'any'
           reporter: github-pr-review
           stylelint_config: '.stylelintrc.json'
-          fail_level: 'any'
+          stylelint_input: 'projects/component-library/**/*.scss'
 
   lint:
     name: Lint
