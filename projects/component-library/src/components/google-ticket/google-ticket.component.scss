@@ -1,51 +1,51 @@
-$width_perforation: 4px;
-$color_ticket: #fff;
-$border_radius_normal: 30px;
-$border_radius_sharp: 18px;
-$ticket_width: 1000px;
+$width-perforation: 4px;
+$color-ticket: #fff;
+$border-radius-normal: 30px;
+$border-radius-sharp: 18px;
+$ticket-width: 1000px;
 
 :host {
   display: inline-flex;
-  column-gap: $width_perforation;
-  width: $ticket_width;
-  height: $ticket_width * 0.35;
-  animation: rotateMinusSix .5s cubic-bezier(0.47, 1.64, 0.41, 0.9) .1s forwards, zoomIn .5s cubic-bezier(0.47, 1.64, 0.41, 0.9) .1s forwards;
+  column-gap: $width-perforation;
+  width: $ticket-width;
+  height: $ticket-width * 0.35;
+  animation: rotate-minus-six .5s cubic-bezier(0.47, 1.64, 0.41, 0.9) .1s forwards, zoom-in .5s cubic-bezier(0.47, 1.64, 0.41, 0.9) .1s forwards;
 }
 
 .stub, .body {
-  background-color: $color_ticket;
+  background-color: $color-ticket;
 }
 
 .stub {
-  border-radius: $border_radius_normal $border_radius_sharp $border_radius_sharp $border_radius_normal;
-  padding: $ticket_width * 0.333 * 0.125;
+  border-radius: $border-radius-normal $border-radius-sharp $border-radius-sharp $border-radius-normal;
+  padding: $ticket-width * 0.333 * 0.125;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 33%;
   position: relative;
 
-  &:after {
-    background: repeating-linear-gradient(transparent 0, transparent 15px, $color_ticket 15px, $color_ticket 30px);
+  &::after {
+    background: repeating-linear-gradient(transparent 0, transparent 15px, $color-ticket 15px, $color-ticket 30px);
     content: "";
     height: 90%;
     position: absolute;
-    right: -1 * $width_perforation;
-    width: $width_perforation;
+    right: -1 * $width-perforation;
+    width: $width-perforation;
   }
 }
 
 .body {
-  border-radius: $border_radius_sharp $border_radius_normal $border_radius_normal $border_radius_sharp;
+  border-radius: $border-radius-sharp $border-radius-normal $border-radius-normal $border-radius-sharp;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: $ticket_width * 0.666 * 0.1;
+  padding: $ticket-width * 0.666 * 0.1;
   flex-grow: 1;
   column-gap: 10%;
 }
 
-@keyframes rotateMinusSix {
+@keyframes rotate-minus-six {
   0% {
     transform: rotate(0);
   }
@@ -55,13 +55,15 @@ $ticket_width: 1000px;
   }
 }
 
-@keyframes zoomIn {
+@keyframes zoom-in {
   0% {
     scale: .8;
   }
+
   50% {
     scale: 1.2;
   }
+
   100% {
     scale: 1;
   }

@@ -1,10 +1,8 @@
 :host {
   display: var(--flex-style, flex);
-  flex-direction: var(--direction, row);
+  flex-flow: var(--direction, row) wrap;
   gap: var(--gap, 0);
   align-items: var(--align-items, stretch);
-  align-content: var(--align-content, 'stretch');
-  justify-content: var(--justify-content, flex-start);
-  flex-wrap: wrap;
+  place-content: var(--align-content, 'stretch') var(--justify-content, flex-start);
   width: 100%;
 }
