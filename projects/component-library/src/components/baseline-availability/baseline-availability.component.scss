@@ -1,6 +1,11 @@
 :host {
   display: inline-flex;
-  column-gap: 10px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+:host ::ng-deep .avatar-group {
+  flex-wrap: nowrap;
 }
 
 :host ::ng-deep .avatar img {

@@ -85,7 +85,7 @@ export const Sample: Story = {
             [inline]="${args.inline}"
             [align_items]="${args.align_items}"
             [justify_content]="${args.justify_content}"
-            [align-content]="${args.align_content}"
+            [align_content]="${args.align_content}"
         >
           <lib-column>1</lib-column>
           <lib-column style="width: var(--example-block-size-large)">2</lib-column>

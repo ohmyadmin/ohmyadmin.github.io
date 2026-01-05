@@ -108,10 +108,10 @@ export const AllSizes: Story = {
       args.name ? `[name]="'${args.name}'"` : '',
       args.image_url ? `[image_url]="'${args.image_url}'"` : '',
       args.bordered ? `[bordered]="${args.bordered}"` : ''
-    ];
+    ].join(' ');
 
     const template_string = tailwind_sizes_values
-      .map(i => `<lib-avatar  ${inputs.join(' ')} size="${i}" />`)
+      .map(i => `<lib-avatar  ${inputs} size="${i}" />`)
       .join('\n')
     return {
       styles: [
