@@ -20,8 +20,9 @@ $medium-size: 4em;
   display: inline-flex;
   justify-content: center;
   position: relative;
-  width: min(var(--size, var(--size-md)), 100cqmin);
   user-select: none;
+  width: min(var(--size, var(--size-md)), 100cqmin);
+  overflow: hidden;
 }
 
 .text {

@@ -5,19 +5,17 @@
     "node": ">=24.12.0"
   },
   "scripts": {
-    "build": "ng build",
-    "build:component-library": "ng run component-library:build",
-    "build:component-library:storybook": "ng run component-library:build-storybook",
+    "build": "ng run component-library:build",
+    "build:storybook": "ng run component-library:build-storybook",
     "lint": "ng lint --cache",
     "lint:styles": "stylelint projects/component-library/**/*.scss",
     "ng": "ng",
     "start": "ng serve",
     "start:cypress": "cypress open",
     "storybook": "ng run component-library:storybook",
-    "test": "ng test",
-    "test:component-library": "VITEST_HEADLESS=false ng run component-library:test",
-    "test:component-library:ci": "ng run component-library:test --no-watch",
-    "test:cypress:component": "cypress run --component",
+    "test": "VITEST_HEADLESS=false ng run component-library:test",
+    "test:ci": "ng run component-library:test --no-watch",
+    "test:cypress": "cypress run --component",
     "watch": "ng build --watch --configuration development"
   },
   "prettier": {
