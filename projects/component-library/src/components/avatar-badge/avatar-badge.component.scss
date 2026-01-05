@@ -7,6 +7,7 @@ $medium-size: 4em;
   @include mixins.generate-size-variables($medium-size);
 
   --border-width: max(1px, calc(var(--size, var(--size-md)) * 0.04));
+  --status-size: 30cqmin;
 
   container-type: inline-size;
   display: inline-flex;
@@ -17,29 +18,43 @@ $medium-size: 4em;
 
 ::ng-deep {
   .badge, [ngProjectAs="badge"] {
-    --status-size: 30cqmin;
-
     aspect-ratio: 1;
-    background: var(--status-color, #{colors.$offline});
+    background: var(--status-color, #{colors.$status-offline});
     bottom: 0;
     border-radius: 50%;
-    border: var(--border-width) solid var(--border-color, white);
+    border: var(--border-width) solid var(--border-color, var(--status-color));
     height: var(--status-size);
     position: absolute;
     width: var(--status-size);
     right: 0;
   }
+
 }
 
-
 :host(.online) {
-  --status-color: #{colors.$online};
+  --border-color: #{colors.$status-online};
+  --status-color: #{colors.$status-online};
+}
+
+:host(.focus) {
+  --border-color: #{colors.$status-focus};
+  --status-color: #{colors.$status-focus};
 }
 
 :host(.busy) {
-  --status-color: #{colors.$busy};
+  --border-color: #{colors.$status-busy};
+  --status-color: #{colors.$status-busy};
 }
 
 :host(.away) {
-  --status-color: #{colors.$away};
+  --border-color: #{colors.$status-away};
+  --status-color: #{colors.$status-away};
+}
+
+:host(.subtract) {
+  ::ng-deep {
+    .badge, [ngProjectAs="badge"] {
+      --border-color: white;
+    }
+  }
 }
