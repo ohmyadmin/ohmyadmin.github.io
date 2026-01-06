@@ -20,7 +20,7 @@ const meta: Meta<AvatarBadgeComponent> = {
     },
     status: {
       type: 'string',
-      options: ['away', 'busy', 'focus', 'offline', 'online'],
+      options: ['away', 'busy', 'focus', 'offline', 'online', 'reachable'],
       control:'select'
     },
     subtract: {
@@ -225,6 +225,37 @@ export const Selected: Story = {
   },
   args: {
     status: 'focus',
+    size: tailwind_sizes['4xl']
+  }
+};
+export const LinkedInReachableStatus: Story = {
+  storyName: 'LinkedIn Reachable Status',
+  parameters: {
+    docs: {
+      description: {
+        story: 'Based on LinkedIn\'s reachable status'
+      }
+    }
+  },
+  render: (args) => {
+    const inputs = [
+      args.size ? `[size]="'${args.size}'"` : '',
+      args.status ? `[status]="'${args.status}'"` : '',
+      args.subtract ? '[subtract]="true"' : '[subtract]="false"'
+    ].join(' ')
+    return {
+      template: `
+        <lib-avatar-badge ${inputs}>
+          <lib-avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" />
+          <svg ngProjectAs="badge" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="8" fill="white" stroke="#38A06C" stroke-width="4"/>
+          </svg>
+        </lib-avatar-badge>
+      `
+    }
+  },
+  args: {
+    status: 'reachable',
     size: tailwind_sizes['4xl']
   }
 };

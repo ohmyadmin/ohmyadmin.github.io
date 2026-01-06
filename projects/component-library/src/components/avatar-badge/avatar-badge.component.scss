@@ -28,17 +28,11 @@ $medium-size: 4em;
     width: var(--status-size);
     right: 0;
   }
-
 }
 
-:host(.online) {
-  --border-color: #{colors.$status-online};
-  --status-color: #{colors.$status-online};
-}
-
-:host(.focus) {
-  --border-color: #{colors.$status-focus};
-  --status-color: #{colors.$status-focus};
+:host(.away) {
+  --border-color: #{colors.$status-away};
+  --status-color: #{colors.$status-away};
 }
 
 :host(.busy) {
@@ -46,9 +40,19 @@ $medium-size: 4em;
   --status-color: #{colors.$status-busy};
 }
 
-:host(.away) {
-  --border-color: #{colors.$status-away};
-  --status-color: #{colors.$status-away};
+:host(.focus) {
+  --border-color: #{colors.$status-focus};
+  --status-color: #{colors.$status-focus};
+}
+
+:host(.online) {
+  --border-color: #{colors.$status-online};
+  --status-color: #{colors.$status-online};
+}
+
+:host(.reachable) {
+  --border-color: #{colors.$status-online};
+  --status-color: white;
 }
 
 :host(.subtract) {

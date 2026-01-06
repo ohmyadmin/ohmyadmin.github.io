@@ -16,7 +16,7 @@ import {AvatarComponent} from '../avatar/avatar.component';
   }
 })
 export class AvatarBadgeComponent {
-  status = input<'away' | 'busy' | 'focus' | 'offline' | 'online'>('offline');
+  status = input<'away' | 'busy' | 'focus' | 'offline' | 'online' | 'reachable'>('offline');
   size = input<tailwind_size>(tailwind_sizes.md);
   subtract = input<boolean>(true);
 
