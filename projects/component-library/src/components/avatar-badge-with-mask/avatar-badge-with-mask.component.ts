@@ -1,0 +1,35 @@
+import {ChangeDetectionStrategy, Component, computed, contentChildren, input} from '@angular/core';
+import {tailwind_size} from '../../types/tailwind-sizes.type';
+import {tailwind_sizes} from '../../enums/tailwind-sizes.enum';
+import {AvatarComponent} from '../avatar/avatar.component';
+import {BaseComponent} from 'component-library/components/_base/base.component';
+
+@Component({
+  selector: 'lib-avatar-badge-with-mask',
+  templateUrl: './avatar-badge-with-mask.component.html',
+  styleUrl: 'avatar-badge-with-mask.component.scss',
+  host: {
+    '[class]': 'host_css_classes()',
+    '[style.--size]': 'css_size_var()'
+  },
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class AvatarBadgeWithMaskComponent extends BaseComponent {
+  status = input<'away' | 'busy' | 'focus' | 'offline' | 'online' | 'reachable'>('offline');
+  size = input<tailwind_size>(tailwind_sizes.md);
+  mode = input<'notch'|'overlay'>('notch')
+
+  private avatars = contentChildren(AvatarComponent);
+
+  protected host_css_classes = computed(() => {
+    const status = this.status();
+    const mode = this.mode();
+
+    return `${status} ${mode}`
+  });
+
+  protected css_size_var = computed(() => {
+    const s = this.size();
+    return s ? `var(--size-${s})` : null;
+  });
+}
