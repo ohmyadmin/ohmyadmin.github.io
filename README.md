@@ -32,9 +32,3 @@ npm install @analogjs/platform --save-dev
   * [ ] Firefox
   * [ ] Edge
   * [ ] Safari
-* [ ] Avoid ng-deep
-* [ ] ReviewDog stylelint and eslint
-* [ ] Avatar Checkbox
-* [ ] Chromatic deploys
-  * [ ] npx chromatic --project-token=chpt_ab84311b35af5c1 --build-script-name=build:storybook
-* [ ] Baseline Availability has some weird radius on the lines
