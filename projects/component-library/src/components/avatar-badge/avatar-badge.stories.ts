@@ -25,7 +25,7 @@ const meta: Meta<AvatarBadgeComponent> = {
     },
     mode: {
       control: 'select',
-      options: ['overlay', 'subtract']
+      options: ['overlay', 'notch']
     }
   },
   args: {
