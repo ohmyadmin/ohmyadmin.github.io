@@ -31,6 +31,8 @@ jobs:
 
       - run: npm run build:storybook
 
+      - run: npx chromatic --build-script-name=build:storybook --yes --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
