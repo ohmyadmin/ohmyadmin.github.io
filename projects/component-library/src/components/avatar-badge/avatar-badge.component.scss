@@ -5,11 +5,23 @@ $medium-size: 4em;
 
 :host {
   @include mixins.generate-size-variables($medium-size);
+
   container-type: inline-size;
   display: inline-flex;
   position: relative;
   width: min(var(--size, var(--size-md)), 100cqmin);
   line-height: 0;
+
+  .badge, ::ng-deep [ngProjectAs="badge"] {
+    aspect-ratio: 1;
+    background: var(--status-color, #{colors.$status-offline});
+    bottom: 0;
+    border-radius: 50%;
+    height: var(--badge-size);
+    position: absolute;
+    width: var(--badge-size);
+    right: 0;
+  }
 }
 
 :host(.overlay) {
@@ -25,33 +37,16 @@ $medium-size: 4em;
 
   ::ng-deep {
     .avatar {
-      /* The size of the 'bite' (0% is no bite, 50% eats half the image) */
-      --cutout_size: 14.6cqmin;
+      --notch-size: 14.6cqmin;
+      --notch-position: 85%;
+      --smooth-edge: 0.5%;
 
-      /* Position of the cutout center */
-      --cutout_position: 85%;
-      /* Anti-aliasing buffer for smooth edges */
-      --smooth_edge: 0.5%;
       mask: radial-gradient(
-          circle at var(--cutout_position) var(--cutout_position),
-          transparent var(--cutout_size),
-          black calc(var(--cutout_size) + var(--smooth_edge))
+          circle at var(--notch-position) var(--notch-position),
+          transparent var(--notch-size),
+          black calc(var(--notch-size) + var(--smooth-edge))
       );
     }
-  }
-}
-
-
-:host {
-  .badge, ::ng-deep [ngProjectAs="badge"] {
-    aspect-ratio: 1;
-    background: var(--status-color, #{colors.$status-offline});
-    bottom: 0;
-    border-radius: 50%;
-    height: var(--badge-size);
-    position: absolute;
-    width: var(--badge-size);
-    right: 0;
   }
 }
 
@@ -78,6 +73,7 @@ $medium-size: 4em;
 :host(.reachable) {
   --status-color: transparent;
   --border-color: transparent;
+
   .badge {
     border: max(1px, calc(var(--size, var(--size-md)) * 0.04)) solid #{colors.$status-online};
   }
