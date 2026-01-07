@@ -2,7 +2,7 @@ import {ChangeDetectionStrategy, Component, computed, contentChildren, input} fr
 import {tailwind_size} from '../../types/tailwind-sizes.type';
 import {tailwind_sizes} from '../../enums/tailwind-sizes.enum';
 import {AvatarComponent} from '../avatar/avatar.component';
-import {BaseComponent} from 'component-library/components/_base/base.component';
+import {BaseComponent} from '../_base/base.component';
 
 @Component({
   selector: 'lib-avatar-badge',
