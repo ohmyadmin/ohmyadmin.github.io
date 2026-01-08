@@ -8,8 +8,13 @@
   flex-wrap: nowrap;
 }
 
+:host ::ng-deep {
+  .avatar, img {
+    border-radius: unset
+  }
+}
+
 :host ::ng-deep .avatar img {
-  border-radius: unset;
   object-fit: contain;
 }
 
