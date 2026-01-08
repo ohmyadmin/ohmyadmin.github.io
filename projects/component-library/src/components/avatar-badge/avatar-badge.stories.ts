@@ -135,7 +135,7 @@ export const DoNotDisturb: Story = {
       template: `
         <lib-avatar-badge ${inputs}>
           <lib-avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" />
-          <svg ngProjectAs="badge" viewBox="0 -960 960 960" fill="currentColor">
+          <svg ngProjectAs="badge" viewBox="0 -960 960 960" fill="white">
             <path d="M200-440v-80h560v80H200Z"/>
           </svg>
        </lib-avatar-badge>
@@ -195,7 +195,7 @@ export const AddAction: Story = {
       template: `
         <lib-avatar-badge ${inputs}>
           <lib-avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" />
-          <svg ngProjectAs="badge" viewBox="0 -960 960 960" fill="currentColor">
+          <svg ngProjectAs="badge" viewBox="0 -960 960 960" fill="white">
             <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/>
           </svg>
         <lib-avatar-badge>
@@ -219,7 +219,7 @@ export const Selected: Story = {
       template: `
         <lib-avatar-badge ${inputs}>
           <lib-avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" [bordered]="true"/>
-          <svg ngProjectAs="badge" viewBox="0 -960 960 960" fill="currentColor">
+          <svg ngProjectAs="badge" viewBox="0 -960 960 960" fill="white">
             <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/>
           </svg>
         <lib-avatar-badge>
@@ -252,7 +252,7 @@ export const LinkedInReachableStatus: Story = {
         <lib-avatar-badge ${inputs}>
           <lib-avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" />
           <svg ngProjectAs="badge" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="10" cy="10" r="8" fill="white" stroke="#38A06C" stroke-width="4"/>
+            <circle cx="10" cy="10" r="8" fill="transparent" stroke="#38A06C" stroke-width="4"/>
           </svg>
        </lib-avatar-badge>
       `
