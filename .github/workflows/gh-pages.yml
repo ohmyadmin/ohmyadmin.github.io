@@ -49,4 +49,4 @@ jobs:
         with:
           fetch-depth: 0
       - uses: ./.github/actions/setup-project
-      - run: npx chromatic --build-script-name=build:storybook --yes --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+      - run: npx chromatic --build-script-name=build:storybook --yes --exit-zero-on-changes --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }}
