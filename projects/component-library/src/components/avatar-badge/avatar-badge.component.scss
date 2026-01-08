@@ -14,67 +14,70 @@ $medium-size: 4em;
 
   .badge, ::ng-deep [ngProjectAs="badge"] {
     aspect-ratio: 1;
-    background: var(--status-color, #{colors.$status-offline});
+    background: var(--avatar-badge-color, #{colors.$status-offline});
     bottom: 0;
     border-radius: 50%;
-    height: var(--badge-size);
+    height: var(--avatar-badge-size);
     position: absolute;
-    width: var(--badge-size);
+    width: var(--avatar-badge-size);
     right: 0;
   }
 }
 
 :host(.overlay) {
-  --badge-size: 30cqmin;
+  --avatar-badge-size: 30cqmin;
 }
 
 :host(.notch) {
-  --badge-size: 22.8cqmin;
+  --avatar-badge-size: 22.8cqmin;
 
   .badge, ::ng-deep [ngProjectAs="badge"] {
     transform: translate(-16%, -16%);
+    z-index: 1;
   }
 
   ::ng-deep {
     .avatar {
-      --notch-size: 14.6cqmin;
-      --notch-position: 85%;
-      --smooth-edge: 0.5%;
+      $notch-size: 15cqmin;
+      $notch-position: 100cqmin - $notch-size;
+      $smooth-edge: 0.5%;
 
       mask: radial-gradient(
-          circle at var(--notch-position) var(--notch-position),
-          transparent var(--notch-size),
-          black calc(var(--notch-size) + var(--smooth-edge))
+          circle at $notch-position $notch-position,
+          transparent $notch-size,
+          black calc(#{$notch-size} + #{$smooth-edge})
       );
     }
   }
 }
 
 :host(.away) {
-  --status-color: #{colors.$status-away};
-  --border-color: #{colors.$status-away};
+  --avatar-badge-color: #{colors.$status-away};
+  --avatar-border-color: #{colors.$status-away};
 }
 
 :host(.busy) {
-  --status-color: #{colors.$status-busy};
-  --border-color: #{colors.$status-busy};
+  --avatar-badge-color: #{colors.$status-busy};
+  --avatar-border-color: #{colors.$status-busy};
 }
 
 :host(.focus) {
-  --status-color: #{colors.$status-focus};
-  --border-color: #{colors.$status-focus};
+  --avatar-badge-color: #{colors.$status-focus};
+  --avatar-border-color: #{colors.$status-focus};
 }
 
 :host(.online) {
-  --status-color: #{colors.$status-online};
-  --border-color: #{colors.$status-online};
+  --avatar-badge-color: #{colors.$status-online};
+  --avatar-border-color: #{colors.$status-online};
 }
 
 :host(.reachable) {
-  --status-color: transparent;
-  --border-color: transparent;
+  --avatar-badge-color: transparent;
+  --avatar-border-color: transparent;
 
   .badge {
-    border: max(1px, calc(var(--size, var(--size-md)) * 0.04)) solid #{colors.$status-online};
+    --avatar-border-width: max(3px, calc(var(--size, var(--size-md)) * 0.04));
+
+    border: var(--avatar-border-width) solid #{colors.$status-online};
   }
 }

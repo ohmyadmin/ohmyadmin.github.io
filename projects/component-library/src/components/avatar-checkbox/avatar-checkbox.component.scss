@@ -1,0 +1,13 @@
+@use '../../styles/colors';
+
+:host {
+  --avatar-border-color: transparent;
+  --avatar-background-color: transparent;
+
+  display: inline-flex;
+  cursor: pointer;
+}
+
+::ng-deep .avatar {
+  padding: var(--avatar-border-width);
+}

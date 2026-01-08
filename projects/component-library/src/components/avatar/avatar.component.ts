@@ -12,7 +12,7 @@ import {tailwind_size} from '../../types/tailwind-sizes.type';
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     '[attr.aria-label]': 'name()',
-    '[style.--border-style]': `bordered() ? 'solid' : undefined`,
+    '[style.--avatar-border-style]': `bordered() ? 'solid' : undefined`,
     '[style.--size]': 'css_size_variable()',
     'class': 'avatar'
   }

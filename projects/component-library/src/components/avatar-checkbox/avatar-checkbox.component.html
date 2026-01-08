@@ -1,0 +1,12 @@
+@if(real_selected_value()){
+  <lib-avatar-badge [size]="size()" status="focus" mode="notch">
+    <lib-avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" [bordered]="true"/>
+    <svg ngProjectAs="badge" viewBox="0 -960 960 960" fill="white">
+      <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/>
+    </svg>
+  </lib-avatar-badge>
+}
+@else {
+  <lib-avatar [size]="size()" name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" [bordered]="true"/>
+}
+

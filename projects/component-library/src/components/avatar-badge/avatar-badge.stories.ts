@@ -164,10 +164,10 @@ export const Birthday: Story = {
     ].join(' ')
     return {
       template: `
-        <lib-avatar-badge ${inputs} style="--status-color: white">
+        <lib-avatar-badge ${inputs} style="--avatar-badge-color: white">
           <lib-avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" />
-          <img alt="birthday icon" ngProjectAs="badge" src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f382/emoji.svg" style="border:max(1px, calc(var(--size, var(--size-md)) * 0.04)) solid var(--status-color);box-shadow: 0 1px 2px rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15);"/>
-        <lib-avatar-badge>
+          <img alt="birthday icon" ngProjectAs="badge" src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f382/emoji.svg" style="border:max(1px, calc(var(--size, var(--size-md)) * 0.04)) solid var(--avatar-badge-color);box-shadow: 0 1px 2px rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15);"/>
+        </lib-avatar-badge>
       `
     }
   },
@@ -198,36 +198,12 @@ export const AddAction: Story = {
           <svg ngProjectAs="badge" viewBox="0 -960 960 960" fill="white">
             <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/>
           </svg>
-        <lib-avatar-badge>
+        </lib-avatar-badge>
       `
     }
   },
   args: {
     status: 'online',
-    size: tailwind_sizes['4xl']
-  }
-};
-
-export const Selected: Story = {
-  render: (args) => {
-    const inputs = [
-      args.size ? `[size]="'${args.size}'"` : '',
-      args.status ? `[status]="'${args.status}'"` : '',
-      args.mode ? `[mode]="'${args.mode}'"` : ''
-    ].join(' ')
-    return {
-      template: `
-        <lib-avatar-badge ${inputs}>
-          <lib-avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" [bordered]="true"/>
-          <svg ngProjectAs="badge" viewBox="0 -960 960 960" fill="white">
-            <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/>
-          </svg>
-        <lib-avatar-badge>
-      `
-    }
-  },
-  args: {
-    status: 'focus',
     size: tailwind_sizes['4xl']
   }
 };
