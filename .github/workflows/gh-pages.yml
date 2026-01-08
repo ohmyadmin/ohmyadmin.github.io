@@ -31,8 +31,6 @@ jobs:
 
       - run: npm run build:storybook
 
-      - run: npx chromatic --build-script-name=build:storybook --yes --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -41,3 +39,14 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  deploy_to_chromatic:
+    environment:
+      name: github-pages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: ./.github/actions/setup-project
+      - run: npx chromatic --build-script-name=build:storybook --yes --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }}
