@@ -50,7 +50,6 @@ projects/component-library/coverage
 .eslintcache
 
 # Cypress
-cypress/screenshots
 
 # Storybook - https://storybook.js.org/docs/angular/sharing/publish-storybook#versioning-storybook
 /storybook-static

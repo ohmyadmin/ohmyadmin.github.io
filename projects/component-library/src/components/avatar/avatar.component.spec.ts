@@ -92,7 +92,7 @@ describe('AvatarComponent', () => {
     fixture.componentRef.setInput('bordered', true);
     fixture.detectChanges();
     const hostElement = fixture.nativeElement;
-    expect(hostElement.style.getPropertyValue('--border-style')).toBe('solid');
+    expect(hostElement.style.getPropertyValue('--avatar-border-style')).toBe('solid');
   });
 
   it('should apply size styles when size is provided', () => {
@@ -119,7 +119,7 @@ describe('AvatarComponent', () => {
 
     const hostElement = fixture.nativeElement;
     expect(hostElement.getAttribute('aria-label')).toBe('Test User');
-    expect(hostElement.style.getPropertyValue('--border-style')).toBe('');
+    expect(hostElement.style.getPropertyValue('--avatar-border-style')).toBe('');
     expect(hostElement.style.getPropertyValue('--size')).toBe('var(--size-lg)');
   });
 
@@ -168,7 +168,6 @@ describe('AvatarComponent', () => {
 
     expect(imgWidth).toBeLessThanOrEqual(hostWidth);
     expect(imgHeight).toBeLessThanOrEqual(hostHeight);
-    expect(hostStyles.overflow).toBe('hidden');
   });
 
   it('should handle a non square small image (200x300) when the avatar size (64x64) is larger', () => {
@@ -191,6 +190,5 @@ describe('AvatarComponent', () => {
 
     expect(imgWidth).toBeLessThanOrEqual(hostWidth);
     expect(imgHeight).toBeLessThanOrEqual(hostHeight);
-    expect(hostStyles.overflow).toBe('hidden');
   });
 });

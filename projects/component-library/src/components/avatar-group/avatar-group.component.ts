@@ -27,7 +27,7 @@ import {tailwind_size} from '../../types/tailwind-sizes.type';
     'class': 'avatar-group',
     '[class]': 'density()',
     '[style.--item-count]': 'avatar_items_as_html().length',
-    '[style.--overlap]': 'overlap()'
+    '[style.--avatar-group-overlap]': 'overlap()'
   },
   changeDetection: ChangeDetectionStrategy.OnPush
 })

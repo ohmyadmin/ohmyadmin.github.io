@@ -6,15 +6,15 @@ $medium-size: 4em;
 :host {
   @include mixins.generate-size-variables($medium-size);
 
-  --border-width: max(1px, calc(var(--size, var(--size-md)) * 0.04));
+  --avatar-border-width: max(3px, calc(var(--size, var(--size-md)) * 0.04));
 
   align-items: center;
   aspect-ratio: 1;
-  background-color: var(--background-color, #{colors.$silvery-white});
+  background-color: var(--avatar-background-color, #{colors.$silvery-white});
   border-radius: 50%;
-  border-width: var(--border-width);
-  border-style: var(--border-style, none);
-  border-color: var(--border-color, rgb(0 0 0 / 10%));
+  border-width: var(--avatar-border-width);
+  border-style: var(--avatar-border-style, none);
+  border-color: var(--avatar-border-color, rgb(0 0 0 / 10%));
   color:rgb(0 0 0 / 50%);
   container-type: inline-size;
   display: inline-flex;
@@ -22,7 +22,6 @@ $medium-size: 4em;
   position: relative;
   user-select: none;
   width: min(var(--size, var(--size-md)), 100cqmin);
-  overflow: hidden;
 }
 
 .text {

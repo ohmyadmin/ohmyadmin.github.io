@@ -9,11 +9,11 @@
       @for (browser of group.items; track browser.id) {
         <lib-avatar-group layering="first_on_top" density="loose" [size]="size()">
           <lib-avatar
-            style="--background-color: transparent"
+            style="--avatar-background-color: transparent"
             [image_url]="browser.icon"
           />
           <lib-avatar
-            style="--background-color: transparent"
+            style="--avatar-background-color: transparent"
             [image_url]="group.status_icon"
           />
         </lib-avatar-group>
