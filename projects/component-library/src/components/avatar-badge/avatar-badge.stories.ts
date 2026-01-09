@@ -53,6 +53,18 @@ export const Sample: Story = {
   }
 };
 
+export const Away: Story = { ...Sample, ...{ args: {status: 'away'}}}
+
+export const Busy: Story = { ...Sample, ...{ args: {status: 'busy'}}}
+
+export const Focus: Story = { ...Sample, ...{ args: {status: 'focus'}}}
+
+export const Offline: Story = { ...Sample, ...{ args: {status: 'offline'}}}
+
+export const Online: Story = { ...Sample, ...{ args: {status: 'online'}}}
+
+export const Reachable: Story = { ...Sample, ...{ args: {status: 'reachable'}}}
+
 export const AllStatuses: Story = {
   render: (args) => {
     const inputs = [
@@ -81,7 +93,7 @@ export const AllStatuses: Story = {
   }
 };
 
-export const AvatarWithTextOnly: Story = {
+export const WithTextOnly: Story = {
   render: (args) => {
     const inputs = [
       args.size ? `[size]="'${args.size}'"` : '',
@@ -208,6 +220,46 @@ export const AddAction: Story = {
   }
 };
 
+export const SonyPSNAppearOffline: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'Based on Sony PSN appear offline status'
+      }
+    }
+  },
+  render: (args) => {
+    const inputs = [
+      args.size ? `[size]="'${args.size}'"` : '',
+      args.mode ? `[mode]="'${args.mode}'"` : ''
+    ].join(' ')
+    return {
+      template: `
+        <lib-avatar-badge ${inputs} style="--avatar-badge-color: none">
+          <lib-avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" />
+          <svg ngProjectAs="badge" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle
+              class="inverted_dashed_circle"
+              style="--dash_length: 10px; --gap_length: 25px;"
+              cx="50"
+              cy="50"
+              r="45"
+              fill="none"
+              stroke="gray"
+              stroke-width="10"
+              stroke-dasharray="var(--dash_length) var(--gap_length)"
+              stroke-linecap="round"
+            />
+          </svg>
+       </lib-avatar-badge>
+      `
+    }
+  },
+  args: {
+    size: tailwind_sizes['4xl']
+  }
+};
+
 export const LinkedInReachableStatus: Story = {
   name: 'LinkedIn Reachable Status',
   parameters: {
@@ -228,7 +280,7 @@ export const LinkedInReachableStatus: Story = {
         <lib-avatar-badge ${inputs}>
           <lib-avatar name="Craig Wayne" image_url="https://mockmind-api.uifaces.co/content/human/1.jpg" />
           <svg ngProjectAs="badge" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="10" cy="10" r="8" fill="transparent" stroke="#38A06C" stroke-width="4"/>
+            <circle cx="10" cy="10" r="8" fill="none" stroke="#38A06C" stroke-width="4"/>
           </svg>
        </lib-avatar-badge>
       `

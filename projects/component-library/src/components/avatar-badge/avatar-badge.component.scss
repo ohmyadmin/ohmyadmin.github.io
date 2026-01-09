@@ -33,7 +33,6 @@ $medium-size: 4em;
 
   .badge, ::ng-deep [ngProjectAs="badge"] {
     transform: translate(-16%, -16%);
-    z-index: 1;
   }
 
   ::ng-deep {
