@@ -2,12 +2,6 @@
   display: inline-flex;
   flex-wrap: var(--avatar-group-wrap, wrap);
   vertical-align: middle;
-
-  ::ng-deep .avatar {
-    &.collapsed {
-      display: none;
-    }
-  }
 }
 
 :host(.compact) ::ng-deep .avatar:not(:last-child) {

@@ -84,6 +84,7 @@ export class AvatarGroupComponent {
 
         const is_collapsed = limit !== undefined && limit > 0 && index >= limit;
         avatar_html_element.classList.toggle('collapsed', is_collapsed);
+        avatar_html_element.style.display = is_collapsed ? 'none' : 'inherit';
       });
     });
   }
