@@ -21,6 +21,7 @@ import {BaseComponent} from '../_base/base.component';
 })
 export class AvatarCheckboxComponent extends BaseComponent {
 
+  image_url = input<string>('https://mockmind-api.uifaces.co/content/human/1.jpg?v=' + new Date().getTime());
   size = input<tailwind_size>(tailwind_sizes.md);
   selected = input(false);
 

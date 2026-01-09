@@ -62,7 +62,7 @@
     "@vitest/browser-playwright": "^4.0.16",
     "@vitest/coverage-v8": "^4.0.16",
     "angular-eslint": "^21.1.0",
-    "cypress": "^15.8.1",
+    "cypress": "^15.8.2",
     "eslint": "^9.28.0",
     "eslint-plugin-cypress": "^5.2.0",
     "jsdom": "^27.4.0",
