@@ -1,27 +1,20 @@
 :host {
+  --avatar-group-wrap: nowrap;
+  --avatar-border-radius: 0;
+  --avatar-image-object-fit: contain;
+  --baseline-availability-gap: 10px;
+
   display: inline-flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-:host ::ng-deep .avatar-group {
-  flex-wrap: nowrap;
-}
-
-:host ::ng-deep {
-  .avatar, img {
-    border-radius: unset
-  }
-}
-
-:host ::ng-deep .avatar img {
-  object-fit: contain;
+  gap: var(--baseline-availability-gap);
 }
 
 .group {
+  align-items: center;
   border-radius: 35px;
-  padding: 15px;
   display: inline-flex;
+  flex-wrap: wrap;
+  padding: 15px;
+  row-gap: var(--baseline-availability-gap);
 
   &.supported {
     background: #d7eddf;

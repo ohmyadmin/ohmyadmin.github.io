@@ -4,10 +4,11 @@
   --avatar-border-color: transparent;
   --avatar-background-color: transparent;
 
-  display: inline-flex;
   cursor: pointer;
+  display: inline-flex;
 }
 
 ::ng-deep .avatar {
+  // have to use ng-deep because border-width is a value that uses container queries
   padding: var(--avatar-border-width);
 }

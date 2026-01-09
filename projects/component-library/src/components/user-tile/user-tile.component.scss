@@ -1,18 +1,18 @@
 :host {
-  display: inline-flex;
   align-items: center;
-  gap: 8px;
   color: black;
+  display: inline-flex;
   font-size: 0.9em;
+  gap: 8px;
 }
 
 .text-column {
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 
 a {
-  font-size: 0.8em;
   color: rgb(0 0 0 / 80%);
+  font-size: 0.8em;
 }
