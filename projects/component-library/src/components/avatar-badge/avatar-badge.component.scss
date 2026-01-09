@@ -8,19 +8,19 @@ $medium-size: 4em;
 
   container-type: inline-size;
   display: inline-flex;
+  line-height: 0;
   position: relative;
   width: min(var(--size, var(--size-md)), 100cqmin);
-  line-height: 0;
 
   .badge, ::ng-deep [ngProjectAs="badge"] {
     aspect-ratio: 1;
     background: var(--avatar-badge-color, #{colors.$status-offline});
-    bottom: 0;
     border-radius: 50%;
+    bottom: 0;
     height: var(--avatar-badge-size);
     position: absolute;
-    width: var(--avatar-badge-size);
     right: 0;
+    width: var(--avatar-badge-size);
   }
 }
 

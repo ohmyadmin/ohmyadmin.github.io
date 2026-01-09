@@ -1,11 +1,9 @@
 :host {
-  display: inline-flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
+  --avatar-group-wrap: nowrap;
+  --baseline-availability-gap: 10px;
 
-:host ::ng-deep .avatar-group {
-  flex-wrap: nowrap;
+  display: inline-flex;
+  gap: var(--baseline-availability-gap);
 }
 
 :host ::ng-deep {
@@ -19,9 +17,12 @@
 }
 
 .group {
+  align-items: center;
   border-radius: 35px;
-  padding: 15px;
   display: inline-flex;
+  flex-wrap: wrap;
+  padding: 15px;
+  row-gap: var(--baseline-availability-gap);
 
   &.supported {
     background: #d7eddf;

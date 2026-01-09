@@ -11,10 +11,10 @@ $medium-size: 4em;
   align-items: center;
   aspect-ratio: 1;
   background-color: var(--avatar-background-color, #{colors.$silvery-white});
-  border-radius: 50%;
-  border-width: var(--avatar-border-width);
-  border-style: var(--avatar-border-style, none);
   border-color: var(--avatar-border-color, rgb(0 0 0 / 10%));
+  border-radius: 50%;
+  border-style: var(--avatar-border-style, none);
+  border-width: var(--avatar-border-width);
   color:rgb(0 0 0 / 50%);
   container-type: inline-size;
   display: inline-flex;
@@ -29,9 +29,9 @@ $medium-size: 4em;
   line-height: 1;
 }
 
-img, svg {
+img, svg, ::ng-deep [ngProjectAs="image"] {
+  border-radius: inherit;
+  height: 100%;
   object-fit: cover;
   width: 100%;
-  height: 100%;
-  border-radius: inherit;
 }

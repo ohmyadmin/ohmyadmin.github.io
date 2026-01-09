@@ -1,6 +1,6 @@
 :host {
   display: inline-flex;
-  flex-wrap: wrap;
+  flex-wrap: var(--avatar-group-wrap, wrap);
   vertical-align: middle;
 
   ::ng-deep .avatar {
@@ -9,7 +9,6 @@
     }
   }
 }
-
 
 :host(.compact) ::ng-deep .avatar:not(:last-child) {
   margin-right: var(--avatar-group-overlap, calc(var(--size, var(--size-md)) * -0.45));

@@ -5,11 +5,11 @@ $border-radius-sharp: 18px;
 $ticket-width: 1000px;
 
 :host {
-  display: inline-flex;
-  column-gap: $width-perforation;
-  width: $ticket-width;
-  height: $ticket-width * 0.35;
   animation: rotate-minus-six .5s cubic-bezier(0.47, 1.64, 0.41, 0.9) .1s forwards, zoom-in .5s cubic-bezier(0.47, 1.64, 0.41, 0.9) .1s forwards;
+  column-gap: $width-perforation;
+  display: inline-flex;
+  height: $ticket-width * 0.35;
+  width: $ticket-width;
 }
 
 .stub, .body {
@@ -17,13 +17,13 @@ $ticket-width: 1000px;
 }
 
 .stub {
-  border-radius: $border-radius-normal $border-radius-sharp $border-radius-sharp $border-radius-normal;
-  padding: $ticket-width * 0.333 * 0.125;
-  display: flex;
   align-items: center;
+  border-radius: $border-radius-normal $border-radius-sharp $border-radius-sharp $border-radius-normal;
+  display: flex;
   justify-content: center;
-  width: 33%;
+  padding: $ticket-width * 0.333 * 0.125;
   position: relative;
+  width: 33%;
 
   &::after {
     background: repeating-linear-gradient(transparent 0, transparent 15px, $color-ticket 15px, $color-ticket 30px);
@@ -36,13 +36,13 @@ $ticket-width: 1000px;
 }
 
 .body {
-  border-radius: $border-radius-sharp $border-radius-normal $border-radius-normal $border-radius-sharp;
-  display: flex;
   align-items: center;
+  border-radius: $border-radius-sharp $border-radius-normal $border-radius-normal $border-radius-sharp;
+  column-gap: 10%;
+  display: flex;
+  flex-grow: 1;
   justify-content: center;
   padding: $ticket-width * 0.666 * 0.1;
-  flex-grow: 1;
-  column-gap: 10%;
 }
 
 @keyframes rotate-minus-six {

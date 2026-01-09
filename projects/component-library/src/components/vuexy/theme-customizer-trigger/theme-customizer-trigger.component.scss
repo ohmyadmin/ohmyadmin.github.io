@@ -5,8 +5,8 @@
 
   background-color: rgb(var(--color-primary));
   block-size: var(--button-height);
-  border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
   box-shadow: 0 2px 6px rgb(115 103 240 / 30%);
   box-sizing: border-box;
   color: rgb(var(--color-on-primary));
@@ -14,8 +14,8 @@
   inline-size: calc(var(--button-height) + 2px);
   inset-block-start: 20%;
   inset-inline-end: -2px;
-  position: fixed;
   padding: 8px;
+  position: fixed;
   transition: inset-inline-end 0.1s ease-in-out;
   z-index: 1001;
 
