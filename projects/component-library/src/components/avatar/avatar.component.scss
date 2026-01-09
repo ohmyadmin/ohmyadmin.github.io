@@ -12,7 +12,7 @@ $medium-size: 4em;
   aspect-ratio: 1;
   background-color: var(--avatar-background-color, #{colors.$silvery-white});
   border-color: var(--avatar-border-color, rgb(0 0 0 / 10%));
-  border-radius: 50%;
+  border-radius: var(--avatar-border-radius, 50%);
   border-style: var(--avatar-border-style, none);
   border-width: var(--avatar-border-width);
   color:rgb(0 0 0 / 50%);
@@ -32,6 +32,6 @@ $medium-size: 4em;
 img, svg, ::ng-deep [ngProjectAs="image"] {
   border-radius: inherit;
   height: 100%;
-  object-fit: cover;
+  object-fit: var(--avatar-image-object-fit, cover);
   width: 100%;
 }

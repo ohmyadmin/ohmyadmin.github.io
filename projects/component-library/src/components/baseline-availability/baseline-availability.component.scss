@@ -1,19 +1,11 @@
 :host {
   --avatar-group-wrap: nowrap;
+  --avatar-border-radius: 0;
+  --avatar-image-object-fit: contain;
   --baseline-availability-gap: 10px;
 
   display: inline-flex;
   gap: var(--baseline-availability-gap);
-}
-
-:host ::ng-deep {
-  .avatar, img {
-    border-radius: unset
-  }
-}
-
-:host ::ng-deep .avatar img {
-  object-fit: contain;
 }
 
 .group {
